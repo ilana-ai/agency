@@ -614,6 +614,34 @@ a.ep:hover { transform: translateY(-2px); box-shadow: 0 16px 38px -18px rgba(7,1
   border-radius: 999px; padding: 6px 16px;
 }
 
+/* הכרטיס שלם הוא קישור, אבל בלי צורת כפתור אף אחד לא יודע שאפשר ללחוץ.
+   נייבי מלא ולא זהב: הזהב שמור לפעולה הראשית של העמוד (ההרשמה),
+   ושני כפתורי זהב באותו מסך מתחרים זה בזה. */
+.ep-go {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 14px;          /* ⛔ לא לשנות - הוראת אילנה */
+  font-weight: 700;
+  color: var(--cream);
+  background: var(--navy);
+  border-radius: 999px;
+  padding: 10px 20px;
+  box-shadow: 0 6px 16px -8px rgba(10,31,77,.65);
+  transition: background .18s ease, box-shadow .2s ease, transform .16s ease;
+}
+.ep-go i {
+  font-style: normal;
+  color: var(--gold-lift);
+  transition: transform .18s ease;
+}
+a.ep:hover .ep-go {
+  background: #14264A;
+  box-shadow: 0 10px 22px -8px rgba(10,31,77,.75);
+}
+a.ep:hover .ep-go i { transform: translateX(-4px); }   /* ב-RTL שמאלה = קדימה */
+
 /* פס ההרשמה העליון - דק, ונדבק יחד עם התפריט.
 
    שניהם יושבים בתוך עוטף אחד שהוא הנדבק, ולא כשני אלמנטים נדבקים
