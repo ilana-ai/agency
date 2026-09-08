@@ -674,6 +674,73 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
 }
 
 /* ==========================================================================
+   8d. שכבת אבק-הכוכבים - עמודה צרה בקצה הימני
+
+   הדפוס נלקח מלוח-הכספים של אילנה (`ilana-private/public/money-board.html`,
+   השכבה `.sparks.r`) - לפי בקשתה.
+
+   היא עושה משהו אחר מהניצוצות שעולים: נקודות זעירות שמרצדות
+   במקום וננדות מעט, ברוחב של 170 פיקסל בלבד. שתי השכבות יחד
+   נותנות עומק - תנועה גדולה מאחור, וריצוד קרוב מלפנים.
+
+   ⛔ וכמו במקור: מופיעה רק מ-1200px ומעלה. במסך צר העמודה הזאת
+   יושבת על התוכן, והצפיפות שלה מיותרת למעבד של טלפון.
+   ========================================================================== */
+
+.dust { display: none; }
+
+@media (min-width: 1200px) {
+  .dust {
+    display: block;
+    position: fixed;
+    inset-block: 0;
+    right: 0;                 /* הקצה הימני הפיזי */
+    width: 170px;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 44;              /* מתחת לניצוצות העולים, והרבה מתחת לפס העליון */
+  }
+  .dust i {
+    position: absolute;
+    width: 3px; height: 3px;
+    border-radius: 50%;
+    background: var(--gold-lift);
+    opacity: 0;
+    box-shadow: 0 0 7px 1px rgba(255,208,138,.55);
+    animation: dust-twinkle linear infinite;
+  }
+  /* נגיעת תכלת במינון קטן, כמו בלוח */
+  .dust i:nth-of-type(3n) {
+    background: var(--cyan);
+    box-shadow: 0 0 7px 1px rgba(31,192,240,.45);
+  }
+  .dust i:nth-of-type(5n) { width: 2px; height: 2px; }
+}
+
+/* ⛔ רק translateY ו-scale. אין כאן rotate, ולכן תיבת-החסימה לא מתרחבת. */
+@keyframes dust-twinkle {
+  0%   { opacity: 0;   transform: translateY(14px)  scale(.6); }
+  25%  { opacity: .75; transform: translateY(0)     scale(1);  }
+  60%  { opacity: .35; transform: translateY(-18px) scale(.9); }
+  100% { opacity: 0;   transform: translateY(-40px) scale(.5); }
+}
+
+/* ההשהיות שליליות, בשונה מהמקור. בלוח הן חיוביות, ולכן העמודה
+   מתמלאת בהדרגה על פני שבע שניות. השהיה שלילית מתחילה את כל נקודה
+   באמצע המחזור שלה, כך שהשכבה חיה מהפריים הראשון (`animations.md`). */
+.dust i:nth-of-type(1)  { left:  18px; top: 12%; animation-delay: -0s;   animation-duration: 7.5s; }
+.dust i:nth-of-type(2)  { left:  96px; top: 26%; animation-delay: -1.9s; animation-duration: 9s;   }
+.dust i:nth-of-type(3)  { left:  52px; top: 41%; animation-delay: -3.4s; animation-duration: 8s;   }
+.dust i:nth-of-type(4)  { left: 128px; top: 55%; animation-delay: -.8s;  animation-duration: 10s;  }
+.dust i:nth-of-type(5)  { left:  30px; top: 63%; animation-delay: -5.1s; animation-duration: 7s;   }
+.dust i:nth-of-type(6)  { left:  78px; top: 74%; animation-delay: -2.6s; animation-duration: 11s;  }
+.dust i:nth-of-type(7)  { left: 112px; top: 88%; animation-delay: -6.2s; animation-duration: 8.5s; }
+.dust i:nth-of-type(8)  { left:  42px; top: 15%; animation-delay: -4.3s; animation-duration: 9.5s; }
+.dust i:nth-of-type(9)  { left: 140px; top: 34%; animation-delay: -7.1s; animation-duration: 7.8s; }
+.dust i:nth-of-type(10) { left:  64px; top: 58%; animation-delay: -1.2s; animation-duration: 12s;  }
+.dust i:nth-of-type(11) { left:  22px; top: 92%; animation-delay: -3.9s; animation-duration: 8.8s; }
+
+/* ==========================================================================
    9. פוטר
    ========================================================================== */
 
