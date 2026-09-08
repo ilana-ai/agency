@@ -615,8 +615,8 @@ a.ep:hover { transform: translateY(-2px); box-shadow: 0 16px 38px -18px rgba(7,1
 }
 
 /* הכרטיס שלם הוא קישור, אבל בלי צורת כפתור אף אחד לא יודע שאפשר ללחוץ.
-   נייבי מלא ולא זהב: הזהב שמור לפעולה הראשית של העמוד (ההרשמה),
-   ושני כפתורי זהב באותו מסך מתחרים זה בזה. */
+   מסגרת נייבי וטקסט בברונזה, ובמעבר עכבר הכפתור מתמלא.
+   ⛔ ולא זהב: הזהב שמור לפעולה הראשית של העמוד - ההרשמה. */
 .ep-go {
   display: inline-flex;
   align-items: center;
@@ -624,23 +624,34 @@ a.ep:hover { transform: translateY(-2px); box-shadow: 0 16px 38px -18px rgba(7,1
   margin-top: 16px;
   font-size: 14px;          /* ⛔ לא לשנות - הוראת אילנה */
   font-weight: 700;
-  color: var(--cream);
-  background: var(--navy);
+  color: #8A6A1F;
+  background: transparent;
+  border: 1.5px solid var(--navy);
   border-radius: 999px;
-  padding: 10px 20px;
-  box-shadow: 0 6px 16px -8px rgba(10,31,77,.65);
-  transition: background .18s ease, box-shadow .2s ease, transform .16s ease;
+  padding: 9px 20px;
+  transition: background .2s ease, color .2s ease,
+              box-shadow .2s ease, transform .16s ease;
 }
 .ep-go i {
   font-style: normal;
+  color: var(--gold);
+  transition: transform .18s ease, color .2s ease;
+}
+
+/* המעבר: המסגרת מתמלאת נייבי, האות מתהפכת לקרם,
+   והחץ מחליק שמאלה - ב-RTL זו התנועה קדימה. */
+a.ep:hover .ep-go,
+a.ep:focus-visible .ep-go {
+  background: var(--navy);
+  color: var(--cream);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px -8px rgba(10,31,77,.7);
+}
+a.ep:hover .ep-go i,
+a.ep:focus-visible .ep-go i {
   color: var(--gold-lift);
-  transition: transform .18s ease;
+  transform: translateX(-4px);
 }
-a.ep:hover .ep-go {
-  background: #14264A;
-  box-shadow: 0 10px 22px -8px rgba(10,31,77,.75);
-}
-a.ep:hover .ep-go i { transform: translateX(-4px); }   /* ב-RTL שמאלה = קדימה */
 
 /* פס ההרשמה העליון - דק, ונדבק יחד עם התפריט.
 
