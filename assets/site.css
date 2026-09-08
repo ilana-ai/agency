@@ -628,7 +628,9 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
   position: absolute;
   top: 100vh;               /* מתחילים מתחת למסך ועולים */
   opacity: 0;
-  color: var(--gold-lift);
+  /* גוון עמוק, לא בהיר - השכבה עוברת גם מעל הפס הקרם,
+     ושם זהב בהיר נעלם. הצל נשאר חם, כדי שעל הנייבי הם עדיין זוהרים. */
+  color: var(--gold);
   text-shadow: 0 0 10px rgba(217,182,90,.55);
   animation: spk-rise 11s linear infinite;
   will-change: transform, opacity;
@@ -707,15 +709,19 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
     position: absolute;
     width: 3px; height: 3px;
     border-radius: 50%;
-    background: var(--gold-lift);
+    /* השכבה הזאת צפה מעל כל העמוד ועוברת גם מעל נייבי וגם מעל קרם.
+       בלוח הרקע כהה תמיד, ולכן הספיק זהב בהיר. כאן זהב בהיר נעלם
+       על הקרם - ולכן הגוון עמוק יותר, ויש לו טבעת ברונזה דקה
+       שנותנת לו קצה על רקע בהיר, ולא נראית על הכהה. */
+    background: var(--gold);
     opacity: 0;
-    box-shadow: 0 0 7px 1px rgba(255,208,138,.55);
+    box-shadow: 0 0 5px 1px rgba(200,154,60,.70), 0 0 0 .5px rgba(122,92,26,.45);
     animation: dust-twinkle linear infinite;
   }
-  /* נגיעת תכלת במינון קטן, כמו בלוח */
+  /* נגיעת תכלת במינון קטן, כמו בלוח - גם היא הועמקה */
   .dust i:nth-of-type(3n) {
-    background: var(--cyan);
-    box-shadow: 0 0 7px 1px rgba(31,192,240,.45);
+    background: #0F8FB8;
+    box-shadow: 0 0 5px 1px rgba(31,192,240,.55), 0 0 0 .5px rgba(11,80,104,.40);
   }
   .dust i:nth-of-type(5n) { width: 2px; height: 2px; }
 }
