@@ -27,6 +27,7 @@
   --cream:     #F4EFE2;   /* טקסט על כהה. לעולם לא לבן טהור */
   --band:      #F7F4EC;   /* פס בהיר */
   --ink:       #1f2328;
+  --ink-warm:  #4A4335;   /* גוף הטקסט על הקרם. חם, לא כחלחל - מהמוקאפ שאושר */
   --muted:     #6b7280;
   --line:      #e7e9ee;
   --bg:        #ffffff;
@@ -166,43 +167,55 @@ a { color: inherit; }
 .sec-dark p { color: rgba(244,239,226,.86); }
 
 h1, h2, h3 { letter-spacing: -.015em; margin: 0 0 12px; }
-h1 { font-size: clamp(27px, 5.6vw, 46px); font-weight: 700; line-height: 1.22; }
+h1 { font-size: clamp(27px, 5.6vw, 46px); font-weight: 800; line-height: 1.32; }
 h2 { font-size: clamp(21px, 3.6vw, 31px); font-weight: 700; line-height: 1.3; }
 h3 { font-size: clamp(16.5px, 2.7vw, 19px); font-weight: 700; }
 p  { margin: 0 0 14px; }
 p:last-child { margin-bottom: 0; }
 
-.lead   { font-size: clamp(16.5px, 2.1vw, 19px); color: #3c4552; }
-.sec-dark .lead { color: rgba(244,239,226,.86); }
+.lead   { font-size: clamp(16.5px, 2.1vw, 19px); color: var(--ink-warm); line-height: 1.7; }
+.sec-dark .lead { color: rgba(244,239,226,.72); }
+.sec-band p, .bg-light p { color: var(--ink-warm); }
+
+/* הליד של ההירו צר וממורכז - מהמוקאפ */
+.hero .lead { max-width: 620px; margin-inline: auto; }
 .strong { font-weight: 700; color: var(--navy); }
 .sec-dark .strong { color: var(--cream); }
+
+/* טקסט זהב מגורדן - הביצוע שאילנה אישרה לשורת המפתח בכותרת.
+   ⛔ על רקע כהה לא שמים מרקר: הזהב השקוף מעל הנייבי יוצא ירקרק ובוצי.
+   על כהה הזהב הוא האות עצמה; על בהיר הוא הפס מאחוריה. */
+.gold-text {
+  background: linear-gradient(118deg, #F3E0AA 0%, #D9B65A 60%, #C89A3C 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
 
 /* מרקר זהב מאחורי מילות המפתח.
    הביצוע של "זהב על המילים החשובות בלבד" - פס נמוך שמסמן,
    לא רקע שממלא את כל גובה השורה. מילה או שתיים בכותרת, לא משפט. */
 .mk {
-  background: linear-gradient(transparent 56%, rgba(200,154,60,.40) 56%, rgba(200,154,60,.40) 94%, transparent 94%);
+  background: linear-gradient(transparent 58%, rgba(217,182,90,.45) 58%);
   color: inherit;
-  padding: 0 .08em;
-  border-radius: 2px;
 }
-.sec-dark .mk, .hero .mk {
-  background: linear-gradient(transparent 56%, rgba(200,154,60,.46) 56%, rgba(200,154,60,.46) 94%, transparent 94%);
-}
+/* על רקע כהה משתמשים ב-.gold-text, לא במרקר */
+.sec-dark .mk, .hero .mk { background: none; color: var(--gold-lift); }
 
 .kicker {
   display: inline-block;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: .04em;
-  color: var(--gold);
-  background: rgba(200,154,60,.12);
-  border: 1px solid rgba(200,154,60,.34);
+  color: #E2C77E;
+  background: transparent;                      /* ⛔ בלי מילוי. מסגרת בלבד */
+  border: 1px solid rgba(200,154,60,.45);
   border-radius: 999px;
-  padding: 5px 15px;
+  padding: 6px 16px;
   margin-bottom: 18px;
 }
-.sec-band .kicker { background: rgba(200,154,60,.14); }
+.sec-band .kicker, .bg-light .kicker { color: #8A6A1F; }
 
 
 /* ==========================================================================
@@ -216,6 +229,7 @@ p:last-child { margin-bottom: 0; }
   color: var(--cream);
   overflow: clip;
   padding: clamp(56px, 10vw, 116px) var(--pad) clamp(52px, 8vw, 96px);
+  text-align: center;   /* מהמוקאפ שאושר. ⛔ לא ליישר לימין */
 }
 /* שכבה 1+2: זוהר זהב מלמעלה במרכז, ונגיעת תכלת בפינה התחתונה */
 .hero::before {
@@ -262,9 +276,9 @@ p:last-child { margin-bottom: 0; }
 
 /* ראשי: גרדיאנט זהב, טקסט כהה, זוהר. שכבה 4 של המתכון */
 .btn-gold {
-  background: linear-gradient(135deg, var(--gold-lift), var(--gold) 58%, #b0842c);
+  background: linear-gradient(118deg, #F3E0AA 0%, #D9B65A 60%, #C89A3C 100%);
   color: #3D2C08;
-  box-shadow: 0 0 36px rgba(217,182,90,.40);
+  box-shadow: 0 0 34px rgba(217,182,90,.38);
 }
 .btn-gold:hover { transform: translateY(-1px); box-shadow: 0 0 46px rgba(217,182,90,.55); }
 .btn-gold:active { transform: translateY(0); }
@@ -295,6 +309,7 @@ p:last-child { margin-bottom: 0; }
   display: flex; flex-wrap: wrap; align-items: center;
   gap: 14px 20px; margin-top: 26px;
 }
+.hero .cta-row { justify-content: center; }
 
 
 /* ==========================================================================
