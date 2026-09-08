@@ -214,6 +214,16 @@ p:last-child { margin-bottom: 0; }
 /* על רקע כהה משתמשים ב-.gold-text, לא במרקר */
 .sec-dark .mk, .hero .mk { background: none; color: var(--gold-lift); }
 
+/* קו זהב מתחת למילים. בניגוד למרקר, הוא עובד גם על כהה:
+   קו דק לא מתערבב עם הרקע כמו שפס שקוף מתערבב. */
+.uline {
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  text-decoration-skip-ink: none;
+}
+
 .kicker {
   display: inline-block;
   font-size: 13px;
