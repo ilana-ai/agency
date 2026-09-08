@@ -786,6 +786,121 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
 .dust.l i:nth-of-type(11) { left:  96px; top: 38%; animation-delay: -1.43s; animation-duration: 6.66s;  }
 
 /* ==========================================================================
+   8e. עמוד פרק בודד - הסרטון והתמלול
+   ========================================================================== */
+
+.ep-back {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: 14.5px;
+  color: rgba(244,239,226,.72);
+  text-decoration: none;
+}
+.ep-back::before { content: "→ "; }   /* חץ ימינה - ב-RTL זו החזרה */
+.ep-back:hover { color: var(--gold-lift); }
+
+/* מסגרת הסרטון. aspect-ratio שומר את המקום מראש,
+   כך שהעמוד לא קופץ כשהאיפריים נטען. */
+.video-frame {
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: clip;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(244,239,226,.14);
+  box-shadow: 0 24px 60px rgba(0,0,0,.34);
+}
+.video-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+.video-todo {
+  height: 100%;
+  display: grid; place-items: center;
+  text-align: center;
+  padding: 24px;
+  font-size: 14.5px; line-height: 1.7;
+  color: rgba(244,239,226,.55);
+  border: 1.5px dashed rgba(200,154,60,.45);
+  border-radius: var(--radius);
+  background: rgba(200,154,60,.05);
+}
+
+/* כותרת הפרק היא משפט ארוך, ולא כותרת קצרה - במידת ה-h1 הרגילה
+   היא משתלטת על העמוד ונשפכת לשש שורות. */
+.ep-page h1 {
+  font-size: clamp(21px, 2.9vw, 30px);
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+/* --- התמלול --- */
+
+.tr-head {
+  display: flex; flex-wrap: wrap; gap: 10px 16px;
+  align-items: baseline; justify-content: space-between;
+  margin-bottom: 18px;
+}
+.tr-head h2 { margin: 0; }
+.tr-all {
+  background: transparent;
+  border: 1px solid rgba(10,31,77,.22);
+  border-radius: 999px;
+  color: var(--navy);
+  font-family: inherit; font-size: 14px; font-weight: 500;
+  padding: 7px 18px; cursor: pointer;
+  transition: border-color .16s ease, color .16s ease;
+}
+.tr-all:hover { border-color: var(--gold); color: #8A6A1F; }
+
+/* כל פרקון הוא מגירה שנפתחת.
+   כלל הברזל מפרוטוקול הדשבורדים: "כרטיס שהתוכן בו גדל בלי גבול
+   נפתח מקופל, והכותרת שלו נשארת גלויה."
+   וכך רשימת הפרקונים היא גם תוכן העניינים - שני נכסים במבנה אחד. */
+.tr {
+  border-bottom: 1px solid var(--line);
+}
+.tr:first-of-type { border-top: 1px solid var(--line); }
+.tr summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 15px 0 15px 28px;
+  position: relative;
+  font-size: clamp(15.5px, 1.9vw, 17px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.5;
+}
+.tr summary::-webkit-details-marker { display: none; }
+/* המשולש בקצה השמאלי, מסתובב כשנפתח */
+.tr summary::after {
+  content: "";
+  position: absolute; left: 2px; top: 50%;
+  width: 8px; height: 8px;
+  border-inline-end: 2px solid var(--gold);
+  border-block-end: 2px solid var(--gold);
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform .18s ease;
+}
+.tr[open] summary::after { transform: translateY(-30%) rotate(225deg); }
+.tr summary:hover { color: #8A6A1F; }
+
+.tr-time {
+  display: inline-block;
+  min-width: 52px;
+  font-weight: 800;
+  color: var(--gold);
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.tr-body { padding: 0 0 20px; }
+.tr-body p {
+  font-size: clamp(16px, 1.9vw, 17.5px);
+  line-height: 1.85;
+  color: var(--ink-warm);
+  margin: 0 0 14px;
+}
+.tr-body p:last-child { margin-bottom: 0; }
+.tr-body b { color: var(--navy); }
+
+/* ==========================================================================
    9. פוטר
    ========================================================================== */
 

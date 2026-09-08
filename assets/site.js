@@ -67,3 +67,20 @@
     setTimeout(function () { field.focus({ preventScroll: true }); }, 620);
   });
 })();
+
+/* כפתור "פתחו הכל" בתמלול.
+   הקיפול הוא ברירת המחדל כדי שרשימת הפרקונים תשמש גם כתוכן עניינים,
+   אבל מי שרוצה לקרוא את הכל ברצף צריך לא לפתוח עשר פעמים. */
+(function () {
+  var btn = document.querySelector('.tr-all');
+  if (!btn) return;
+  var all = document.querySelectorAll('details.tr');
+  if (!all.length) return;
+
+  btn.addEventListener('click', function () {
+    var open = btn.getAttribute('data-open') !== 'true';
+    all.forEach(function (d) { d.open = open; });
+    btn.setAttribute('data-open', open ? 'true' : 'false');
+    btn.textContent = open ? 'סגרו הכל' : 'פתחו הכל';
+  });
+})();
