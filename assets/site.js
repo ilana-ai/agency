@@ -50,3 +50,20 @@
   window.addEventListener('resize', reserve, { passive: true });
   if ('ResizeObserver' in window) new ResizeObserver(reserve).observe(bar);
 })();
+
+/* כל קישור שמוביל לטופס - אחרי הקפיצה הסמן נכנס לשדה הראשון.
+   בלעדיו הלחיצה נראית כאילו לא קרה כלום כשהטופס כבר על המסך -
+   וזה בדיוק חוק-העל "אף פעם לא באוויר": כל לחיצה מקבלת פידבק מיידי. */
+(function () {
+  var form = document.getElementById('form');
+  if (!form) return;
+  var field = form.querySelector('input:not([type="checkbox"])');
+  if (!field) return;
+
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href="#form"]');
+    if (!a) return;
+    /* מחכים שהגלילה תירגע, אחרת המיקוד עצמו קופץ וקוטע אותה */
+    setTimeout(function () { field.focus({ preventScroll: true }); }, 620);
+  });
+})();
