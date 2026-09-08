@@ -93,9 +93,12 @@ a { color: inherit; }
 
 .head-in {
   position: relative;
-  max-width: var(--maxw-wide);
-  margin-inline: auto;
-  padding: 10px var(--pad);
+  /* ⛔ בלי max-width. הפס נפרש על כל רוחב המסך,
+     כדי שהתפריט יגיע עד קצה המסך ממש (הוראת אילנה, 8.9.2026).
+     מיכל ממורכז עצר אותו באמצע הדרך. */
+  padding-block: 10px;
+  padding-right: var(--pad);  /* צד ההתחלה ב-RTL - נושם */
+  padding-left: 0;            /* הצד השמאלי הפיזי - כמעט נוגע */
   display: flex;
   align-items: center;
   justify-content: flex-end;   /* בשמאל. ב-RTL זהו flex-end */
@@ -173,6 +176,19 @@ p:last-child { margin-bottom: 0; }
 .sec-dark .lead { color: rgba(244,239,226,.86); }
 .strong { font-weight: 700; color: var(--navy); }
 .sec-dark .strong { color: var(--cream); }
+
+/* מרקר זהב מאחורי מילות המפתח.
+   הביצוע של "זהב על המילים החשובות בלבד" - פס נמוך שמסמן,
+   לא רקע שממלא את כל גובה השורה. מילה או שתיים בכותרת, לא משפט. */
+.mk {
+  background: linear-gradient(transparent 56%, rgba(200,154,60,.40) 56%, rgba(200,154,60,.40) 94%, transparent 94%);
+  color: inherit;
+  padding: 0 .08em;
+  border-radius: 2px;
+}
+.sec-dark .mk, .hero .mk {
+  background: linear-gradient(transparent 56%, rgba(200,154,60,.46) 56%, rgba(200,154,60,.46) 94%, transparent 94%);
+}
 
 .kicker {
   display: inline-block;
@@ -489,7 +505,7 @@ p:last-child { margin-bottom: 0; }
     background: var(--navy);
     border-top: 1px solid rgba(200,154,60,.22);
     box-shadow: 0 18px 40px rgba(0,0,0,.34);
-    padding: 6px var(--pad) 14px;
+    padding: 6px var(--pad) 14px 14px;
   }
   .site-nav.open { display: flex; }
   .site-nav a {
