@@ -244,21 +244,17 @@ p:last-child { margin-bottom: 0; }
   padding: clamp(16px, 2.2vw, 30px) var(--pad) clamp(38px, 5.4vw, 66px);
   text-align: center;   /* מהמוקאפ שאושר. ⛔ לא ליישר לימין */
 }
-/* הרקע הכהה - מקור אור אחד, רך וחם, מאחורי הכותרת.
-   ⛔ בלי טבעות ובלי דפוס - עיגולים צפופים סביב הטקסט
-   נקראים כמטרה, לא כאור. ⛔ ובלי blur - הגרדיאנטים רכים בלאו הכי,
-   ופילטר על שטח בגודל מסך מייקר את הציור. */
+/* הרקע הכהה.
+   ⛔ בלי העיגול המואר במרכז (הוראת אילנה, 8.9.2026) - העומק
+   בא מהגרדיאנט של הרקע עצמו, ולא מדקורציה שמונחת מעליו.
+   נשארה רק נגיעת התכלת בפינה, מהמתכון המקורי. */
 .hero::before {
   content: "";
   position: absolute; inset: 0; z-index: -2;
-  background:
-    radial-gradient(30% 44% at 50% 44%, rgba(238,214,158,.13), transparent 68%),
-    radial-gradient(62% 80% at 50% 44%, rgba(203,158,66,.10), transparent 72%),
-    radial-gradient(46% 40% at 10% 106%, rgba(31,192,240,.08), transparent 74%);
+  background: radial-gradient(46% 40% at 10% 106%, rgba(31,192,240,.08), transparent 74%);
 }
 
-/* הרשת העדינה - נשארת רק בשוליים.
-   המרכז נשאר נקי, כדי שהאור יהיה הדבר היחיד שם. */
+/* הרשת העדינה, מתפוגגת בשוליים */
 .hero::after {
   content: "";
   position: absolute; inset: 0; z-index: -1;
@@ -266,8 +262,8 @@ p:last-child { margin-bottom: 0; }
     linear-gradient(to left, rgba(244,239,226,.026) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(244,239,226,.026) 1px, transparent 1px);
   background-size: 44px 44px;
-  -webkit-mask-image: radial-gradient(58% 68% at 50% 44%, transparent 22%, #000 96%);
-  mask-image: radial-gradient(58% 68% at 50% 44%, transparent 22%, #000 96%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, rgba(0,0,0,.35) 62%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, rgba(0,0,0,.35) 62%, transparent 100%);
 }
 .hero .wrap { position: relative; }
 .hero p { color: rgba(244,239,226,.84); }
