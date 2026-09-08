@@ -531,9 +531,9 @@ p:last-child { margin-bottom: 0; }
    כל עמוד-מוצר מביא את שלו, ולכן זה רכיב ולא חלק מהפוטר הקבוע. */
 .foot-legal {
   max-width: var(--maxw-wide);
-  margin: 18px auto 0;
-  padding-top: 15px;
-  border-top: 1px solid rgba(244,239,226,.10);
+  margin: 0 auto 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(244,239,226,.10);
   font-size: 13px;
   line-height: 1.6;
   color: rgba(244,239,226,.52);
