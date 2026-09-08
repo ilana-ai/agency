@@ -473,6 +473,8 @@ p:last-child { margin-bottom: 0; }
 
 /* כשקופצים לטופס, שלא יישב מתחת לפס העליון הנדבק */
 #form { scroll-margin-top: 80px; }
+/* בעמוד הפרק הכותרת הנדבקת גבוהה יותר - תפריט ועוד פס */
+.ep-page #form { scroll-margin-top: 124px; }
 
 /* נסתרת מהעין, נשמעת לקורא-מסך.
    placeholder אינו תווית: הוא נעלם ברגע שמתחילים להקליד,
@@ -610,6 +612,45 @@ a.ep:hover { transform: translateY(-2px); box-shadow: 0 16px 38px -18px rgba(7,1
   font-size: 14px; font-weight: 700;
   color: #8A6A1F; background: rgba(200,154,60,.12);
   border-radius: 999px; padding: 6px 16px;
+}
+
+/* פס ההרשמה העליון - דק, ונדבק יחד עם התפריט.
+
+   שניהם יושבים בתוך עוטף אחד שהוא הנדבק, ולא כשני אלמנטים נדבקים
+   זה מעל זה. שתי שכבות נפרדות היו מחייבות לדעת את גובה התפריט מראש,
+   והוא משתנה בין דסקטופ לנייד. עוטף אחד פותר את זה בלי מדידה. */
+.stick-top {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+}
+.stick-top .site-head { position: static; }
+
+.snap-top {
+  background: rgba(12,36,80,.95);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid rgba(200,154,60,.28);
+  padding: 6px var(--pad);
+}
+.snap-top-in {
+  max-width: var(--maxw-wide); margin-inline: auto;
+  display: flex; flex-wrap: wrap; align-items: center;
+  justify-content: center; gap: 6px 14px;
+}
+.snap-top span {
+  color: rgba(244,239,226,.86);
+  font-size: clamp(13px, 1.5vw, 14.5px);
+  font-weight: 500;
+}
+/* כפתור קטן במיוחד - הפס אמור להיות דק */
+.snap-top .btn {
+  padding: 5px 18px;
+  font-size: 13.5px;
+  box-shadow: 0 0 18px rgba(217,182,90,.28);
+}
+@media (max-width: 480px) {
+  .snap-top .btn { width: auto; }
 }
 
 /* פס נדבק - נשאר זמין לכל אורך העמוד.
