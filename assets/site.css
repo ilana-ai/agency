@@ -906,11 +906,15 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
 }
 
 .tr-body { padding: 0 0 20px; }
+/* הטקסט עצמו קטן מכותרות הפרקונים, והשורה קצרה.
+   אורך השורה הוא מה שקובע אם טקסט ארוך נקרא בכלל: על עמודה
+   של 760 העין מאבדת את תחילת השורה הבאה. 54 תווים הם טווח הקריאה. */
 .tr-body p {
-  font-size: clamp(16px, 1.9vw, 17.5px);
-  line-height: 1.85;
+  font-size: clamp(14.5px, 1.5vw, 15.5px);
+  line-height: 1.95;
   color: var(--ink-warm);
-  margin: 0 0 14px;
+  max-width: 54ch;
+  margin: 0 0 18px;
 }
 .tr-body p:last-child { margin-bottom: 0; }
 .tr-body b { color: var(--navy); }
