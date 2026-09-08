@@ -255,6 +255,7 @@
     }
     .legal a:hover { color: var(--link); border-bottom-color: var(--link); }
     .legal .sep { opacity: .5; }
+    .legal .ltr { direction: ltr; unicode-bidi: isolate; }
 
     @media (max-width: 480px) {
       body { font-size: 15.5px; }
@@ -336,7 +337,7 @@
     <nav class="legal" aria-label="קישורים משפטיים">
       <a href="https://ilana-ai.github.io/pages/terms-ai-private-lessons/" target="_blank" rel="noopener">תקנון ומדיניות פרטיות</a>
       <span class="sep" aria-hidden="true">·</span>
-      <a href="https://wa.me/972545698333" target="_blank" rel="noopener">צור קשר בוואטסאפ</a>
+      <span>וואטסאפ <span class="ltr" dir="ltr">054-569-8333</span></span>
     </nav>
   </main>
 </body>
