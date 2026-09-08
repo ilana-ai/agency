@@ -583,10 +583,11 @@ a.ep:hover { transform: translateY(-2px); box-shadow: 0 16px 38px -18px rgba(7,1
   -webkit-backdrop-filter: saturate(140%) blur(10px);
   border-top: 1px solid rgba(200,154,60,.30);
   padding: 11px var(--pad);
-  transform: translateY(110%);
-  transition: transform .24s ease;
 }
-.snap.show { transform: translateY(0); }
+/* גובה הפס נשמר כמשתנה, כדי שהעמוד יפנה לו מקום למטה
+   והפוטר לא יישב מתחתיו. הערך נמדד ב-JS, כי הפס מתקפל במובייל. */
+body:has(.snap),
+body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא רשת ביטחון לדפדפן בלי :has */
 .snap-in {
   max-width: var(--maxw-wide); margin-inline: auto;
   display: flex; flex-wrap: wrap; align-items: center;

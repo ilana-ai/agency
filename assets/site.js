@@ -34,22 +34,19 @@
 })();
 
 /* הפס הנדבק של עמוד הפודקאסט.
-   נכנס אחרי שגוללים קצת, ונשאר זמין לכל אורך העמוד (הוראת אילנה).
-   ⛔ בלי להסתיר אותו כשהטופס על המסך - בעמוד קצר זה היה מבטל אותו לגמרי. */
+   הוא גלוי מהרגע הראשון (הוראת אילנה) - אין סף גלילה.
+   מה שנשאר ל-JS הוא למדוד את גובהו ולשמור מקום בתחתית העמוד,
+   כדי שהפוטר לא יישב מתחתיו. הפס מתקפל במובייל, ולכן המדידה חיה. */
 (function () {
   var bar = document.querySelector('.snap');
   if (!bar) return;
 
-  function paint() {
-    bar.classList.toggle('show', window.scrollY > 320);
+  function reserve() {
+    document.documentElement.style.setProperty('--snap-h', bar.offsetHeight + 'px');
   }
 
-  var ticking = false;
-  window.addEventListener('scroll', function () {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(function () { paint(); ticking = false; });
-  }, { passive: true });
-
-  paint();
+  document.body.classList.add('has-snap');
+  reserve();
+  window.addEventListener('resize', reserve, { passive: true });
+  if ('ResizeObserver' in window) new ResizeObserver(reserve).observe(bar);
 })();
