@@ -99,7 +99,7 @@ a { color: inherit; }
      מיכל ממורכז עצר אותו באמצע הדרך. */
   padding-block: 10px;
   padding-right: var(--pad);  /* צד ההתחלה ב-RTL - נושם */
-  padding-left: 0;            /* הצד השמאלי הפיזי - כמעט נוגע */
+  padding-left: 18px;         /* הצד השמאלי הפיזי - כמעט נוגע */
   display: flex;
   align-items: center;
   justify-content: flex-end;   /* בשמאל. ב-RTL זהו flex-end */
@@ -522,7 +522,7 @@ p:last-child { margin-bottom: 0; }
     background: var(--navy);
     border-top: 1px solid rgba(200,154,60,.22);
     box-shadow: 0 18px 40px rgba(0,0,0,.34);
-    padding: 6px var(--pad) 14px 14px;
+    padding: 6px var(--pad) 14px 18px;
   }
   .site-nav.open { display: flex; }
   .site-nav a {
