@@ -251,7 +251,7 @@ p:last-child { margin-bottom: 0; }
   color: var(--cream);
   overflow: clip;
   /* רווח עליון מרוסן - הכותרת מתחילה קרוב לפס, כמו במוקאפ (הוראת אילנה, 8.9) */
-  padding: clamp(16px, 2.2vw, 30px) var(--pad) clamp(38px, 5.4vw, 66px);
+  padding: clamp(34px, 4.4vw, 62px) var(--pad) clamp(38px, 5.4vw, 66px);
   text-align: center;   /* מהמוקאפ שאושר. ⛔ לא ליישר לימין */
 }
 /* הרקע הכהה.
@@ -372,16 +372,36 @@ p:last-child { margin-bottom: 0; }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 .grid-2 { grid-template-columns: repeat(2, 1fr); }
 
-/* הערה רגועה - לא צעקנית */
+/* כרטיס מודגש - הערכים מהמוקאפ שאילנה אישרה.
+   כרטיס לבן עם פינות נדיבות, קו זהב בצד ההתחלה, וצל רך בגוון הנייבי.
+   ⛔ לא קופסה שטוחה בגוון קרם - זה מה שנפסל. */
 .note {
+  background: #fff;
+  border-radius: 18px;
   border-inline-start: 3px solid var(--gold);
-  background: rgba(200,154,60,.08);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  padding: 14px 18px;
-  font-size: 14.5px;
-  color: #4a5361;
+  padding: clamp(16px, 2.2vw, 22px) clamp(18px, 2.4vw, 24px);
+  box-shadow: 0 10px 24px -16px rgba(7,18,40,.40);
+  font-size: clamp(15.5px, 1.9vw, 17px);
+  line-height: 1.75;
+  color: var(--ink-warm);
 }
-.sec-dark .note { color: rgba(244,239,226,.76); background: rgba(200,154,60,.10); }
+.note p { margin: 0 0 10px; }
+.note p:last-child { margin-bottom: 0; }
+.note b, .note strong { color: var(--navy); }
+.sec-dark .note {
+  background: rgba(255,255,255,.06);
+  color: rgba(244,239,226,.82);
+  box-shadow: none;
+}
+.sec-dark .note b, .sec-dark .note strong { color: var(--cream); }
+
+/* הסתייגות שקטה - שורה, לא קופסה. שתי קופסאות בסקשן אחד מתחרות. */
+.caveat {
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+}
 
 
 /* ==========================================================================
