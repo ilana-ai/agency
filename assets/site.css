@@ -220,12 +220,12 @@ p:last-child { margin-bottom: 0; }
    האותיות נשארות קרם, ושניהם לא מתחרים על אותו שטח. */
 .sec-dark .mk, .hero .mk {
   background: linear-gradient(to bottom,
-    transparent 71%,
-    #D9B65A 71%,
-    #C89A3C 97%,
-    transparent 97%);
-  /* 71% הוא בדיוק מתחת לקו-הבסיס של Heebo בגובה-שורה 1.7 -
-     משם ומטה הפס לא חוצה את גוף האותיות, רק את הזנבות של ך ן ף ץ ק. */
+    transparent 82%,
+    #D9B65A 82%,
+    #C89A3C 95%,
+    transparent 95%);
+  /* 82% הוא מתחת לקצה הנמוך ביותר של האותיות - לא קו-הבסיס,
+     אלא תחתית הזנבות של ך ן ף ץ ק. כך הפס לא נוגע באף אות. */
   color: inherit;
   padding: 0 .12em;
   border-radius: 0;
