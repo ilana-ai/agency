@@ -519,10 +519,11 @@ p:last-child { margin-bottom: 0; }
   max-width: var(--maxw-wide);
   margin-inline: auto;
   display: flex; flex-wrap: wrap;
-  align-items: center; justify-content: space-between;
-  gap: 16px 26px;
+  align-items: center;
+  gap: 4px 10px;
 }
-.foot-links { display: flex; flex-wrap: wrap; gap: 10px 22px; }
+/* הנקודה שמפרידה בין הפריטים */
+.foot-in .sep { color: rgba(200,154,60,.55); }
 .site-foot a { color: rgba(244,239,226,.78); text-decoration: none; }
 .site-foot a:hover { color: var(--gold-lift); text-decoration: underline; }
 .foot-note { font-size: 12.5px; color: rgba(244,239,226,.46); }
@@ -587,7 +588,7 @@ p:last-child { margin-bottom: 0; }
   .site-nav a[aria-current="page"] { border-bottom-color: rgba(244,239,226,.09); }
 
   .grid-3, .grid-2 { grid-template-columns: 1fr; }
-  .foot-in { flex-direction: column; align-items: flex-start; }
+  .foot-in { justify-content: flex-start; }
 }
 
 @media (max-width: 480px) {
