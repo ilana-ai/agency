@@ -211,8 +211,17 @@ p:last-child { margin-bottom: 0; }
   background: linear-gradient(transparent 58%, rgba(217,182,90,.45) 58%);
   color: inherit;
 }
-/* על רקע כהה משתמשים ב-.gold-text, לא במרקר */
-.sec-dark .mk, .hero .mk { background: none; color: var(--gold-lift); }
+/* מרקר על רקע כהה - חייב להיות אטום, והאות מתהפכת לכהה.
+   פס זהב שקוף מעל נייבי מתערבב איתו ויוצא ירקרק ובוצי - זה נפסל.
+   אטום עם אות כהה הוא בדיוק אותו הגיון של הכפתור הזהב, ולכן הוא נקרא שייך. */
+.sec-dark .mk, .hero .mk {
+  background: linear-gradient(118deg, #F3E0AA 0%, #D9B65A 60%, #C89A3C 100%);
+  color: #3D2C08;
+  padding: .08em .34em;
+  border-radius: 5px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;   /* שהריפוד יחזור גם בשורה שנייה, אם הטקסט נשבר */
+}
 
 /* קו זהב מתחת למילים. בניגוד למרקר, הוא עובד גם על כהה:
    קו דק לא מתערבב עם הרקע כמו שפס שקוף מתערבב. */
