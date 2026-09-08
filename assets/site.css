@@ -592,7 +592,7 @@ a.ep:hover { transform: translateY(-2px); box-shadow: 0 16px 38px -18px rgba(7,1
   color: var(--gold); margin-bottom: 10px;
 }
 .ep h3 {
-  font-size: clamp(16px, 2vw, 19px);
+  font-size: clamp(19px, 2.5vw, 24px);
   color: var(--navy);
   margin: 0 0 12px;
   line-height: 1.45;
@@ -600,7 +600,7 @@ a.ep:hover { transform: translateY(-2px); box-shadow: 0 16px 38px -18px rgba(7,1
 /* טקסט בכחול עמוק, לא באפור (הוראת אילנה).
    והתיאור מפוצל לפסקאות, כדי שהשורות לא יימתחו לבלוק אחד. */
 .ep p {
-  font-size: clamp(13px, 1.3vw, 14px);
+  font-size: clamp(15.5px, 1.6vw, 17px);
   color: #16305E;
   max-width: 40ch;
   line-height: 1.75;
@@ -923,14 +923,18 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
 /* כותרת הפרק היא משפט ארוך, ולא כותרת קצרה - במידת ה-h1 הרגילה
    היא משתלטת על העמוד ונשפכת לשש שורות. */
 .ep-page h1 {
-  font-size: clamp(21px, 2.9vw, 30px);
+  font-size: clamp(19px, 2.5vw, 26px);
   line-height: 1.4;
   font-weight: 700;
 }
 
 /* גם התיאור מתחת לכותרת מקבל אורך שורה קצר, מאותה סיבה
    שהתמלול קיבל אותו. קצת רחב מהתמלול, כי הגופן גדול יותר. */
-.ep-page .lead { max-width: 56ch; }
+.ep-page .lead {
+  max-width: 56ch;
+  font-size: clamp(15px, 1.7vw, 16.5px);
+  line-height: 1.75;
+}
 
 /* --- התמלול --- */
 
@@ -997,8 +1001,8 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
    אורך השורה הוא מה שקובע אם טקסט ארוך נקרא בכלל: על עמודה
    של 760 העין מאבדת את תחילת השורה הבאה. 54 תווים הם טווח הקריאה. */
 .tr-body p {
-  font-size: clamp(14.5px, 1.5vw, 15.5px);
-  line-height: 1.95;
+  font-size: clamp(16px, 1.6vw, 16.5px);
+  line-height: 1.9;
   color: var(--ink-warm);
   max-width: 54ch;
   margin: 0 0 18px;
