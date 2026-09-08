@@ -7,8 +7,18 @@
 
 :root {
   /* --- מבנה --- */
-  --navy:      #0A1F4D;   /* נייבי הלוגו. הרקע הכהה. אסור להחליף בכמעט-שחור */
+  --navy:      #0A1F4D;   /* נייבי הלוגו. הצבע של המבנה - טקסט, מסגרות, צללים */
   --navy-soft: #24335c;   /* הנייבי של ה-CRM - לצללים ולמעברים */
+
+  /* הרקע הכהה - ארבעת הגוונים של הגרסה הכהה בפודקאסט (בקשת אילנה, 8.9.2026).
+     המקור: master-library/scripts/podcast_video.py, THEMES["dark"]["grad"].
+     הם לא כחול אחד אלא גרדיאנט, וזה מה שנותן לו את העומק שנייבי שטוח לא נותן. */
+  --navy-0:    #05112A;   /* העמוק ביותר */
+  --navy-1:    #0C2450;
+  --navy-2:    #14386F;   /* הכחול הבהיר, ליבת הגרדיאנט */
+  --navy-3:    #081A3A;
+  --navy-bg:   #0C2450;   /* המשטח הכהה כשצריך צבע אחיד - פס עליון, פוטר */
+  --navy-grad: linear-gradient(163deg, var(--navy-0) 0%, var(--navy-1) 30%, var(--navy-2) 62%, var(--navy-3) 100%);
 
   /* --- יוקרה. מינון קטן בלבד --- */
   --gold:      #C89A3C;
@@ -86,7 +96,7 @@ a { color: inherit; }
   position: sticky;
   top: 0;
   z-index: 60;
-  background: rgba(10,31,77,.92);
+  background: rgba(12,36,80,.92);
   backdrop-filter: saturate(140%) blur(10px);
   -webkit-backdrop-filter: saturate(140%) blur(10px);
   border-bottom: 1px solid rgba(200,154,60,.22);
@@ -164,7 +174,7 @@ a { color: inherit; }
 .wrap-wide { max-width: var(--maxw-wide); margin-inline: auto; }
 
 .sec-band { background: var(--band); }
-.sec-dark { background: var(--navy); color: var(--cream); }
+.sec-dark { background: var(--navy-1); background-image: var(--navy-grad); color: var(--cream); }
 .sec-dark p { color: rgba(244,239,226,.86); }
 
 h1, h2, h3 { letter-spacing: -.015em; margin: 0 0 12px; }
@@ -226,41 +236,38 @@ p:last-child { margin-bottom: 0; }
 .hero {
   position: relative;
   isolation: isolate;
-  background: var(--navy);
+  background: var(--navy-1);
+  background-image: var(--navy-grad);
   color: var(--cream);
   overflow: clip;
   /* רווח עליון מרוסן - הכותרת מתחילה קרוב לפס, כמו במוקאפ (הוראת אילנה, 8.9) */
   padding: clamp(16px, 2.2vw, 30px) var(--pad) clamp(38px, 5.4vw, 66px);
   text-align: center;   /* מהמוקאפ שאושר. ⛔ לא ליישר לימין */
 }
-/* שכבה 1: הזוהר המרכזי - ליבה חמה מאחורי הכותרת,
-   שמתפוגגת החוצה. מעליה הזוהר מלמעלה ונגיעת התכלת מהמתכון.
-   הכל בזהב של הלוגו - אפס צבעים חדשים. */
+/* הרקע הכהה - מקור אור אחד, רך וחם, מאחורי הכותרת.
+   ⛔ בלי טבעות ובלי דפוס - עיגולים צפופים סביב הטקסט
+   נקראים כמטרה, לא כאור. ⛔ ובלי blur - הגרדיאנטים רכים בלאו הכי,
+   ופילטר על שטח בגודל מסך מייקר את הציור. */
 .hero::before {
   content: "";
   position: absolute; inset: 0; z-index: -2;
   background:
-    radial-gradient(20% 28% at 50% 46%, rgba(245,229,182,.24), transparent 70%),
-    radial-gradient(44% 58% at 50% 46%, rgba(232,206,140,.17), rgba(200,154,60,.10) 44%, transparent 76%),
-    radial-gradient(78% 92% at 50% 46%, rgba(200,154,60,.13), transparent 70%),
-    radial-gradient(58% 46% at 50% 0%,  rgba(200,154,60,.13), transparent 72%),
-    radial-gradient(46% 40% at 12% 100%, rgba(31,192,240,.10), transparent 74%);
+    radial-gradient(30% 44% at 50% 44%, rgba(238,214,158,.13), transparent 68%),
+    radial-gradient(62% 80% at 50% 44%, rgba(203,158,66,.10), transparent 72%),
+    radial-gradient(46% 40% at 10% 106%, rgba(31,192,240,.08), transparent 74%);
 }
-/* שכבה 3: הטבעות סביב הזוהר, ומתחתיהן הרשת העדינה.
-   שתיהן תחת אותה מסכה רדיאלית, כך שהן מתפוגגות בקצוות ולא נחתכות. */
+
+/* הרשת העדינה - נשארת רק בשוליים.
+   המרכז נשאר נקי, כדי שהאור יהיה הדבר היחיד שם. */
 .hero::after {
   content: "";
   position: absolute; inset: 0; z-index: -1;
   background-image:
-    repeating-radial-gradient(circle at 50% 46%,
-      transparent 0 74px,
-      rgba(243,224,170,.055) 74px 75.2px,
-      transparent 75.5px 150px),
-    linear-gradient(to left, rgba(244,239,226,.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(244,239,226,.03) 1px, transparent 1px);
-  background-size: auto, 40px 40px, 40px 40px;
-  -webkit-mask-image: radial-gradient(88% 88% at 50% 46%, #000 14%, transparent 88%);
-  mask-image: radial-gradient(88% 88% at 50% 46%, #000 14%, transparent 88%);
+    linear-gradient(to left, rgba(244,239,226,.026) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(244,239,226,.026) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(58% 68% at 50% 44%, transparent 22%, #000 96%);
+  mask-image: radial-gradient(58% 68% at 50% 44%, transparent 22%, #000 96%);
 }
 .hero .wrap { position: relative; }
 .hero p { color: rgba(244,239,226,.84); }
@@ -343,12 +350,10 @@ p:last-child { margin-bottom: 0; }
 
 /* המסגרת המוזהבת - לחשובים בלבד. יוקרה היא ריסון */
 .sec-dark .card-gold {
-  border: 1.5px solid transparent;
-  /* המילוי חייב להיות אטום. מילוי שקוף מראה את גרדיאנט המסגרת דרכו,
-     ואז כל הכרטיס נצבע זהב במקום רק הקצה. #1B2F59 = הנייבי עם אותה הבהרה בדיוק. */
-  background:
-    linear-gradient(#1B2F59, #1B2F59) padding-box,
-    linear-gradient(135deg, var(--gold-lift), rgba(200,154,60,.30) 52%, var(--gold)) border-box;
+  /* קו זהב פנימי, לא מסגרת-גרדיאנט. מסגרת-גרדיאנט דורשת מילוי אטום,
+     ומילוי אטום על גבי גרדיאנט הרקע נראה כמו טלאי. */
+  border: 0;
+  box-shadow: inset 0 0 0 1.5px rgba(200,154,60,.60);
 }
 .bg-light .card-gold, .sec-band .card-gold {
   border: 1.5px solid transparent;
@@ -478,7 +483,7 @@ p:last-child { margin-bottom: 0; }
    ========================================================================== */
 
 .site-foot {
-  background: var(--navy);
+  background: var(--navy-bg);
   color: rgba(244,239,226,.72);
   padding: clamp(34px, 5vw, 54px) var(--pad);
   font-size: 14px;
