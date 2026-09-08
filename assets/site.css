@@ -632,7 +632,7 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
      ושם זהב בהיר נעלם. הצל נשאר חם, כדי שעל הנייבי הם עדיין זוהרים. */
   color: var(--gold);
   text-shadow: 0 0 10px rgba(217,182,90,.55);
-  animation: spk-rise 11s linear infinite;
+  animation: spk-rise 7.5s linear infinite;
   will-change: transform, opacity;
   user-select: none;
 }
@@ -652,13 +652,13 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
    ה-delay השלילי הוא מה שמונע מסך ריק ברגע הטעינה:
    כל ניצוץ נכנס כבר באמצע המסלול שלו. */
 .spk.s1 { right:  2%; font-size: 18px; animation-delay:  0s;   }
-.spk.s2 { right:  7%; font-size: 13px; animation-delay: -2.4s; }
-.spk.s3 { right: 12%; font-size: 21px; animation-delay: -4.8s; }
-.spk.s4 { right:  4%; font-size: 15px; animation-delay: -1.2s; }
-.spk.s5 { right: 15%; font-size: 19px; animation-delay: -3.6s; }
-.spk.s6 { right:  9%; font-size: 14px; animation-delay: -6s;   }
-.spk.s7 { right:  1%; font-size: 22px; animation-delay: -7.4s; }
-.spk.s8 { right: 13%; font-size: 16px; animation-delay: -9s;   }
+.spk.s2 { right:  7%; font-size: 13px; animation-delay: -1.64s; }
+.spk.s3 { right: 12%; font-size: 21px; animation-delay: -3.27s; }
+.spk.s4 { right:  4%; font-size: 15px; animation-delay: -0.82s; }
+.spk.s5 { right: 15%; font-size: 19px; animation-delay: -2.45s; }
+.spk.s6 { right:  9%; font-size: 14px; animation-delay: -4.09s;   }
+.spk.s7 { right:  1%; font-size: 22px; animation-delay: -5.05s; }
+.spk.s8 { right: 13%; font-size: 16px; animation-delay: -6.14s;   }
 
 @keyframes spk-rise {
   0%   { transform: translateY(0)     scale(0);   opacity: 0; }
@@ -737,31 +737,31 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
 /* ההשהיות שליליות, בשונה מהמקור. בלוח הן חיוביות, ולכן העמודה
    מתמלאת בהדרגה על פני שבע שניות. השהיה שלילית מתחילה את כל נקודה
    באמצע המחזור שלה, כך שהשכבה חיה מהפריים הראשון (`animations.md`). */
-.dust i:nth-of-type(1)  { left:  18px; top: 12%; animation-delay: -0s;   animation-duration: 7.5s; }
-.dust i:nth-of-type(2)  { left:  96px; top: 26%; animation-delay: -1.9s; animation-duration: 9s;   }
-.dust i:nth-of-type(3)  { left:  52px; top: 41%; animation-delay: -3.4s; animation-duration: 8s;   }
-.dust i:nth-of-type(4)  { left: 128px; top: 55%; animation-delay: -.8s;  animation-duration: 10s;  }
-.dust i:nth-of-type(5)  { left:  30px; top: 63%; animation-delay: -5.1s; animation-duration: 7s;   }
-.dust i:nth-of-type(6)  { left:  78px; top: 74%; animation-delay: -2.6s; animation-duration: 11s;  }
-.dust i:nth-of-type(7)  { left: 112px; top: 88%; animation-delay: -6.2s; animation-duration: 8.5s; }
-.dust i:nth-of-type(8)  { left:  42px; top: 15%; animation-delay: -4.3s; animation-duration: 9.5s; }
-.dust i:nth-of-type(9)  { left: 140px; top: 34%; animation-delay: -7.1s; animation-duration: 7.8s; }
-.dust i:nth-of-type(10) { left:  64px; top: 58%; animation-delay: -1.2s; animation-duration: 12s;  }
-.dust i:nth-of-type(11) { left:  22px; top: 92%; animation-delay: -3.9s; animation-duration: 8.8s; }
+.dust i:nth-of-type(1)  { left:  18px; top: 12%; animation-delay: -0s;   animation-duration: 5.1s; }
+.dust i:nth-of-type(2)  { left:  96px; top: 26%; animation-delay: -1.29s; animation-duration: 6.12s;   }
+.dust i:nth-of-type(3)  { left:  52px; top: 41%; animation-delay: -2.31s; animation-duration: 5.44s;   }
+.dust i:nth-of-type(4)  { left: 128px; top: 55%; animation-delay: -0.54s;  animation-duration: 6.8s;  }
+.dust i:nth-of-type(5)  { left:  30px; top: 63%; animation-delay: -3.47s; animation-duration: 4.76s;   }
+.dust i:nth-of-type(6)  { left:  78px; top: 74%; animation-delay: -1.77s; animation-duration: 7.48s;  }
+.dust i:nth-of-type(7)  { left: 112px; top: 88%; animation-delay: -4.22s; animation-duration: 5.78s; }
+.dust i:nth-of-type(8)  { left:  42px; top: 15%; animation-delay: -2.92s; animation-duration: 6.46s; }
+.dust i:nth-of-type(9)  { left: 140px; top: 34%; animation-delay: -4.83s; animation-duration: 5.3s; }
+.dust i:nth-of-type(10) { left:  64px; top: 58%; animation-delay: -0.82s; animation-duration: 8.16s;  }
+.dust i:nth-of-type(11) { left:  22px; top: 92%; animation-delay: -2.65s; animation-duration: 5.98s; }
 
 /* העמודה השמאלית מקבלת מיקומים ותזמון משלה.
    אחרת שני הצדדים מרצדים באותו רגע בדיוק, וזה נקרא מכני ולא אקראי. */
-.dust.l i:nth-of-type(1)  { left:  44px; top:  8%; animation-delay: -2.7s; animation-duration: 8.2s;  }
-.dust.l i:nth-of-type(2)  { left: 132px; top: 21%; animation-delay: -6.4s; animation-duration: 10.5s; }
-.dust.l i:nth-of-type(3)  { left:  20px; top: 33%; animation-delay: -1.1s; animation-duration: 7.2s;  }
-.dust.l i:nth-of-type(4)  { left:  88px; top: 47%; animation-delay: -4.9s; animation-duration: 11.5s; }
-.dust.l i:nth-of-type(5)  { left: 150px; top: 56%; animation-delay: -8.3s; animation-duration: 9.2s;  }
-.dust.l i:nth-of-type(6)  { left:  36px; top: 69%; animation-delay: -3.2s; animation-duration: 7.8s;  }
-.dust.l i:nth-of-type(7)  { left: 104px; top: 81%; animation-delay: -7.6s; animation-duration: 10s;   }
-.dust.l i:nth-of-type(8)  { left:  68px; top: 95%; animation-delay: -5.4s; animation-duration: 8.6s;  }
-.dust.l i:nth-of-type(9)  { left: 122px; top: 62%; animation-delay: -.6s;  animation-duration: 12s;   }
-.dust.l i:nth-of-type(10) { left:  26px; top: 17%; animation-delay: -9.1s; animation-duration: 7.6s;  }
-.dust.l i:nth-of-type(11) { left:  96px; top: 38%; animation-delay: -2.1s; animation-duration: 9.8s;  }
+.dust.l i:nth-of-type(1)  { left:  44px; top:  8%; animation-delay: -1.84s; animation-duration: 5.58s;  }
+.dust.l i:nth-of-type(2)  { left: 132px; top: 21%; animation-delay: -4.35s; animation-duration: 7.14s; }
+.dust.l i:nth-of-type(3)  { left:  20px; top: 33%; animation-delay: -0.75s; animation-duration: 4.9s;  }
+.dust.l i:nth-of-type(4)  { left:  88px; top: 47%; animation-delay: -3.33s; animation-duration: 7.82s; }
+.dust.l i:nth-of-type(5)  { left: 150px; top: 56%; animation-delay: -5.64s; animation-duration: 6.26s;  }
+.dust.l i:nth-of-type(6)  { left:  36px; top: 69%; animation-delay: -2.18s; animation-duration: 5.3s;  }
+.dust.l i:nth-of-type(7)  { left: 104px; top: 81%; animation-delay: -5.17s; animation-duration: 6.8s;   }
+.dust.l i:nth-of-type(8)  { left:  68px; top: 95%; animation-delay: -3.67s; animation-duration: 5.85s;  }
+.dust.l i:nth-of-type(9)  { left: 122px; top: 62%; animation-delay: -0.41s;  animation-duration: 8.16s;   }
+.dust.l i:nth-of-type(10) { left:  26px; top: 17%; animation-delay: -6.19s; animation-duration: 5.17s;  }
+.dust.l i:nth-of-type(11) { left:  96px; top: 38%; animation-delay: -1.43s; animation-duration: 6.66s;  }
 
 /* ==========================================================================
    9. פוטר
