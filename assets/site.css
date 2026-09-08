@@ -156,8 +156,9 @@ a { color: inherit; }
    2. פריסת עמוד - סקשנים ורוחב קריאה
    ========================================================================== */
 
-.sec { padding: clamp(48px, 8vw, 92px) var(--pad); }
-.sec-tight { padding-block: clamp(34px, 5.5vw, 58px); }
+/* ריווח הסקשן - מרוסן. הטקסט מתחיל קרוב לראש הסקשן (הוראת אילנה, 8.9) */
+.sec { padding: clamp(32px, 5vw, 58px) var(--pad); }
+.sec-tight { padding-block: clamp(24px, 3.4vw, 40px); }
 
 .wrap { max-width: var(--maxw); margin-inline: auto; }
 .wrap-wide { max-width: var(--maxw-wide); margin-inline: auto; }
@@ -228,7 +229,8 @@ p:last-child { margin-bottom: 0; }
   background: var(--navy);
   color: var(--cream);
   overflow: clip;
-  padding: clamp(56px, 10vw, 116px) var(--pad) clamp(52px, 8vw, 96px);
+  /* רווח עליון מרוסן - הכותרת מתחילה קרוב לפס, כמו במוקאפ (הוראת אילנה, 8.9) */
+  padding: clamp(22px, 3.2vw, 42px) var(--pad) clamp(38px, 5.4vw, 66px);
   text-align: center;   /* מהמוקאפ שאושר. ⛔ לא ליישר לימין */
 }
 /* שכבה 1+2: זוהר זהב מלמעלה במרכז, ונגיעת תכלת בפינה התחתונה */
