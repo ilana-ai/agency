@@ -222,8 +222,8 @@ p:last-child { margin-bottom: 0; }
   background: linear-gradient(to bottom,
     transparent 82%,
     #D9B65A 82%,
-    #C89A3C 95%,
-    transparent 95%);
+    #C89A3C 91%,
+    transparent 91%);
   /* 82% הוא מתחת לקצה הנמוך ביותר של האותיות - לא קו-הבסיס,
      אלא תחתית הזנבות של ך ן ף ץ ק. כך הפס לא נוגע באף אות. */
   color: inherit;
