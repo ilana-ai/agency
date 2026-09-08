@@ -1,0 +1,516 @@
+/* ==========================================================================
+   ilana-ai.agency - המעטפת המשותפת לכל עמודי האתר
+   מוגדרת פעם אחת. כל עמוד טוען את הקובץ הזה ומוסיף רק את מה שייחודי לו.
+   מקור הערכים: ~/.adi/design-profile.md + pages/protocol-fonts-and-padding.md
+   אין כאן צבע שלא קיים בפרופיל העיצובי.
+   ========================================================================== */
+
+:root {
+  /* --- מבנה --- */
+  --navy:      #0A1F4D;   /* נייבי הלוגו. הרקע הכהה. אסור להחליף בכמעט-שחור */
+  --navy-soft: #24335c;   /* הנייבי של ה-CRM - לצללים ולמעברים */
+
+  /* --- יוקרה. מינון קטן בלבד --- */
+  --gold:      #C89A3C;
+  --gold-lift: #D9B65A;
+
+  /* --- טכנולוגיה. רק בהקשר AI --- */
+  --cyan:      #1FC0F0;
+
+  /* --- משמעות במסך פיננסי --- */
+  --green:     #2F7A5F;   /* מותר / פנוי */
+  --green-dk:  #6EE7A0;   /* אותו תפקיד, על רקע כהה */
+  --red:       #B4472F;   /* אסור לגעת / חסום */
+  --red-dk:    #E88A72;
+
+  /* --- טקסט ורקעים --- */
+  --cream:     #F4EFE2;   /* טקסט על כהה. לעולם לא לבן טהור */
+  --band:      #F7F4EC;   /* פס בהיר */
+  --ink:       #1f2328;
+  --muted:     #6b7280;
+  --line:      #e7e9ee;
+  --bg:        #ffffff;
+
+  /* --- מידות --- */
+  --maxw:      760px;    /* רוחב קריאה. התקן */
+  --maxw-wide: 1120px;   /* מעטפת: פס עליון, פוטר, רשתות כרטיסים */
+  --pad:       clamp(20px, 5.5vw, 48px);
+  --radius:    clamp(20px, 4vw, 28px);
+  --radius-sm: 14px;
+
+  /* --- צל. תמיד בגוון הנייבי, לעולם לא אפור --- */
+  --shadow:    0 2px 6px rgba(10,31,77,.08), 0 18px 46px rgba(10,31,77,.10);
+}
+
+* { box-sizing: border-box; }
+/* hidden מנצח על כל display שרכיב מגדיר לעצמו */
+[hidden] { display: none !important; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: clip;
+  overscroll-behavior-x: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;
+  overscroll-behavior-x: none;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Heebo", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; height: auto; }
+a { color: inherit; }
+
+/* מספרים וטלפונים בתוך טקסט RTL - שלא יתהפכו */
+.ltr { direction: ltr; unicode-bidi: isolate; display: inline-block; }
+
+
+/* ==========================================================================
+   1. פס עליון
+   מלכודת RTL: justify-content: flex-start דוחף ימינה.
+   התפריט מיושר לשמאל, ולכן flex-end.
+   בלי לוגו בפס. בלי טלפון בפס - הוא חי בעמוד "צור קשר".
+   ========================================================================== */
+
+.site-head {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: rgba(10,31,77,.92);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid rgba(200,154,60,.22);
+}
+
+.head-in {
+  position: relative;
+  max-width: var(--maxw-wide);
+  margin-inline: auto;
+  padding: 10px var(--pad);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;   /* בשמאל. ב-RTL זהו flex-end */
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;   /* גם כאן */
+  gap: clamp(10px, 1.8vw, 26px);
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: clamp(13px, 1.25vw, 15px);
+  font-weight: 500;
+  letter-spacing: -.01em;
+  padding: 7px 2px;
+  white-space: nowrap;         /* השמות המלאים לא נשברים באמצע */
+  border-bottom: 2px solid transparent;
+  transition: color .18s ease, border-color .18s ease;
+}
+.site-nav a:hover { color: var(--gold-lift); }
+.site-nav a[aria-current="page"] {
+  color: var(--gold-lift);
+  border-bottom-color: var(--gold);
+}
+
+/* כפתור ההמבורגר - מופיע רק במובייל */
+.nav-toggle {
+  display: none;
+  align-items: center;
+  gap: 9px;
+  background: transparent;
+  border: 1px solid rgba(244,239,226,.28);
+  border-radius: 10px;
+  color: var(--cream);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 13px;
+  cursor: pointer;
+}
+.nav-toggle .bars { display: inline-flex; flex-direction: column; gap: 3px; }
+.nav-toggle .bars i {
+  display: block; width: 17px; height: 2px;
+  background: var(--cream); border-radius: 2px;
+}
+
+
+/* ==========================================================================
+   2. פריסת עמוד - סקשנים ורוחב קריאה
+   ========================================================================== */
+
+.sec { padding: clamp(48px, 8vw, 92px) var(--pad); }
+.sec-tight { padding-block: clamp(34px, 5.5vw, 58px); }
+
+.wrap { max-width: var(--maxw); margin-inline: auto; }
+.wrap-wide { max-width: var(--maxw-wide); margin-inline: auto; }
+
+.sec-band { background: var(--band); }
+.sec-dark { background: var(--navy); color: var(--cream); }
+.sec-dark p { color: rgba(244,239,226,.86); }
+
+h1, h2, h3 { letter-spacing: -.015em; margin: 0 0 12px; }
+h1 { font-size: clamp(27px, 5.6vw, 46px); font-weight: 700; line-height: 1.22; }
+h2 { font-size: clamp(21px, 3.6vw, 31px); font-weight: 700; line-height: 1.3; }
+h3 { font-size: clamp(16.5px, 2.7vw, 19px); font-weight: 700; }
+p  { margin: 0 0 14px; }
+p:last-child { margin-bottom: 0; }
+
+.lead   { font-size: clamp(16.5px, 2.1vw, 19px); color: #3c4552; }
+.sec-dark .lead { color: rgba(244,239,226,.86); }
+.strong { font-weight: 700; color: var(--navy); }
+.sec-dark .strong { color: var(--cream); }
+
+.kicker {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--gold);
+  background: rgba(200,154,60,.12);
+  border: 1px solid rgba(200,154,60,.34);
+  border-radius: 999px;
+  padding: 5px 15px;
+  margin-bottom: 18px;
+}
+.sec-band .kicker { background: rgba(200,154,60,.14); }
+
+
+/* ==========================================================================
+   3. ההירו הכהה - מתכון הפרופיל העיצובי, ארבע שכבות. אפס צבעים חדשים.
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  background: var(--navy);
+  color: var(--cream);
+  overflow: clip;
+  padding: clamp(56px, 10vw, 116px) var(--pad) clamp(52px, 8vw, 96px);
+}
+/* שכבה 1+2: זוהר זהב מלמעלה במרכז, ונגיעת תכלת בפינה התחתונה */
+.hero::before {
+  content: "";
+  position: absolute; inset: 0; z-index: -2;
+  background:
+    radial-gradient(58% 46% at 50% 0%,  rgba(200,154,60,.16), transparent 72%),
+    radial-gradient(46% 40% at 12% 100%, rgba(31,192,240,.10), transparent 74%);
+}
+/* שכבה 3: רשת עדינה, כמעט לא נראית */
+.hero::after {
+  content: "";
+  position: absolute; inset: 0; z-index: -1;
+  background-image:
+    linear-gradient(to left, rgba(244,239,226,.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(244,239,226,.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  -webkit-mask-image: radial-gradient(78% 68% at 50% 34%, #000 42%, transparent 100%);
+  mask-image: radial-gradient(78% 68% at 50% 34%, #000 42%, transparent 100%);
+}
+.hero .wrap { position: relative; }
+.hero p { color: rgba(244,239,226,.84); }
+
+
+/* ==========================================================================
+   4. כפתורים - שני רכיבים חוזרים, מוגדרים פעם אחת
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font-family: inherit;
+  font-size: clamp(15.5px, 1.9vw, 17.5px);
+  font-weight: 700;
+  border: 0;
+  border-radius: 999px;
+  padding: 15px 34px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform .16s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+/* ראשי: גרדיאנט זהב, טקסט כהה, זוהר. שכבה 4 של המתכון */
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-lift), var(--gold) 58%, #b0842c);
+  color: #3D2C08;
+  box-shadow: 0 0 36px rgba(217,182,90,.40);
+}
+.btn-gold:hover { transform: translateY(-1px); box-shadow: 0 0 46px rgba(217,182,90,.55); }
+.btn-gold:active { transform: translateY(0); }
+.btn-gold:disabled { filter: grayscale(.35) opacity(.65); cursor: default; box-shadow: none; }
+
+/* משני: קו בלבד. לא מתחרה בראשי */
+.btn-ghost {
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid rgba(244,239,226,.34);
+  font-weight: 500;
+  padding: 12px 26px;
+  font-size: clamp(14px, 1.6vw, 15.5px);
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold-lift); }
+.sec-band .btn-ghost, .bg-light .btn-ghost { color: var(--navy); border-color: rgba(10,31,77,.24); }
+
+/* השורה שאומרת את האמת לפני הלחיצה. חוק-על: אף פעם לא באוויר */
+.btn-truth {
+  display: block;
+  margin-top: 11px;
+  font-size: 13.5px;
+  color: rgba(244,239,226,.62);
+}
+.sec-band .btn-truth, .bg-light .btn-truth { color: var(--muted); }
+
+.cta-row {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 14px 20px; margin-top: 26px;
+}
+
+
+/* ==========================================================================
+   5. כרטיסים
+   ========================================================================== */
+
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(20px, 3.4vw, 30px);
+  box-shadow: var(--shadow);
+}
+.sec-dark .card {
+  background: rgba(255,255,255,.055);
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: none;
+}
+
+/* המסגרת המוזהבת - לחשובים בלבד. יוקרה היא ריסון */
+.sec-dark .card-gold {
+  border: 1.5px solid transparent;
+  /* המילוי חייב להיות אטום. מילוי שקוף מראה את גרדיאנט המסגרת דרכו,
+     ואז כל הכרטיס נצבע זהב במקום רק הקצה. #1B2F59 = הנייבי עם אותה הבהרה בדיוק. */
+  background:
+    linear-gradient(#1B2F59, #1B2F59) padding-box,
+    linear-gradient(135deg, var(--gold-lift), rgba(200,154,60,.30) 52%, var(--gold)) border-box;
+}
+.bg-light .card-gold, .sec-band .card-gold {
+  border: 1.5px solid transparent;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(135deg, var(--gold-lift), rgba(200,154,60,.35) 52%, var(--gold)) border-box;
+}
+
+.grid { display: grid; gap: clamp(14px, 2.2vw, 22px); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+/* הערה רגועה - לא צעקנית */
+.note {
+  border-inline-start: 3px solid var(--gold);
+  background: rgba(200,154,60,.08);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 14px 18px;
+  font-size: 14.5px;
+  color: #4a5361;
+}
+.sec-dark .note { color: rgba(244,239,226,.76); background: rgba(200,154,60,.10); }
+
+
+/* ==========================================================================
+   6. מסגרת לצילום מסך
+   ========================================================================== */
+
+.shot {
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: clip;
+  border: 1px solid rgba(244,239,226,.14);
+  background: rgba(255,255,255,.04);
+  box-shadow: 0 24px 60px rgba(0,0,0,.34);
+}
+.bg-light .shot, .sec-band .shot {
+  border-color: var(--line);
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+.shot img { display: block; width: 100%; }
+.shot figcaption {
+  padding: 11px 18px;
+  font-size: 13px;
+  color: rgba(244,239,226,.6);
+  border-top: 1px solid rgba(244,239,226,.10);
+}
+.bg-light .shot figcaption, .sec-band .shot figcaption {
+  color: var(--muted); border-top-color: var(--line);
+}
+
+/* פלייסהולדר עד שיגיעו הצילומים האמיתיים */
+.shot-todo {
+  display: grid; place-items: center;
+  min-height: clamp(200px, 34vw, 340px);
+  padding: 26px;
+  text-align: center;
+  border: 1.5px dashed rgba(200,154,60,.45);
+  border-radius: var(--radius);
+  background: rgba(200,154,60,.05);
+  color: rgba(244,239,226,.55);
+  font-size: 14px;
+  line-height: 1.7;
+}
+.bg-light .shot-todo, .sec-band .shot-todo { color: var(--muted); background: rgba(200,154,60,.06); }
+
+
+/* ==========================================================================
+   7. טופס
+   ========================================================================== */
+
+.form { display: grid; gap: 14px; }
+.field label {
+  display: block;
+  font-size: 14px; font-weight: 500;
+  margin-bottom: 6px; color: #414b59;
+}
+.field input {
+  width: 100%;
+  font-family: inherit;
+  font-size: 16px;                 /* 16 ומעלה - מונע זום אוטומטי באייפון */
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 13px 15px;
+  transition: border-color .16s ease, box-shadow .16s ease;
+}
+.field input:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(200,154,60,.18);
+}
+.consent {
+  display: flex; align-items: flex-start; gap: 9px;
+  font-size: 13.5px; color: var(--muted); line-height: 1.5;
+}
+.consent input { margin-top: 3px; flex: none; }
+
+
+/* ==========================================================================
+   8. כפתור וואטסאפ צף
+   מוסתר בכוונה: מספר הוואטסאפ העסקי עדיין לא פעיל (personal-links.md, 8.9.2026).
+   קישור wa.me למספר לא פעיל מציג לגולש שגיאה.
+   להפעלה: להסיר את hidden מהאלמנט ב-HTML ולמלא את המספר.
+   ========================================================================== */
+
+.wa-float {
+  position: fixed;
+  bottom: clamp(16px, 3vw, 26px);
+  left:   clamp(16px, 3vw, 26px);   /* פינה שמאלית תחתונה */
+  z-index: 70;
+  width: 56px; height: 56px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: #25D366;
+  box-shadow: 0 6px 22px rgba(10,31,77,.28);
+  transition: transform .16s ease;
+}
+.wa-float:hover { transform: scale(1.06); }
+.wa-float svg { width: 30px; height: 30px; fill: #fff; }
+
+
+/* ==========================================================================
+   9. פוטר
+   ========================================================================== */
+
+.site-foot {
+  background: var(--navy);
+  color: rgba(244,239,226,.72);
+  padding: clamp(34px, 5vw, 54px) var(--pad);
+  font-size: 14px;
+  border-top: 1px solid rgba(200,154,60,.22);
+}
+.foot-in {
+  max-width: var(--maxw-wide);
+  margin-inline: auto;
+  display: flex; flex-wrap: wrap;
+  align-items: center; justify-content: space-between;
+  gap: 16px 26px;
+}
+.foot-links { display: flex; flex-wrap: wrap; gap: 10px 22px; }
+.site-foot a { color: rgba(244,239,226,.78); text-decoration: none; }
+.site-foot a:hover { color: var(--gold-lift); text-decoration: underline; }
+.foot-note { font-size: 12.5px; color: rgba(244,239,226,.46); }
+
+
+/* ==========================================================================
+   10. עמוד ריק - שלד זמני עד שייכתב התוכן
+   ========================================================================== */
+
+.soon { text-align: center; padding: clamp(66px, 12vw, 130px) var(--pad); }
+.soon h1 { margin-bottom: 14px; }
+.soon p { color: var(--muted); font-size: 17px; }
+
+
+/* ==========================================================================
+   11. שלושה breakpoints, לא שניים.
+   אייפד פרו 12.9 יושב בדיוק על 1024 - ולכן הוא גבול משלו.
+   ========================================================================== */
+
+/* טאבלט */
+@media (max-width: 1024px) {
+  .site-nav { gap: 12px; }
+  .site-nav a { font-size: 13px; }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* מובייל - הפס מתקפל לתפריט, ושם השמות המלאים עובדים */
+@media (max-width: 768px) {
+  .nav-toggle { display: inline-flex; }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%; inset-inline: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--navy);
+    border-top: 1px solid rgba(200,154,60,.22);
+    box-shadow: 0 18px 40px rgba(0,0,0,.34);
+    padding: 6px var(--pad) 14px;
+  }
+  .site-nav.open { display: flex; }
+  .site-nav a {
+    font-size: 16px;
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(244,239,226,.09);
+    white-space: normal;          /* השם המלא, גם אם הוא נשבר לשתי שורות */
+  }
+  .site-nav a[aria-current="page"] { border-bottom-color: rgba(244,239,226,.09); }
+
+  .grid-3, .grid-2 { grid-template-columns: 1fr; }
+  .foot-in { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 480px) {
+  body { font-size: 15.5px; }
+  .btn { width: 100%; }
+  .cta-row { flex-direction: column; align-items: stretch; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+}
