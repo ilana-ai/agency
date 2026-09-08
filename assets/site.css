@@ -640,10 +640,10 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
    ובא בכתום שלו. עיגול מצוייר ב-CSS נשמע לפלטה, ונראה אותו דבר בכל מכשיר. */
 .spk-dot {
   display: block;
-  width: 1em; height: 1em;
+  width: .28em; height: .28em;   /* נקודת אור, לא כדור */
   border-radius: 50%;
   background: radial-gradient(circle at 34% 30%, #F6E7B4, var(--gold-lift) 46%, var(--gold) 100%);
-  box-shadow: 0 0 12px rgba(217,182,90,.55);
+  box-shadow: 0 0 6px rgba(217,182,90,.6);
 }
 
 /* כולם מתקבצים בטווח הימני של המסך (הוראת אילנה).
