@@ -604,6 +604,65 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
 }
 
 /* ==========================================================================
+   8c. ניצוצות עולים - בצד ימין בלבד
+
+   הדפוס הקנוני מ-`pages/landing-pages/animations.md`, עם שני הבאגים
+   שכבר שולם עליהם מחיר:
+
+   ⛔ **לא לייצר אותם ב-JS.** בזמן שה-JS רץ, התווים נראים תקועים בראש הדף
+   בלי אנימציה. הם יושבים ב-HTML מההתחלה, וה-CSS מניע אותם.
+
+   ⛔ **ולא `rotate()` בתוך ה-keyframe.** סיבוב מרחיב את תיבת-החסימה של
+   האלמנט, ובנייד זה מדליק זיגוג אופקי. רק translateY ו-scale.
+   ========================================================================== */
+
+.sparkles-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 45;              /* מעל הכרטיסים הלבנים, מתחת לפס העליון ולפס הנדבק */
+}
+
+.spk {
+  position: absolute;
+  top: 100vh;               /* מתחילים מתחת למסך ועולים */
+  opacity: 0;
+  color: var(--gold-lift);
+  text-shadow: 0 0 10px rgba(217,182,90,.55);
+  animation: spk-rise 11s linear infinite;
+  will-change: transform, opacity;
+  user-select: none;
+}
+
+/* כולם מתקבצים בטווח הימני של המסך (הוראת אילנה).
+   ה-delay השלילי הוא מה שמונע מסך ריק ברגע הטעינה:
+   כל ניצוץ נכנס כבר באמצע המסלול שלו. */
+.spk.s1 { right:  2%; font-size: 18px; animation-delay:  0s;   }
+.spk.s2 { right:  7%; font-size: 13px; animation-delay: -2.4s; }
+.spk.s3 { right: 12%; font-size: 21px; animation-delay: -4.8s; }
+.spk.s4 { right:  4%; font-size: 15px; animation-delay: -1.2s; }
+.spk.s5 { right: 15%; font-size: 19px; animation-delay: -3.6s; }
+.spk.s6 { right:  9%; font-size: 14px; animation-delay: -6s;   }
+.spk.s7 { right:  1%; font-size: 22px; animation-delay: -7.4s; }
+.spk.s8 { right: 13%; font-size: 16px; animation-delay: -9s;   }
+
+@keyframes spk-rise {
+  0%   { transform: translateY(0)     scale(0);   opacity: 0; }
+  8%   { opacity: 1; }
+  50%  { transform: translateY(-60vh) scale(1.1); opacity: 1; }
+  92%  { opacity: .7; }
+  100% { transform: translateY(-120vh) scale(.5); opacity: 0; }
+}
+
+/* בנייד מצמצמים לחמישה - תקציב האנימציות של המעבד שם קטן יותר,
+   והטווח הימני צר יותר במסך צר. */
+@media (max-width: 768px) {
+  .spk.s6, .spk.s7, .spk.s8 { display: none; }
+  .spk { font-size: 14px !important; }
+}
+
+/* ==========================================================================
    9. פוטר
    ========================================================================== */
 
