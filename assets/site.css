@@ -592,7 +592,7 @@ a.ep:hover { transform: translateY(-2px); box-shadow: 0 16px 38px -18px rgba(7,1
   color: var(--gold); margin-bottom: 10px;
 }
 .ep h3 {
-  font-size: clamp(19px, 2.5vw, 24px);
+  font-size: clamp(17.5px, 2.2vw, 21px);
   color: var(--navy);
   margin: 0 0 12px;
   line-height: 1.45;
@@ -600,7 +600,7 @@ a.ep:hover { transform: translateY(-2px); box-shadow: 0 16px 38px -18px rgba(7,1
 /* טקסט בכחול עמוק, לא באפור (הוראת אילנה).
    והתיאור מפוצל לפסקאות, כדי שהשורות לא יימתחו לבלוק אחד. */
 .ep p {
-  font-size: clamp(14.5px, 1.5vw, 16px);
+  font-size: clamp(13.5px, 1.4vw, 15px);
   color: #16305E;
   max-width: 40ch;
   line-height: 1.75;
