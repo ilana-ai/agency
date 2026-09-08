@@ -32,3 +32,24 @@
     function (e) { if (e.matches) setOpen(false); }
   );
 })();
+
+/* הפס הנדבק של עמוד הפודקאסט.
+   נכנס אחרי שגוללים קצת, ונשאר זמין לכל אורך העמוד (הוראת אילנה).
+   ⛔ בלי להסתיר אותו כשהטופס על המסך - בעמוד קצר זה היה מבטל אותו לגמרי. */
+(function () {
+  var bar = document.querySelector('.snap');
+  if (!bar) return;
+
+  function paint() {
+    bar.classList.toggle('show', window.scrollY > 320);
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { paint(); ticking = false; });
+  }, { passive: true });
+
+  paint();
+})();
