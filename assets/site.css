@@ -326,7 +326,19 @@ p:last-child { margin-bottom: 0; }
 }
 .btn-gold:hover { transform: translateY(-1px); box-shadow: 0 0 46px rgba(217,182,90,.55); }
 .btn-gold:active { transform: translateY(0); }
-.btn-gold:disabled { filter: grayscale(.35) opacity(.65); cursor: default; box-shadow: none; }
+/* מושבת, אבל עדיין זהב: הסינון האפור הפך אותו לבז' עכור.
+   עכשיו הוא רק מעומעם מעט, וההבדל ממשיך להיקרא. */
+.btn-gold:disabled { opacity: .82; cursor: default; box-shadow: 0 0 18px rgba(217,182,90,.22); }
+.btn-gold:disabled:hover { transform: none; }
+
+/* כפתור הטופס נקרא באותה שפה כמו הכפתור שבפס הנדבק (הוראת אילנה):
+   אותה פעולה, אותו כיתוב - ולכן גם אותה צורה, רק קצת גדול יותר
+   כי כאן הוא הפעולה הראשית של הסקשן ולא נוסע בפס דק. */
+.form .btn-gold {
+  padding: 9px 28px;
+  font-size: 14.5px;
+  box-shadow: 0 0 22px rgba(217,182,90,.30);
+}
 
 /* משני: קו בלבד. לא מתחרה בראשי */
 .btn-ghost {
