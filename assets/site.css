@@ -752,7 +752,7 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
      ושם זהב בהיר נעלם. הצל נשאר חם, כדי שעל הנייבי הם עדיין זוהרים. */
   color: var(--gold);
   text-shadow: 0 0 10px rgba(217,182,90,.55);
-  animation: spk-rise 9.5s linear infinite;
+  animation: spk-rise 12s linear infinite;
   will-change: transform, opacity;
   user-select: none;
 }
@@ -772,13 +772,13 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
    ה-delay השלילי הוא מה שמונע מסך ריק ברגע הטעינה:
    כל ניצוץ נכנס כבר באמצע המסלול שלו. */
 .spk.s1 { right:  2%; font-size: 18px; animation-delay:  0s;   }
-.spk.s2 { right:  7%; font-size: 13px; animation-delay: -2.08s; }
-.spk.s3 { right: 12%; font-size: 21px; animation-delay: -4.14s; }
-.spk.s4 { right:  4%; font-size: 15px; animation-delay: -1.04s; }
-.spk.s5 { right: 15%; font-size: 19px; animation-delay: -3.10s; }
-.spk.s6 { right:  9%; font-size: 14px; animation-delay: -5.18s;   }
-.spk.s7 { right:  1%; font-size: 22px; animation-delay: -6.40s; }
-.spk.s8 { right: 13%; font-size: 16px; animation-delay: -7.78s;   }
+.spk.s2 { right:  7%; font-size: 13px; animation-delay: -2.63s; }
+.spk.s3 { right: 12%; font-size: 21px; animation-delay: -5.23s; }
+.spk.s4 { right:  4%; font-size: 15px; animation-delay: -1.31s; }
+.spk.s5 { right: 15%; font-size: 19px; animation-delay: -3.92s; }
+.spk.s6 { right:  9%; font-size: 14px; animation-delay: -6.54s;   }
+.spk.s7 { right:  1%; font-size: 22px; animation-delay: -8.08s; }
+.spk.s8 { right: 13%; font-size: 16px; animation-delay: -9.83s;   }
 
 @keyframes spk-rise {
   0%   { transform: translateY(0)     scale(0);   opacity: 0; }
@@ -889,7 +889,7 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
 
 /* הסקשן הראשון בעמוד פרק נצמד לפס ההרשמה שמעליו (הוראת אילנה):
    בלי פנדינג עליון, כך שהקישור-חזרה והסרטון עולים למעלה. */
-.ep-top { padding-block: 0 clamp(26px, 3.4vw, 44px); }
+.ep-top { padding-block: 10px clamp(26px, 3.4vw, 44px); }
 
 .ep-back {
   display: inline-block;
