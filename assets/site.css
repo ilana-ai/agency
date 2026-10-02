@@ -752,7 +752,7 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
      ושם זהב בהיר נעלם. הצל נשאר חם, כדי שעל הנייבי הם עדיין זוהרים. */
   color: var(--gold);
   text-shadow: 0 0 10px rgba(217,182,90,.55);
-  animation: spk-rise 12s linear infinite;
+  animation: spk-rise 15s linear infinite;
   will-change: transform, opacity;
   user-select: none;
 }
@@ -770,15 +770,25 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
 
 /* כולם מתקבצים בטווח הימני של המסך (הוראת אילנה).
    ה-delay השלילי הוא מה שמונע מסך ריק ברגע הטעינה:
-   כל ניצוץ נכנס כבר באמצע המסלול שלו. */
-.spk.s1 { right:  2%; font-size: 18px; animation-delay:  0s;   }
-.spk.s2 { right:  7%; font-size: 13px; animation-delay: -2.63s; }
-.spk.s3 { right: 12%; font-size: 21px; animation-delay: -5.23s; }
-.spk.s4 { right:  4%; font-size: 15px; animation-delay: -1.31s; }
-.spk.s5 { right: 15%; font-size: 19px; animation-delay: -3.92s; }
-.spk.s6 { right:  9%; font-size: 14px; animation-delay: -6.54s;   }
-.spk.s7 { right:  1%; font-size: 22px; animation-delay: -8.08s; }
-.spk.s8 { right: 13%; font-size: 16px; animation-delay: -9.83s;   }
+   כל ניצוץ נכנס כבר באמצע המסלול שלו.
+
+   ⛔ ומי שמאט את המחזור חייב להוסיף ניצוצות באותה נשימה: הניצוץ מגיע
+   לגודל המלא רק באמצע המסלול, ולכן מחזור איטי פירושו פחות רגעי-שיא
+   בשנייה - והשכבה נראית כאילו נעלמה. 15 שניות דורשות 14 ניצוצות. */
+.spk.s1  { right:  2%; font-size: 18px; animation-delay:   0s;    }
+.spk.s2  { right:  7%; font-size: 13px; animation-delay:  -5.4s;  }
+.spk.s3  { right: 12%; font-size: 21px; animation-delay: -10.7s;  }
+.spk.s4  { right:  4%; font-size: 15px; animation-delay:  -2.1s;  }
+.spk.s5  { right: 15%; font-size: 19px; animation-delay:  -7.5s;  }
+.spk.s6  { right:  9%; font-size: 14px; animation-delay: -12.9s;  }
+.spk.s7  { right:  1%; font-size: 22px; animation-delay:  -3.2s;  }
+.spk.s8  { right: 13%; font-size: 16px; animation-delay:  -8.6s;  }
+.spk.s9  { right:  6%; font-size: 20px; animation-delay: -14.0s;  }
+.spk.s10 { right: 17%; font-size: 15px; animation-delay:  -1.1s;  }
+.spk.s11 { right:  3%; font-size: 17px; animation-delay:  -6.4s;  }
+.spk.s12 { right: 10%; font-size: 23px; animation-delay: -11.8s;  }
+.spk.s13 { right: 19%; font-size: 14px; animation-delay:  -4.3s;  }
+.spk.s14 { right:  8%; font-size: 19px; animation-delay:  -9.6s;  }
 
 @keyframes spk-rise {
   0%   { transform: translateY(0)     scale(0);   opacity: 0; }
@@ -791,7 +801,8 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
 /* בנייד מצמצמים לחמישה - תקציב האנימציות של המעבד שם קטן יותר,
    והטווח הימני צר יותר במסך צר. */
 @media (max-width: 768px) {
-  .spk.s6, .spk.s7, .spk.s8 { display: none; }
+  .spk.s6,  .spk.s7,  .spk.s8,  .spk.s9,
+  .spk.s10, .spk.s11, .spk.s12, .spk.s13, .spk.s14 { display: none; }
   .spk { font-size: 14px !important; }
 }
 
