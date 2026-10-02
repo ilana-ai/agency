@@ -889,7 +889,7 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
 
 /* הסקשן הראשון בעמוד פרק נצמד לפס ההרשמה שמעליו (הוראת אילנה):
    בלי פנדינג עליון, כך שהקישור-חזרה והסרטון עולים למעלה. */
-.ep-top { padding-block: 10px clamp(26px, 3.4vw, 44px); }
+.ep-top { padding-block: 26px clamp(26px, 3.4vw, 44px); }
 
 .ep-back {
   display: inline-block;
