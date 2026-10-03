@@ -319,16 +319,24 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* ראשי: גרדיאנט זהב, טקסט כהה, זוהר. שכבה 4 של המתכון */
+/* נקודת האמצע של הגרדיאנט היא מה שזז במעבר העכבר.
+   ⛔ ולא `background-size` גדול עם `background-position`: שם מצב-המנוחה
+   מראה רק את הקצה הבהיר של הגרדיאנט, והכפתור יוצא חיוור. ככה מצב
+   המנוחה נשאר בדיוק הגרדיאנט המקורי, ורק ההובר מזיז אותו. */
+@property --gold-mid {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 60%;
+}
+
 .btn-gold {
   position: relative;
   overflow: hidden;            /* חותך את הברק לצורת הגלולה */
   color: #3D2C08;
   box-shadow: 0 0 34px rgba(217,182,90,.38);
-  /* 230% כדי שיהיה לגרדיאנט לאן להחליק (הוראת אילנה: 1+2 ביחד) */
-  background: linear-gradient(118deg, #F3E0AA 0%, #D9B65A 60%, #C89A3C 100%);
-  background-size: 230% 100%;
-  background-position: 0% 0;
-  transition: background-position .6s ease, box-shadow .3s ease, transform .25s ease;
+  --gold-mid: 60%;
+  background: linear-gradient(118deg, #F3E0AA 0%, #D9B65A var(--gold-mid), #C89A3C 100%);
+  transition: --gold-mid .6s ease, box-shadow .3s ease, transform .25s ease;
 }
 
 /* הברק עצמו - פס אור שיושב מחוץ לכפתור ומחכה */
@@ -345,7 +353,7 @@ p:last-child { margin-bottom: 0; }
 /* במעבר עכבר שני הדברים קורים יחד: הזהב זורם לרוחב, והברק חולף פעם אחת. */
 .btn-gold:hover,
 .btn-gold:focus-visible {
-  background-position: 100% 0;
+  --gold-mid: 22%;
   box-shadow: 0 0 46px rgba(217,182,90,.55);
   transform: translateY(-1px);
 }
