@@ -320,17 +320,45 @@ p:last-child { margin-bottom: 0; }
 
 /* ראשי: גרדיאנט זהב, טקסט כהה, זוהר. שכבה 4 של המתכון */
 .btn-gold {
-  background: linear-gradient(118deg, #F3E0AA 0%, #D9B65A 60%, #C89A3C 100%);
+  position: relative;
+  overflow: hidden;            /* חותך את הברק לצורת הגלולה */
   color: #3D2C08;
   box-shadow: 0 0 34px rgba(217,182,90,.38);
+  /* 230% כדי שיהיה לגרדיאנט לאן להחליק (הוראת אילנה: 1+2 ביחד) */
+  background: linear-gradient(118deg, #F3E0AA 0%, #D9B65A 60%, #C89A3C 100%);
+  background-size: 230% 100%;
+  background-position: 0% 0;
+  transition: background-position .6s ease, box-shadow .3s ease, transform .25s ease;
 }
-.btn-gold:hover { transform: translateY(-1px); box-shadow: 0 0 46px rgba(217,182,90,.55); }
+
+/* הברק עצמו - פס אור שיושב מחוץ לכפתור ומחכה */
+.btn-gold::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(105deg,
+    transparent 38%, rgba(255,251,235,.9) 50%, transparent 62%);
+  transform: translateX(-135%);
+}
+
+/* במעבר עכבר שני הדברים קורים יחד: הזהב זורם לרוחב, והברק חולף פעם אחת. */
+.btn-gold:hover,
+.btn-gold:focus-visible {
+  background-position: 100% 0;
+  box-shadow: 0 0 46px rgba(217,182,90,.55);
+  transform: translateY(-1px);
+}
+.btn-gold:hover::after,
+.btn-gold:focus-visible::after { animation: btn-shine .8s ease forwards; }
+
+@keyframes btn-shine { to { transform: translateX(135%); } }
+
 .btn-gold:active { transform: translateY(0); }
-/* מושבת - אבל בצבע מלא (הוראת אילנה). הסינון האפור והעמעום
-   הפכו אותו לבז' עכור; מה שמסמן שהוא לא פעיל זה הסמן והיעדר התגובה,
-   ⛔ לא הצבע. */
+
+/* מושבת - אבל בצבע מלא ועם אותו אפקט (הוראת אילנה). הסינון האפור
+   והעמעום הפכו אותו לבז' עכור; מה שמסמן שהוא לא פעיל זה הסמן, ⛔ לא הצבע. */
 .btn-gold:disabled { cursor: default; }
-.btn-gold:disabled:hover { transform: none; box-shadow: 0 0 34px rgba(217,182,90,.38); }
 
 /* משני: קו בלבד. לא מתחרה בראשי */
 .btn-ghost {
