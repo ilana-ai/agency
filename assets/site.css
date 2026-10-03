@@ -191,7 +191,7 @@ p:last-child { margin-bottom: 0; }
 /* השורה הראשונה בהירו של הפודקאסט גדולה מהשנייה (הוראת אילנה):
    היא המסר, והשורה שמתחתיה היא ההמשך שלו. em ולא px, כדי שתמשיך
    לגדול ולהתכווץ יחד עם הליד במסכים שונים. */
-.hero .lead .gold-text { font-size: 1.45em; line-height: 1.45; }
+.hero .lead .gold-text { font-size: 1.32em; line-height: 1.45; }   /* 25px במסך רגיל */
 
 /* הליד של ההירו צר וממורכז - מהמוקאפ */
 .hero .lead { max-width: 620px; margin-inline: auto; }
