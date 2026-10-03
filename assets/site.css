@@ -196,7 +196,7 @@ p:last-child { margin-bottom: 0; }
 /* והשורה הזו נצמדת לכותרת "הפודקאסט" (הוראת אילנה).
    ה-:has מכוון רק להירו שהזהב שלו יושב בליד - כלומר הפודקאסט;
    בדשבורד הזהב יושב בתוך ה-h1 עצמו, ושם המרווח לא זז. */
-.hero h1:has(+ .lead .gold-text) { margin-bottom: 2px; }
+.hero h1:has(+ .lead .gold-text) { margin-bottom: 7px; }
 
 /* הליד של ההירו צר וממורכז - מהמוקאפ */
 .hero .lead { max-width: 620px; margin-inline: auto; }
