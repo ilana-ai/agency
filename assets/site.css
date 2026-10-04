@@ -198,6 +198,10 @@ p:last-child { margin-bottom: 0; }
    בדשבורד הזהב יושב בתוך ה-h1 עצמו, ושם המרווח לא זז. */
 .hero h1:has(+ .lead .gold-text) { margin-bottom: 7px; }
 
+/* ובהירו של הפודקאסט הכותרת גם יושבת קרוב יותר לתפריט (הוראת אילנה).
+   אותו :has - כדי שהדשבורד והבית לא יזוזו. */
+.hero:has(h1 + .lead .gold-text) { padding-top: clamp(26px, 3.4vw, 46px); }
+
 /* הליד של ההירו צר וממורכז - מהמוקאפ */
 .hero .lead { max-width: 620px; margin-inline: auto; }
 .strong { font-weight: 700; color: var(--navy); }
