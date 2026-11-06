@@ -1256,6 +1256,12 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
   transform: none; box-shadow: 0 0 0 3px rgba(37,211,102,.18);
 }
 
+/* אותו כפתור בפתיחה של עמוד הבית (רקע כהה): אייקון ירוק, מסגרת זהב, ובמעבר עכבר מסגרת ירוקה עם הילה */
+.hero .btn-ghost.wa-btn { border-color: var(--gold); gap: 10px; }
+.hero .btn-ghost.wa-btn:hover, .hero .btn-ghost.wa-btn:focus-visible {
+  border-color: #25D366; color: #fff; transform: none; box-shadow: 0 0 0 3px rgba(37,211,102,.22);
+}
+
 /* כפתור "לפרקים" בעמוד הבית (אילנה בחרה, 6.11.2026): בלי רקע, מסגרת וכיתוב בנייבי.
    במעבר עכבר המסגרת והכיתוב הופכים לזהב, בלי מילוי */
 .btn-navy-line { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); transition: color .2s ease, border-color .2s ease; }
