@@ -1246,6 +1246,15 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
 .pd-ico { font-size: 26px; }
 @media (max-width: 768px) { .pd-grid { grid-template-columns: 1fr; } }
 
+/* כפתור הוואטסאפ בצור קשר (אילנה בחרה, 6.11.2026): לבן עם מסגרת זהב ואייקון ירוק.
+   במעבר עכבר רק המסגרת הופכת לירוקה עם הילה רכה - בלי מילוי ובלי קפיצה */
+.bg-light .btn-ghost.wa-btn { background: #fff; color: var(--navy); border-color: var(--gold); gap: 10px; }
+.wa-ico { width: 22px; height: 22px; fill: #25D366; flex: none; }
+.bg-light .btn-ghost.wa-btn:hover, .bg-light .btn-ghost.wa-btn:focus-visible {
+  background: #fff; color: var(--navy); border-color: #25D366;
+  transform: none; box-shadow: 0 0 0 3px rgba(37,211,102,.18);
+}
+
 /* צור קשר - מי אנחנו */
 .team { display: grid; gap: clamp(30px, 4.4vw, 44px); justify-items: center; text-align: center; margin-top: 26px; }
 .member img { display: block; width: clamp(180px, 34vw, 230px); height: auto; margin-inline: auto; border-radius: 50%; }
