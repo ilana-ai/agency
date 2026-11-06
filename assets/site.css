@@ -1337,3 +1337,11 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
 .svc-list ul { margin: 10px 0 0; padding-inline-start: 1.3em; }
 .svc-list ul li { margin-bottom: 8px; }
 .svc-list ul li::marker { color: var(--gold); }
+/* "מה אני בונה" - בלוקים עם אימוג'י (הנוסח של אילנה מהבוט, 6.11.2026). גובר על הרשימה הממוספרת */
+.svc-intro { text-align: center; margin: 0 auto clamp(22px, 3vw, 34px); font-size: clamp(16.5px, 2vw, 19px); }
+div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
+.svc-item { display: flex; gap: 14px; align-items: flex-start; }
+.svc-emoji { font-size: 24px; line-height: 1.6; flex: none; }
+.svc-item ul { margin: 8px 0 0; padding-inline-start: 1.2em; }
+.svc-item ul li { margin-bottom: 6px; }
+.svc-item ul li::marker { color: var(--gold); }
