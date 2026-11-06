@@ -1180,3 +1180,76 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
   html { scroll-behavior: auto; }
   * { transition: none !important; animation: none !important; }
 }
+
+/* ==========================================================================
+   12. האתר התדמיתי (6.11.2026) - עמוד הבית, צור קשר, תנאי שימוש
+   ========================================================================== */
+
+/* הפוטר - שורה שנייה: כפתורי הרשתות וזכויות היוצרים */
+.foot-row { margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(244,239,226,.10); justify-content: space-between; gap: 14px 20px; padding-inline-end: 76px; }   /* מקום לכפתור הוואטסאפ הצף, שיושב בפינה השמאלית */
+
+/* כפתורי אינסטגרם ופייסבוק - עיגול עם קו זהב, בכל רקע */
+.social { display: flex; gap: 12px; }
+.social a {
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(200,154,60,.55);
+  color: var(--cream);
+  text-decoration: none;
+  transition: color .16s ease, border-color .16s ease, transform .16s ease;
+}
+.social a:hover { color: var(--gold-lift); border-color: var(--gold-lift); transform: translateY(-1px); text-decoration: none; }
+.social svg { width: 20px; height: 20px; }
+.sec-band .social a, .bg-light .social a { color: var(--navy); border-color: rgba(10,31,77,.24); }
+.sec-band .social a:hover, .bg-light .social a:hover { color: #8A6A1F; border-color: var(--gold); }
+
+/* "מי אני" - תמונה לצד הטקסט */
+.about { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(24px, 4.4vw, 56px); align-items: center; }
+.about-img img { display: block; width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow); }
+
+/* כרטיסי השירותים */
+.svc-ico { display: block; font-size: 26px; line-height: 1; margin-bottom: 12px; }
+.sec-dark .card h3 { color: var(--cream); }
+
+/* שלבי העבודה */
+.step-num {
+  display: inline-grid; place-items: center;
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--navy); color: var(--gold-lift);
+  font-weight: 800; margin-bottom: 14px;
+}
+
+/* צור קשר - מי אנחנו */
+.team { display: grid; gap: clamp(30px, 4.4vw, 44px); justify-items: center; text-align: center; margin-top: 26px; }
+.member img { display: block; width: clamp(180px, 34vw, 230px); height: auto; margin-inline: auto; border-radius: 50%; }
+.member h3 { margin: 16px 0 4px; }
+.member p { color: var(--ink-warm); }
+
+/* צור קשר - הכפתורים */
+.contact-box { max-width: 460px; margin: 26px auto 0; display: grid; gap: 12px; }
+.contact-box .btn { width: 100%; }
+.contact-mail { text-align: center; margin-top: 8px; }
+.contact-mail a { color: var(--navy); font-weight: 700; }
+.contact-box .social { justify-content: center; margin-top: 8px; }
+
+/* תנאי שימוש - לפי התקן ב-pages/protocol-fonts-and-padding.md */
+.legal { max-width: var(--maxw); margin-inline: auto; padding: clamp(28px, 5.5vw, 64px); color: var(--ink); line-height: 1.55; }
+.legal h1 { font-size: clamp(19.5px, 3.9vw, 26px); font-weight: 700; line-height: 1.35; margin: 0 0 6px; }
+.legal .legal-head { padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+.legal .legal-date { font-size: 13px; color: var(--muted); margin: 0; }
+.legal h2 { font-size: clamp(15.5px, 2.7vw, 17px); font-weight: 700; margin: 28px 0 12px; }
+.legal h3 { font-size: 15.5px; font-weight: 700; margin: 18px 0 8px; color: var(--navy); }
+.legal p, .legal li { margin: 0 0 11px; }
+.legal ul { padding-inline-start: 22px; margin: 0 0 11px; }
+.legal a { color: #2563eb; }
+.legal .num { font-weight: 500; color: var(--muted); font-size: .92em; }
+
+@media (max-width: 768px) {
+  .about { grid-template-columns: 1fr; }
+  .about-img { max-width: 420px; margin-inline: auto; }
+  .foot-row { justify-content: flex-start; }
+}
+@media (max-width: 480px) {
+  .legal { font-size: 15.5px; }
+}

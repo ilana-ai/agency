@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/site.css" />
+  <link rel="stylesheet" href="/assets/site.css?v=20261106b" />
 </head>
 <body>
 
@@ -29,11 +29,8 @@
         תפריט
       </button>
       <nav class="site-nav" id="site-nav" aria-label="ניווט ראשי">
+        <!-- ⏸️ האתר התדמיתי (6.11.2026): שאר העמודים (CRM, סוכנים, אנסטסיה, דשבורד) חיים בכתובת שלהם ורק לא בתפריט. -->
         <a href="/">בית</a>
-        <a href="/crm/" aria-current="page">CRM בבעלותך</a>
-        <a href="/ai-agents/">סוכני AI ואוטומציות</a>
-        <a href="/anastasia/">אנסטסיה - מזכירה פיננסית</a>
-        <a href="/dashboard/">דשבורד-פיננסי</a>
         <a href="/podcast/">הפודקאסט</a>
         <a href="/contact/">צור קשר</a>
       </nav>
@@ -50,19 +47,26 @@
   <!-- ===== פוטר ===== -->
   <footer class="site-foot">
     <div class="foot-in">
-      <span>&#169; כל הזכויות שמורות ל"החיים הטובים" 2026</span>
+      <a href="https://calendar.ilana-ai.agency/" target="_blank" rel="noopener">לשריון שיחת אפיון בחינם</a>
       <span class="sep" aria-hidden="true">&#183;</span>
-      <a href="/terms-ai-private-lessons/">תנאי שימוש ומדיניות פרטיות</a>
+      <a href="/wa-site/" target="_blank" rel="noopener">וואטסאפ</a>
       <span class="sep" aria-hidden="true">&#183;</span>
       <a href="/contact/">צור קשר</a>
+      <span class="sep" aria-hidden="true">&#183;</span>
+      <a href="/terms/">תנאי שימוש ומדיניות פרטיות</a>
+    </div>
+    <div class="foot-in foot-row">
+      <div class="social">
+        <a href="https://www.instagram.com/ilana.ai.agency" target="_blank" rel="noopener" aria-label="אינסטגרם"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.facebook.com/profile.php?id=61594528547179" target="_blank" rel="noopener" aria-label="פייסבוק"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M14 8h3V4h-3c-2.76 0-5 2.24-5 5v2H7v4h2v9h4v-9h3l1-4h-4V9c0-.55.45-1 1-1z"/></svg></a>
+      </div>
+      <span class="foot-note">&#169; כל הזכויות שמורות ל"החיים הטובים" 2026</span>
     </div>
   </footer>
 
-  <!-- כפתור וואטסאפ צף.
-       מוסתר בכוונה: מספר הוואטסאפ העסקי עדיין לא פעיל (personal-links.md, 8.9.2026),
-       וקישור wa.me למספר לא פעיל מציג לגולש שגיאה.
-       להפעלה: להסיר hidden ולהחליף את ה-href במספר בפורמט https://wa.me/9725XXXXXXXX -->
-  <a class="wa-float" href="#" hidden aria-label="שליחת הודעה בוואטסאפ">
+  <!-- כפתור וואטסאפ צף. מוביל לקישור הקצר של האתר (wa-site), שמגיע עם ההודעה
+       "הגעתי מהאתר שלך", כדי שאילנה תדע מאיפה הליד הגיע. -->
+  <a class="wa-float" href="/wa-site/" target="_blank" rel="noopener" aria-label="שליחת הודעה בוואטסאפ">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.21-8.24 8.21z"/></svg>
   </a>
 
