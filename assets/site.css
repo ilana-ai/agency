@@ -1320,3 +1320,11 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
 /* צילום מסך מהדמו בעמוד ה-CRM */
 .shot { margin: 0; border-radius: 14px; overflow: hidden; border: 1px solid rgba(200, 154, 60, .45); box-shadow: 0 14px 34px rgba(10, 31, 77, .14); background: #fff; }
 .shot img { display: block; width: 100%; height: auto; }
+/* צילומים גדולים (אילנה, 6.11.2026: "מטושטשות וקטנות"): הטקסט למעלה והצילום ברוחב מלא מתחתיו */
+.feat { grid-template-columns: 1fr; gap: clamp(16px, 2.4vw, 26px); }
+.feat > div:first-child { max-width: 760px; }
+.feat-rev > :first-child { order: 0; }
+.shot { max-width: 1080px; width: 100%; margin-inline: auto; }
+.ask-sub { margin: 26px 0 12px; }
+.more-feats .card h3 { font-size: 1.12em; }
+.more-note { text-align: center; margin-top: 22px; color: var(--muted); font-size: .95em; }
