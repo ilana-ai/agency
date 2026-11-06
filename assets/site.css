@@ -1300,3 +1300,20 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
 @media (max-width: 480px) {
   .legal { font-size: 15.5px; }
 }
+
+/* ===== עמוד ה-CRM (6.11.2026) ===== */
+/* פיצ'ר: טקסט וצילום מסך זה לצד זה. בכל פיצ'ר שני הצילום עובר לצד השני */
+.feat { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(22px, 4vw, 52px); align-items: center; }
+.feat-rev > :first-child { order: 2; }
+.feat h3 { margin-top: 0; }
+/* מקום לצילום מסך מהדמו, עד שהצילומים יגיעו */
+.shot-ph { aspect-ratio: 16 / 10; border: 2px dashed var(--gold); border-radius: 16px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 18px; color: #8A6A1F; background: rgba(200, 154, 60, .07); font-weight: 500; line-height: 1.6; }
+/* "מכירים את זה?" - שאלות בשורות, עם נקודת זהב */
+.ask-list { list-style: none; padding: 0; margin: 0 0 18px; }
+.ask-list li { position: relative; padding-inline-start: 22px; margin-bottom: 10px; }
+.ask-list li::before { content: ""; position: absolute; inset-inline-start: 0; top: .62em; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+@media (max-width: 1024px) { .feat { gap: 28px; } }
+@media (max-width: 768px) {
+  .feat { grid-template-columns: 1fr; }
+  .feat-rev > :first-child { order: 0; }
+}
