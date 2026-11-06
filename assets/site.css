@@ -1256,6 +1256,11 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
   transform: none; box-shadow: 0 0 0 3px rgba(37,211,102,.18);
 }
 
+/* כפתור "לפרקים" בעמוד הבית (אילנה בחרה, 6.11.2026): בלי רקע, מסגרת וכיתוב בנייבי.
+   במעבר עכבר המסגרת והכיתוב הופכים לזהב, בלי מילוי */
+.btn-navy-line { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); transition: color .2s ease, border-color .2s ease; }
+.btn-navy-line:hover, .btn-navy-line:focus-visible { border-color: var(--gold); color: #8A6A1F; }
+
 /* צור קשר - מי אנחנו */
 .team { display: grid; gap: clamp(30px, 4.4vw, 44px); justify-items: center; text-align: center; margin-top: 26px; }
 .member img { display: block; width: clamp(180px, 34vw, 230px); height: auto; margin-inline: auto; border-radius: 50%; }
