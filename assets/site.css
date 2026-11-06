@@ -1239,9 +1239,10 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
   font-weight: 800; margin-bottom: 14px;
 }
 
-/* סקשן הפודקאסט בעמוד הבית - שלושת הנושאים (אילנה בחרה באופציה ד, 6.11.2026) */
+/* סקשן הפודקאסט בעמוד הבית - מיקרופון, כותרת ושלושת הנושאים, ישר על הלבן (אילנה בחרה "בהיר ב", 6.11.2026) */
 .pd-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 2vw, 20px); margin: clamp(20px, 3vw, 30px) 0 6px; }
-.pd-item { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 18px; text-align: center; background: #fff; }
+.pd-item { border-radius: var(--radius-sm); padding: 18px; text-align: center; background: #fff; box-shadow: inset 0 0 0 1px rgba(200,154,60,.55), 0 10px 24px -18px rgba(10,31,77,.4); }
+.pd-mic { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; font-size: 30px; margin: 0 auto 14px; background: #fff; box-shadow: inset 0 0 0 2px rgba(200,154,60,.7), 0 8px 20px -12px rgba(10,31,77,.35); }
 .pd-item b { display: block; color: var(--navy); font-size: 17px; margin-top: 6px; }
 .pd-ico { font-size: 26px; }
 @media (max-width: 768px) { .pd-grid { grid-template-columns: 1fr; } }
