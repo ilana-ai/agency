@@ -1355,3 +1355,5 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 .crm-hero h1 { font-size: clamp(24px, 4.2vw, 36px); }
 .inside-intro h2 { font-size: clamp(28px, 4.6vw, 42px); }
 .inside-intro p { font-size: clamp(18px, 2.3vw, 22px); }
+/* כותרות הפיצ'רים בעמוד ה-CRM: גדולות יותר ובנייבי (אילנה, 6.11.2026) */
+.feat h3 { font-size: clamp(21px, 3vw, 27px); color: var(--navy); }
