@@ -393,6 +393,17 @@ p:last-child { margin-bottom: 0; }
 }
 .btn-ghost:hover { border-color: var(--gold); color: var(--gold-lift); }
 .sec-band .btn-ghost, .bg-light .btn-ghost { color: var(--navy); border-color: rgba(10,31,77,.24); }
+/* מעבר עכבר לכפתור המשני על רקע בהיר (הוראת אילנה, 6.11.2026).
+   בלעדיו השורה שמעל דורסת את ההובר הכללי, והכפתור לא מגיב בכלל */
+.btn-ghost { transition: transform .16s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease; }
+.sec-band .btn-ghost:hover, .bg-light .btn-ghost:hover,
+.sec-band .btn-ghost:focus-visible, .bg-light .btn-ghost:focus-visible {
+  border-color: var(--gold);
+  color: #8A6A1F;
+  background: rgba(200,154,60,.08);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -12px rgba(10,31,77,.35);
+}
 
 /* השורה שאומרת את האמת לפני הלחיצה. חוק-על: אף פעם לא באוויר */
 .btn-truth {
