@@ -1208,6 +1208,19 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
 .about { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(24px, 4.4vw, 56px); align-items: center; }
 .about-img img { display: block; width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow); }
 
+/* הלוגו בפתיחה של עמוד הבית. לתמונה יש רקע כהה משלה,
+   ולכן השוליים שלה נמוגים לתוך הגרדיאנט במקום להיראות כמו מלבן מודבק */
+.hero-logo {
+  display: block;
+  width: clamp(260px, 44vw, 430px); height: auto;
+  margin: 0 auto clamp(10px, 1.6vw, 18px);
+  /* קצוות רכים רק בשוליים, כדי שהכיתוב הרחב של הלוגו נשאר שלם */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent), linear-gradient(to bottom, transparent, #000 9%, #000 91%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent), linear-gradient(to bottom, transparent, #000 9%, #000 91%, transparent);
+  mask-composite: intersect;
+}
+
 /* כרטיסי השירותים */
 .svc-ico { display: block; font-size: 26px; line-height: 1; margin-bottom: 12px; }
 .sec-dark .card h3 { color: var(--cream); }
