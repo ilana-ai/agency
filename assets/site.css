@@ -1317,3 +1317,6 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
   .feat { grid-template-columns: 1fr; }
   .feat-rev > :first-child { order: 0; }
 }
+/* צילום מסך מהדמו בעמוד ה-CRM */
+.shot { margin: 0; border-radius: 14px; overflow: hidden; border: 1px solid rgba(200, 154, 60, .45); box-shadow: 0 14px 34px rgba(10, 31, 77, .14); background: #fff; }
+.shot img { display: block; width: 100%; height: auto; }
