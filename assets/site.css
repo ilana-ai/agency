@@ -1361,3 +1361,10 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 .team-free .svc-ico { font-size: 44px; margin-bottom: 14px; }
 .team-free h2 { font-size: clamp(28px, 4.6vw, 42px); }
 .team-free p { font-size: clamp(18px, 2.3vw, 22px); }
+/* ריבועי הפיצ'רים בעמוד ה-CRM - אפקט מעבר עכבר (אופציה ד', אילנה 6.11.2026):
+   הריבוע עולה ונוטה ימינה, צל מודגש, והאייקון מסתובב. בלי פס האור */
+.more-feats .card { transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s, border-color .3s; }
+.more-feats .card .svc-ico { display: inline-block; transition: transform .6s; }
+.more-feats .card:hover { transform: translateY(-8px) rotate(1.8deg); box-shadow: 0 24px 46px rgba(10,31,77,.32); border-color: var(--gold); }
+.more-feats .card:hover .svc-ico { transform: rotate(360deg); }
+@media (prefers-reduced-motion: reduce) { .more-feats .card, .more-feats .card .svc-ico { transition: none; } }
