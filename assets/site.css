@@ -1348,3 +1348,6 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 /* פתיחת עמוד הבית (אילנה, 6.11.2026): הלוגו צמוד יותר לתפריט, והכותרת קטנה יותר */
 .hero:has(.hero-logo) { padding-top: clamp(14px, 1.8vw, 24px); }
 .hero-logo + h1 { font-size: clamp(24px, 4.2vw, 36px); }
+/* הפירוט על רקע בהיר */
+.bg-light .svc-list b { color: var(--navy); }
+.bg-light .svc-list a { color: #8A6A1F; }
