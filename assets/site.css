@@ -1351,3 +1351,7 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 /* הפירוט על רקע בהיר */
 .bg-light .svc-list b { color: var(--navy); }
 .bg-light .svc-list a { color: #8A6A1F; }
+/* עמוד ה-CRM (אילנה, 6.11.2026): כותרת הפתיחה קטנה יותר, ו"מה יש בפנים" בפונט גדול יותר */
+.crm-hero h1 { font-size: clamp(24px, 4.2vw, 36px); }
+.inside-intro h2 { font-size: clamp(28px, 4.6vw, 42px); }
+.inside-intro p { font-size: clamp(18px, 2.3vw, 22px); }
