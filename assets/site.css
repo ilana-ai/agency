@@ -1328,3 +1328,12 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
 .ask-sub { margin: 26px 0 12px; }
 .more-feats .card h3 { font-size: 1.12em; }
 .more-note { text-align: center; margin-top: 22px; color: var(--muted); font-size: .95em; }
+/* "מה אני בונה" בעמוד הבית - רשימה ממוספרת (אילנה, 6.11.2026) */
+.svc-list { margin: 0; padding-inline-start: 1.6em; font-size: clamp(16px, 1.9vw, 18.5px); line-height: 1.75; }
+.svc-list > li { margin-bottom: 14px; padding-inline-start: 4px; }
+.svc-list > li::marker { color: var(--gold); font-weight: 700; }
+.svc-list b { color: var(--cream); }
+.svc-list a { color: var(--gold-lift, #E8C36A); text-decoration: underline; text-underline-offset: 3px; }
+.svc-list ul { margin: 10px 0 0; padding-inline-start: 1.3em; }
+.svc-list ul li { margin-bottom: 8px; }
+.svc-list ul li::marker { color: var(--gold); }
