@@ -1212,7 +1212,7 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
    קטן בכוונה (הוראת אילנה, 6.11.2026: "שלא יהיה ענק"). */
 .hero-logo {
   display: block;
-  width: clamp(160px, 22vw, 230px); height: auto;
+  width: clamp(115px, 14vw, 155px); height: auto;
   margin: 0 auto clamp(12px, 1.8vw, 20px);
 }
 
