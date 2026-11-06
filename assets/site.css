@@ -1208,18 +1208,13 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
 .about { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(24px, 4.4vw, 56px); align-items: center; }
 .about-img img { display: block; width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow); }
 
-/* הלוגו בפתיחה של עמוד הבית - גרסת הלוגו הבהירה (כיתוב נייבי),
-   ולכן הוא יושב על תג בהיר, אחרת החלקים הכהים שלו נעלמים ברקע הכהה.
+/* הלוגו בפתיחה של עמוד הבית - גרסת הזהב השקופה, יושבת ישר על הרקע הכהה.
    קטן בכוונה (הוראת אילנה, 6.11.2026: "שלא יהיה ענק"). */
 .hero-logo {
-  display: inline-block;
-  background: var(--cream);
-  border-radius: var(--radius-sm);
-  padding: 10px 14px;
-  margin: 0 auto clamp(14px, 2vw, 22px);
-  box-shadow: 0 8px 26px rgba(0,0,0,.28);
+  display: block;
+  width: clamp(160px, 22vw, 230px); height: auto;
+  margin: 0 auto clamp(12px, 1.8vw, 20px);
 }
-.hero-logo img { display: block; width: clamp(130px, 17vw, 180px); height: auto; }
 
 /* כרטיסי השירותים */
 .svc-ico { display: block; font-size: 26px; line-height: 1; margin-bottom: 12px; }
