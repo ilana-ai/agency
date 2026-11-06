@@ -1368,3 +1368,4 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 .more-feats .card:hover { transform: translateY(-8px) rotate(1.8deg); box-shadow: 0 24px 46px rgba(10,31,77,.32); border-color: var(--gold); }
 .more-feats .card:hover .svc-ico { transform: rotate(360deg); }
 @media (prefers-reduced-motion: reduce) { .more-feats .card, .more-feats .card .svc-ico { transition: none; } }
+.shot-narrow { max-width: 560px; }
