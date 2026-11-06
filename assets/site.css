@@ -1239,6 +1239,13 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
   font-weight: 800; margin-bottom: 14px;
 }
 
+/* סקשן הפודקאסט בעמוד הבית - שלושת הנושאים (אילנה בחרה באופציה ד, 6.11.2026) */
+.pd-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 2vw, 20px); margin: clamp(20px, 3vw, 30px) 0 6px; }
+.pd-item { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 18px; text-align: center; background: #fff; }
+.pd-item b { display: block; color: var(--navy); font-size: 17px; margin-top: 6px; }
+.pd-ico { font-size: 26px; }
+@media (max-width: 768px) { .pd-grid { grid-template-columns: 1fr; } }
+
 /* צור קשר - מי אנחנו */
 .team { display: grid; gap: clamp(30px, 4.4vw, 44px); justify-items: center; text-align: center; margin-top: 26px; }
 .member img { display: block; width: clamp(180px, 34vw, 230px); height: auto; margin-inline: auto; border-radius: 50%; }
