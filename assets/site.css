@@ -1411,3 +1411,5 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 .pair-shots { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(14px, 2vw, 24px); max-width: 900px; width: 100%; margin-inline: auto; align-items: center; }
 .pair-shots .shot { margin: 0; max-width: none; }
 @media (max-width: 640px) { .pair-shots { grid-template-columns: 1fr; max-width: 440px; } }
+/* קו זהב קצר מתחת לכותרת של כל פיצ'ר בעמוד ה-CRM (אילנה, 7.11.2026) */
+.feat h3 { padding-bottom: 14px; margin-bottom: 14px; background: linear-gradient(90deg, #E2BE5E, #C89A3C) no-repeat right bottom / 74px 3px; }
