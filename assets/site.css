@@ -1372,7 +1372,11 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 .shot-mid { max-width: 760px; }
 /* פתיחה אישית בסקשן "למה בניתי" בעמוד ה-CRM (אילנה, 7.11.2026): זהב וגדול מהבודי */
 .about-hello { color: var(--gold); font-weight: 800; font-size: clamp(17px, 1.7vw, 19px); line-height: 1.4; margin: 0 0 10px; }
-.inside-intro p.inside-note { font-size: clamp(15px, 1.8vw, 17px); opacity: .85; margin-top: 6px; }
+.inside-intro p.inside-note { font-size: clamp(15px, 1.8vw, 17px); opacity: .85; margin-top: 0; }
+/* (אילנה, 7.11.2026): השורה הראשונה בלבן, ופחות רווח בין השורות */
+.inside-intro h2 { margin-bottom: 8px; }
+.inside-intro p { margin-bottom: 4px; }
+.inside-intro p:not(.inside-note) { color: #fff; }
 /* טקסט ההסבר של הפיצ'רים בעמוד ה-CRM (אילנה, 7.11.2026): גדול יותר, נייבי, צפוף יותר */
 .feat > div p { font-size: clamp(16.5px, 1.6vw, 17.5px); color: var(--navy); line-height: 1.4; margin-bottom: 6px; }
 .sec-dark .feat > div p { color: inherit; }
