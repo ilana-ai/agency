@@ -1430,3 +1430,5 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 .shot-lg { max-width: 900px; }
 .shot-680 { max-width: 680px; }
 .feat > div p.spaced-top { margin-top: clamp(22px, 3vw, 36px); }
+.gold-arrow { display: flex; justify-content: center; margin: 4px 0 -6px; }
+.gold-arrow svg { display: block; }
