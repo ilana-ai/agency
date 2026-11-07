@@ -1437,3 +1437,7 @@ main:has(.crm-hero) .ask-list li, main:has(.crm-hero) .ask-list ~ p { font-size:
 main:has(.crm-hero) .about p:not(.about-hello) { font-size: clamp(17px, 1.75vw, 19px); }
 .feat:has(.page-types) > div p { line-height: 1.62; margin-bottom: 12px; }
 .page-types li b { color: #654A14; }
+.shot-xs { max-width: 420px; }
+.shot-head { text-align: center; }
+.shot-head .feat-sub { margin-bottom: 4px; }
+.feat > .shot-head p.shot-sub { font-size: clamp(15px, 1.4vw, 16px); color: var(--ink-warm); margin: 0; }
