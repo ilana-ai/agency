@@ -1369,3 +1369,4 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 .more-feats .card:hover .svc-ico { transform: rotate(360deg); }
 @media (prefers-reduced-motion: reduce) { .more-feats .card, .more-feats .card .svc-ico { transition: none; } }
 .shot-narrow { max-width: 560px; }
+.shot-mid { max-width: 760px; }
