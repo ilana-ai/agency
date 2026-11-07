@@ -1429,3 +1429,4 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 @media (prefers-reduced-motion: reduce) { .build-cards .card, .build-cards .card .svc-ico, .card:has(> .step-num), .card:has(> .step-num) .step-num { transition: none; } }
 .shot-lg { max-width: 900px; }
 .shot-680 { max-width: 680px; }
+.feat > div p.spaced-top { margin-top: clamp(22px, 3vw, 36px); }
