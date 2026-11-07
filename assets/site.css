@@ -1385,14 +1385,9 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 .feat-title .wa-ico { width: 32px; height: 32px; }
 .feat-title .feat-emoji { font-size: 30px; line-height: 1; flex: none; }
 .feat-title .mail-ico { width: 34px; height: 34px; flex: none; }
-/* פתיחת עמוד ה-CRM: טקסט מימין, מחשב וטלפון משמאל שגולשים אל הסקשן הבא (אילנה, 7.11.2026) */
-.hero-devices { margin: clamp(22px, 4vw, 34px) auto 0; max-width: 620px; }
+/* פתיחת עמוד ה-CRM: הטקסט באמצע, ומתחת מחשב נייד עם כרטיס לקוח שיורד אל הסקשן הבא (אילנה, 7.11.2026) */
+.crm-hero { display: flow-root; overflow: visible; z-index: 2; padding-bottom: 0; }
+.hero-devices { --w: min(600px, 92vw); width: var(--w); margin: clamp(40px, 5vw, 60px) auto calc(var(--w) * -0.33); position: relative; z-index: 3; }
 .hero-devices img { display: block; width: 100%; height: auto; }
-@media (min-width: 980px) {
-  .crm-hero { overflow: visible; z-index: 2; padding-bottom: clamp(30px, 3vw, 44px); }
-  .hero-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: clamp(20px, 3vw, 48px); align-items: center; }
-  .hero-split .hero-text .lead { max-width: 560px; }
-  .hero-devices { margin: 0 0 -120px; max-width: none; }
-  .crm-hero .hero-split { max-width: 1320px; }
-  .crm-hero .hero-text h1 { font-size: clamp(26px, 2.3vw, 32px); }
-}
+.crm-hero + .sec { padding-top: calc(min(600px, 92vw) * 0.33 + 34px); }
+.crm-hero .cta-row { gap: 16px 26px; }
