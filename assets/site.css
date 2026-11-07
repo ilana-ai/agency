@@ -1444,4 +1444,4 @@ main:has(.crm-hero) .about p:not(.about-hello) { font-size: 17px; }
 .same-task figcaption { font-size: clamp(17px, 1.9vw, 21px); margin-bottom: 10px; }
 .shot-confirm { max-width: 470px; }
 .team-free p.team-note { font-size: clamp(14.5px, 1.4vw, 16px); opacity: .8; margin-top: 14px; }
-.feat > .shot-head + .shot { margin-top: clamp(-20px, -1.6vw, -10px); }
+.feat > .shot-head + .shot { margin-top: clamp(-30px, -2.4vw, -14px); }
