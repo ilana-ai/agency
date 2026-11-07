@@ -1442,3 +1442,4 @@ main:has(.crm-hero) .about p:not(.about-hello) { font-size: clamp(17px, 1.75vw, 
 .shot-head .feat-sub { margin-bottom: 4px; }
 .feat > .shot-head p.shot-sub { font-size: clamp(15px, 1.4vw, 16px); color: var(--ink-warm); margin: 0; }
 .same-task figcaption { font-size: clamp(17px, 1.9vw, 21px); margin-bottom: 10px; }
+.shot-confirm { max-width: 470px; }
