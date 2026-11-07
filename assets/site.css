@@ -1398,7 +1398,7 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 .same-task img { display: block; width: 100%; height: auto; border: 1px solid rgba(200,154,60,.5); border-radius: 12px; box-shadow: 0 10px 26px rgba(10,31,77,.14); }
 @media (max-width: 760px) { .same-task { grid-template-columns: 1fr; max-width: 460px; } }
 /* (אילנה, 7.11.2026): שורת הסיום בזהב מודגש, והפתיחה בזהב אחר - גרדיאנט בהיר-כהה */
-.about-gold { color: #9A7424; font-weight: 800; }
+.about-gold { color: #B8892F; font-weight: 800; }
 .about-hello { background: linear-gradient(118deg, #E2BE5E 0%, #B5832A 55%, #8C5E14 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .shot-sm { max-width: 600px; }
 /* רשימת סוגי העמודים בכרטיס (אילנה, 7.11.2026) */
