@@ -1427,3 +1427,4 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 .card:has(> .step-num):hover::before { width: 100%; }
 .card:has(> .step-num):hover .step-num { transform: rotate(360deg); background-color: var(--gold); color: var(--navy); }
 @media (prefers-reduced-motion: reduce) { .build-cards .card, .build-cards .card .svc-ico, .card:has(> .step-num), .card:has(> .step-num) .step-num { transition: none; } }
+.shot-lg { max-width: 900px; }
