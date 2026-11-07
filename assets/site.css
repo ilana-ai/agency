@@ -1374,7 +1374,7 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 .about-hello { color: #B8892F; font-weight: 800; font-size: clamp(20px, 2.4vw, 25px); line-height: 1.4; margin: 0 0 10px; }
 .inside-intro p.inside-note { font-size: clamp(15px, 1.8vw, 17px); opacity: .85; margin-top: 6px; }
 /* טקסט ההסבר של הפיצ'רים בעמוד ה-CRM (אילנה, 7.11.2026): גדול יותר, נייבי, צפוף יותר */
-.feat > div p { font-size: clamp(16.5px, 1.6vw, 17.5px); color: var(--navy); line-height: 1.55; margin-bottom: 8px; }
+.feat > div p { font-size: clamp(16.5px, 1.6vw, 17.5px); color: var(--navy); line-height: 1.4; margin-bottom: 6px; }
 .sec-dark .feat > div p { color: inherit; }
 /* כותרת פיצ'ר עם אייקון לידה, לא מעליה (אילנה, 7.11.2026) */
 .feat-title { display: flex; align-items: center; gap: 12px; }
