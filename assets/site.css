@@ -1400,3 +1400,8 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 /* (אילנה, 7.11.2026): שורת הסיום בזהב מודגש, והפתיחה בזהב אחר - גרדיאנט בהיר-כהה */
 .about-gold { color: #9A7424; font-weight: 800; }
 .about-hello { background: linear-gradient(118deg, #E2BE5E 0%, #B5832A 55%, #8C5E14 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.shot-sm { max-width: 600px; }
+/* רשימת סוגי העמודים בכרטיס (אילנה, 7.11.2026) */
+.page-types { list-style: none; padding: 0; margin: 4px 0 14px; display: grid; gap: 8px; }
+.page-types li { display: flex; gap: 10px; align-items: flex-start; color: var(--navy); font-size: clamp(16.5px, 1.6vw, 17.5px); line-height: 1.4; }
+.page-types li > span:first-child { flex: none; font-size: 20px; line-height: 1.2; }
