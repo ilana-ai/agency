@@ -1324,7 +1324,7 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
 .feat { grid-template-columns: 1fr; gap: clamp(26px, 3.2vw, 40px); }
 .feat > div:first-child { max-width: 760px; }
 .feat-rev > :first-child { order: 0; }
-.shot { max-width: 1080px; width: 100%; margin-inline: auto; }
+.shot { max-width: 1240px; width: 100%; margin-inline: auto; }
 .ask-sub { margin: 26px 0 12px; }
 .more-feats .card h3 { font-size: 1.12em; }
 .more-note { text-align: center; margin-top: 22px; color: var(--muted); font-size: .95em; }
@@ -1392,7 +1392,7 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 .crm-hero + .sec { padding-top: calc(min(600px, 92vw) * 0.33 + 34px); }
 .crm-hero .cta-row { gap: 16px 26px; }
 /* אותה משימה בשלושה מקומות, אחד ליד השני (אילנה, 7.11.2026). הרוחבים לפי היחס של כל צילום, כדי שהגבהים יהיו שווים */
-.same-task { display: grid; grid-template-columns: .78fr .78fr 1.4fr; gap: clamp(12px, 1.6vw, 20px); max-width: 1080px; width: 100%; margin-inline: auto; }
+.same-task { display: grid; grid-template-columns: 1.94fr 1.97fr 1.25fr; gap: clamp(12px, 1.6vw, 20px); max-width: 1080px; width: 100%; margin-inline: auto; }
 .same-task figure { margin: 0; }
 .same-task figcaption { text-align: center; font-weight: 800; color: var(--navy); font-size: clamp(15px, 1.5vw, 17px); margin-bottom: 8px; }
 .same-task img { display: block; width: 100%; height: auto; border: 1px solid rgba(200,154,60,.5); border-radius: 12px; box-shadow: 0 10px 26px rgba(10,31,77,.14); }
