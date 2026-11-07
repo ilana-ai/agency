@@ -1405,3 +1405,4 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 .page-types { list-style: none; padding: 0; margin: 4px 0 14px; display: grid; gap: 8px; }
 .page-types li { display: flex; gap: 10px; align-items: flex-start; color: var(--navy); font-size: clamp(16.5px, 1.6vw, 17.5px); line-height: 1.4; }
 .page-types li > span:first-child { flex: none; font-size: 20px; line-height: 1.2; }
+.feat-sub { color: var(--navy); font-size: clamp(19px, 2.2vw, 23px); font-weight: 800; margin: 14px 0 6px; }
