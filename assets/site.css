@@ -1370,3 +1370,5 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 @media (prefers-reduced-motion: reduce) { .more-feats .card, .more-feats .card .svc-ico { transition: none; } }
 .shot-narrow { max-width: 560px; }
 .shot-mid { max-width: 760px; }
+/* פתיחה אישית בסקשן "למה בניתי" בעמוד ה-CRM (אילנה, 7.11.2026): זהב וגדול מהבודי */
+.about-hello { color: #B8892F; font-weight: 800; font-size: clamp(20px, 2.4vw, 25px); line-height: 1.4; margin: 0 0 10px; }
