@@ -1408,3 +1408,6 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 .feat-sub { color: var(--navy); font-size: clamp(19px, 2.2vw, 23px); font-weight: 800; margin: 14px 0 6px; }
 .same-task.two { grid-template-columns: 1fr 1fr; }
 @media (max-width: 760px) { .same-task.two { grid-template-columns: 1fr; } }
+.pair-shots { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(14px, 2vw, 24px); max-width: 900px; width: 100%; margin-inline: auto; align-items: center; }
+.pair-shots .shot { margin: 0; max-width: none; }
+@media (max-width: 640px) { .pair-shots { grid-template-columns: 1fr; max-width: 440px; } }
