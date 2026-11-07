@@ -1380,3 +1380,4 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 .feat-title { display: flex; align-items: center; gap: 12px; }
 .feat-title .wa-ico { width: 32px; height: 32px; }
 .feat-title .feat-emoji { font-size: 30px; line-height: 1; flex: none; }
+.feat-title .mail-ico { width: 34px; height: 34px; flex: none; }
