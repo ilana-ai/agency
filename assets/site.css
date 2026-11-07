@@ -1321,7 +1321,7 @@ body.has-snap { padding-bottom: var(--snap-h, 72px); }   /* המחלקה היא 
 .shot { margin: 0; border-radius: 14px; overflow: hidden; border: 1px solid rgba(200, 154, 60, .45); box-shadow: 0 14px 34px rgba(10, 31, 77, .14); background: #fff; }
 .shot img { display: block; width: 100%; height: auto; }
 /* צילומים גדולים (אילנה, 6.11.2026: "מטושטשות וקטנות"): הטקסט למעלה והצילום ברוחב מלא מתחתיו */
-.feat { grid-template-columns: 1fr; gap: clamp(16px, 2.4vw, 26px); }
+.feat { grid-template-columns: 1fr; gap: clamp(26px, 3.2vw, 40px); }
 .feat > div:first-child { max-width: 760px; }
 .feat-rev > :first-child { order: 0; }
 .shot { max-width: 1080px; width: 100%; margin-inline: auto; }
@@ -1391,3 +1391,9 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 .hero-devices img { display: block; width: 100%; height: auto; }
 .crm-hero + .sec { padding-top: calc(min(600px, 92vw) * 0.33 + 34px); }
 .crm-hero .cta-row { gap: 16px 26px; }
+/* אותה משימה בשלושה מקומות, אחד ליד השני (אילנה, 7.11.2026). הרוחבים לפי היחס של כל צילום, כדי שהגבהים יהיו שווים */
+.same-task { display: grid; grid-template-columns: .78fr .78fr 1.4fr; gap: clamp(12px, 1.6vw, 20px); max-width: 1080px; width: 100%; margin-inline: auto; }
+.same-task figure { margin: 0; }
+.same-task figcaption { text-align: center; font-weight: 800; color: var(--navy); font-size: clamp(15px, 1.5vw, 17px); margin-bottom: 8px; }
+.same-task img { display: block; width: 100%; height: auto; border: 1px solid rgba(200,154,60,.5); border-radius: 12px; box-shadow: 0 10px 26px rgba(10,31,77,.14); }
+@media (max-width: 760px) { .same-task { grid-template-columns: 1fr; max-width: 460px; } }
