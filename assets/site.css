@@ -1414,3 +1414,16 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 /* קו זהב קצר מתחת לכותרת של כל פיצ'ר בעמוד ה-CRM (אילנה, 7.11.2026) */
 .feat h3 { padding-bottom: 14px; margin-bottom: 14px; background: linear-gradient(90deg, #E2BE5E, #C89A3C) no-repeat right bottom / 74px 3px; }
 .feat > div p.feat-lead { font-size: clamp(19px, 2.1vw, 22px); font-weight: 800; color: var(--navy); line-height: 1.35; margin: 18px 0 6px; }
+/* ריחוף (אילנה, 7.11.2026). "מה אני בונה": הטיה בתלת מימד + רקע זהב עדין והאייקון קופץ (ד+ג) */
+.build-cards .card { transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s, background-color .45s, border-color .3s; }
+.build-cards .card .svc-ico { display: inline-block; transition: transform .5s cubic-bezier(.2,.8,.2,1); }
+.build-cards .card:hover { transform: perspective(700px) rotateX(4deg) rotateY(-6deg) scale(1.03); border-color: var(--gold); background-color: rgba(200,154,60,.14); box-shadow: 0 22px 44px rgba(0,0,0,.45); }
+.build-cards .card:hover .svc-ico { transform: translateY(-6px) scale(1.25); }
+/* "איך זה עובד": עולה, המספר מסתובב לזהב, ופס זהב נמתח למעלה (1+2) */
+.card:has(> .step-num) { position: relative; overflow: hidden; transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s; }
+.card:has(> .step-num)::before { content: ""; position: absolute; top: 0; right: 0; height: 4px; width: 0; background: linear-gradient(90deg, #E2BE5E, #C89A3C); transition: width .5s; }
+.card:has(> .step-num) .step-num { transition: transform .6s, background-color .4s, color .4s; }
+.card:has(> .step-num):hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(10,31,77,.18); }
+.card:has(> .step-num):hover::before { width: 100%; }
+.card:has(> .step-num):hover .step-num { transform: rotate(360deg); background-color: var(--gold); color: var(--navy); }
+@media (prefers-reduced-motion: reduce) { .build-cards .card, .build-cards .card .svc-ico, .card:has(> .step-num), .card:has(> .step-num) .step-num { transition: none; } }
