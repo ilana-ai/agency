@@ -1376,3 +1376,7 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 /* טקסט ההסבר של הפיצ'רים בעמוד ה-CRM (אילנה, 7.11.2026): גדול יותר, נייבי, צפוף יותר */
 .feat > div p { font-size: clamp(17.5px, 2vw, 20px); color: var(--navy); line-height: 1.55; margin-bottom: 8px; }
 .sec-dark .feat > div p { color: inherit; }
+/* כותרת פיצ'ר עם אייקון לידה, לא מעליה (אילנה, 7.11.2026) */
+.feat-title { display: flex; align-items: center; gap: 12px; }
+.feat-title .wa-ico { width: 32px; height: 32px; }
+.feat-title .feat-emoji { font-size: 30px; line-height: 1; flex: none; }
