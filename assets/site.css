@@ -1435,3 +1435,4 @@ div.svc-list { padding: 0; display: grid; gap: clamp(18px, 2.4vw, 26px); }
 /* עמוד ה-CRM: טקסט קצת יותר גדול ב"מכירים את זה?" וב"למה בניתי", בלי הכותרות (אילנה, 8.11.2026) */
 main:has(.crm-hero) .ask-list li, main:has(.crm-hero) .ask-list ~ p { font-size: clamp(17px, 1.75vw, 19px); }
 main:has(.crm-hero) .about p:not(.about-hello) { font-size: clamp(17px, 1.75vw, 19px); }
+.feat:has(.page-types) > div p { line-height: 1.62; margin-bottom: 12px; }
