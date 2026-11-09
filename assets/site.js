@@ -113,7 +113,7 @@
       document.documentElement.classList.toggle('toc-open', !c);
       tab.setAttribute('aria-expanded', c ? 'false' : 'true');
       tab.setAttribute('aria-label', c ? 'פתיחת התפריט' : 'קיפול התפריט');
-      tab.querySelector('.arr').textContent = c ? '›' : '‹';
+      tab.querySelector('.arr').textContent = '›'; // חץ ימינה בשני המצבים (אילנה, 9.11.2026)
       try { localStorage.setItem('crmTocClosed', c ? '1' : '0'); } catch (e) {}
     };
     // בלפטופ צר (מתחת ל-1440) התפריט נפתח סגור, אלא אם הגולש כבר פתח אותו בעבר
@@ -124,7 +124,7 @@
     document.documentElement.classList.toggle('toc-open', !startClosed);
     tab.setAttribute('aria-expanded', startClosed ? 'false' : 'true');
     tab.setAttribute('aria-label', startClosed ? 'פתיחת התפריט' : 'קיפול התפריט');
-    tab.querySelector('.arr').textContent = startClosed ? '›' : '‹';
+    tab.querySelector('.arr').textContent = '›'; // חץ ימינה בשני המצבים (אילנה, 9.11.2026)
     tab.addEventListener('click', function () { setClosed(!toc.classList.contains('closed')); });
   }
   window.addEventListener('scroll', spy, { passive: true });

@@ -1454,6 +1454,8 @@ main:has(.crm-hero) .about p:not(.about-hello) { font-size: 17px; }
   .crm-toc a.on { color: #0a1f4d; font-weight: 800; border-right-color: #c9a227; background: linear-gradient(270deg, rgba(201,162,39,.2), transparent); }
   .crm-toc-tab { position: absolute; left: -24px; top: 40px; width: 24px; height: 70px; padding: 0; border: 0; border-radius: 12px 0 0 12px; cursor: pointer; font: inherit; font-size: 18px; font-weight: 800; color: #0a1f4d; background: linear-gradient(180deg, #f3dc8a, #c9a227); box-shadow: -3px 4px 12px rgba(10,31,77,.3); transition: all .35s ease; }
   .crm-toc-tab .lbl { display: none; }
+  /* החץ תמיד מצביע ימינה: בלי היפוך של כיוון מימין לשמאל ובלי סיבוב של הכתב האנכי */
+  .crm-toc-tab .arr { display: inline-block; writing-mode: horizontal-tb; direction: ltr; unicode-bidi: isolate; }
   /* כפתור זהב בתחתית התפריט: לשריון שיחה */
   .crm-toc a.crm-toc-cta { display: flex; align-items: center; justify-content: center; gap: 6px; white-space: nowrap; height: 42px; margin: 8px 0 0; padding: 0 6px; border: 0; border-radius: 0 0 15px 15px; font-size: 13.5px; font-weight: 800; line-height: 1; color: #0a1f4d; background: linear-gradient(135deg, #f3dc8a, #c9a227); }
   .crm-toc a.crm-toc-cta:hover { color: #0a1f4d; filter: brightness(1.05); }
