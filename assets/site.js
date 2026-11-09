@@ -139,17 +139,29 @@
   var head = document.querySelector('.site-head .head-in');
   if (!toc || !head) return;
   var panel = document.createElement('nav'); panel.className = 'crm-mtoc-panel'; panel.id = 'crm-mtoc-panel'; panel.setAttribute('aria-label', 'תפריט ה-CRM');
-  var ttl = document.createElement('p'); ttl.className = 'ttl'; ttl.textContent = 'מה יש בעמוד'; panel.appendChild(ttl);
+  // הרשימה גוללת בתוך הכרטיס, ולצידה פס גלילה זהוב שמוצג תמיד, כדי שיהיה ברור שיש עוד סקשנים למטה (אילנה, 9.11.2026)
+  var list = document.createElement('div'); list.className = 'crm-mtoc-list'; panel.appendChild(list);
+  var bar = document.createElement('div'); bar.className = 'crm-mtoc-bar'; bar.setAttribute('aria-hidden', 'true');
+  var thumb = document.createElement('i'); bar.appendChild(thumb); panel.appendChild(bar);
   Array.prototype.forEach.call(toc.querySelectorAll('a'), function (a) {
     var c = a.cloneNode(true);
     if (c.classList.contains('crm-toc-cta')) { c.className = 'cta'; } else { c.removeAttribute('class'); }
-    panel.appendChild(c);
+    list.appendChild(c);
   });
+  function moveThumb() {
+    var h = list.scrollHeight, v = list.clientHeight;
+    bar.style.display = h > v + 1 ? '' : 'none';
+    var track = bar.clientHeight, th = Math.max(28, track * v / h);
+    thumb.style.height = th + 'px';
+    thumb.style.transform = 'translateY(' + ((track - th) * (list.scrollTop / Math.max(1, h - v))) + 'px)';
+  }
+  list.addEventListener('scroll', moveThumb, { passive: true });
+  window.addEventListener('resize', moveThumb);
   var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'crm-mtoc-btn';
   btn.textContent = 'תפריט ה-CRM'; btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-controls', 'crm-mtoc-panel');
   var dim = document.createElement('div'); dim.className = 'crm-mtoc-dim';
   head.appendChild(btn); head.appendChild(panel); document.body.appendChild(dim);
-  function setOpen(o) { panel.classList.toggle('open', o); dim.classList.toggle('open', o); btn.setAttribute('aria-expanded', o ? 'true' : 'false'); }
+  function setOpen(o) { panel.classList.toggle('open', o); dim.classList.toggle('open', o); btn.setAttribute('aria-expanded', o ? 'true' : 'false'); if (o) moveThumb(); }
   btn.addEventListener('click', function () { setOpen(!panel.classList.contains('open')); });
   dim.addEventListener('click', function () { setOpen(false); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
