@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/site.css?v=20261108r" />
+  <link rel="stylesheet" href="/assets/site.css?v=20261109a" />
 </head>
 <body>
 
@@ -107,7 +107,7 @@
       <div class="wrap-wide feat">
         <div>
           <span class="svc-ico" aria-hidden="true">🗂️</span>
-          <h3>כרטיס לקוח שיש בו הכל</h3>
+          <h3 id="card">כרטיס לקוח שיש בו הכל</h3>
           <p><b>פותחים כרטיס ורואים הכל במקום אחד: כל ההתכתבויות, הפגישות, ההערות, המשימות, החוזים והתשלומים.</b></p>
           <p>ככה לא מחפשים בשלושה מקומות מי זה ומה דיברנו איתו, ונכנסים לכל שיחה כשיודעים בדיוק איפה עומדים.</p>
         </div>
@@ -117,7 +117,7 @@
     <section class="sec sec-band">
       <div class="wrap-wide feat">
         <div>
-          <h3 class="feat-title"><span class="feat-emoji" aria-hidden="true">📑</span><span>סוגי עמודים שונים בכל כרטיס לקוח</span></h3>
+          <h3 id="pages" class="feat-title"><span class="feat-emoji" aria-hidden="true">📑</span><span>סוגי עמודים שונים בכל כרטיס לקוח</span></h3>
           <p>כל מה שקורה עם לקוח נשמר בכרטיס שלו כעמוד משלו, ונכנסים לכל אחד בלחיצה:</p>
           <ul class="page-types">
             <li><span aria-hidden="true">🗓️</span><span><b>פגישות ושיחות</b> - פגישה, פגישת זום, שיחת טלפון, שיחת מכירה, וכל סוג נוסף שתרצו.</span></li>
@@ -136,7 +136,7 @@
     <section class="sec bg-light">
       <div class="wrap-wide feat feat-rev">
         <div>
-          <h3 class="feat-title"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.21-8.24 8.21z"/></svg><span>התכתבות בווטסאפ ישירות מתוך ה-CRM</span></h3>
+          <h3 id="whatsapp" class="feat-title"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.21-8.24 8.21z"/></svg><span>התכתבות בווטסאפ ישירות מתוך ה-CRM</span></h3>
           <p>ההודעות בוואטסאפ <b>נכנסות לבד לכרטיס של הלקוח, גם אלה שנשלחו מהטלפון,<br>ואפשר לענות ישר מתוך המערכת.</b></p>
           <p>ויש גם אפשרות <b>שכל הודעה קולית תתומלל לבד</b>, ככה שקוראים אותה במקום להקשיב לה.</p>
         </div>
@@ -146,7 +146,7 @@
     <section class="sec sec-band">
       <div class="wrap-wide feat">
         <div>
-          <h3 class="feat-title"><svg class="mail-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="#C89A3C"/><path d="M3.5 6.5 12 13l8.5-6.5" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>התכתבות במייל ישירות מתוך ה-CRM</span></h3>
+          <h3 id="email" class="feat-title"><svg class="mail-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="#C89A3C"/><path d="M3.5 6.5 12 13l8.5-6.5" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>התכתבות במייל ישירות מתוך ה-CRM</span></h3>
           <p><b>כל מייל שנשלח ללקוח או מגיע ממנו נכנס לבד לכרטיס שלו</b>, ואפשר לכתוב ולענות ישר מתוך המערכת, בלי לצאת מה-CRM בשביל ללכת לתיבת המייל.</p>
         </div>
         <figure class="shot shot-680"><img src="/assets/img/crm/email.webp?v=hd1" width="2094" height="2085" loading="lazy" alt="התכתבות במייל עם לקוחה, שמתועדת בתוך המערכת" /></figure>
@@ -155,7 +155,7 @@
     <section class="sec bg-light">
       <div class="wrap-wide feat">
         <div>
-          <h3 class="feat-title"><span class="feat-emoji" aria-hidden="true">📥</span><span>כל ההודעות הנכנסות במקום אחד</span></h3>
+          <h3 id="inbox" class="feat-title"><span class="feat-emoji" aria-hidden="true">📥</span><span>כל ההודעות הנכנסות במקום אחד</span></h3>
           <p><b>בשדרוג:</b> ההודעות מהוואטסאפ ומהמייל נכנסות ישירות למערכת,<br><b>וכבר מהתפריט רואים כמה הודעות עוד לא נקראו.</b></p>
         </div>
         <figure class="shot shot-mid"><img src="/assets/img/crm/inbox-menu.webp?v=2" width="1299" height="904" loading="lazy" alt="התפריט של המערכת עם מספר ההודעות שלא נקראו, מסומן בעיגול אדום" /></figure>
@@ -173,7 +173,7 @@
       <div class="wrap-wide feat feat-rev">
         <div>
           <span class="svc-ico" aria-hidden="true">✅</span>
-          <h3>משימות ופרויקטים שלא נותנים לשום דבר ליפול</h3>
+          <h3 id="tasks">משימות ופרויקטים שלא נותנים לשום דבר ליפול</h3>
           <p><b>משימות להיום, למחר ובאיחור, משימות חוזרות, פרויקטים,</b> וכל משימה מקושרת ללקוח ולשיחה שממנה היא נולדה.</p>
         </div>
         <figure class="shot"><img src="/assets/img/crm/tasks.webp?v=hd1" width="3360" height="2070" loading="lazy" alt="עמוד המשימות" /></figure>
@@ -221,7 +221,7 @@
       <div class="wrap-wide feat">
         <div>
           <span class="svc-ico" aria-hidden="true">🗓️</span>
-          <h3>יומן חכם, תזכורות אוטומטיות ללא המעורבות שלכם<br>וקביעת פגישות - שאתם קובעים, או שהליד או הלקוח קובעים בעצמם</h3>
+          <h3 id="calendar">יומן חכם, תזכורות אוטומטיות ללא המעורבות שלכם<br>וקביעת פגישות - שאתם קובעים, או שהליד או הלקוח קובעים בעצמם</h3>
           <p><b>היומן מסונכרן עם כל יומני הגוגל שלכם!</b> לא אחד אלא כולם - אישי, עבודה ועוד.</p>
           <p>ואתם מחליטים בדיוק <b>אילו זמנים פתוחים לקביעה ואילו חסומים.</b></p>
           <p><b>היומן חוסם לבד את השעות</b> שבאחד היומנים שלכם רשום כבר משהו (למשל רופא או אירוע משפחתי),<br><b>כך שלא תצטרכו לעשות עבודה כפולה</b>, ידנית גם ביומן של העסק!</p>
@@ -287,7 +287,7 @@
     <section class="sec sec-band">
       <div class="wrap-wide feat">
         <div>
-          <h3 class="feat-title"><span class="feat-emoji" aria-hidden="true">💰</span><span>גבייה ומסמכים פיננסיים</span></h3>
+          <h3 id="finance" class="feat-title"><span class="feat-emoji" aria-hidden="true">💰</span><span>גבייה ומסמכים פיננסיים</span></h3>
           <p><b>הצעות מחיר, חשבוניות וקבלות בכרטיס של כל לקוח</b> - ככה שרואים מיד כמה כסף יש לך מהלקוח, מבלי לחשב או לצאת למערכות חיצוניות של חשבוניות!</p>
         </div>
         <figure class="shot"><img src="/assets/img/crm/finance-card.webp?v=hd1" width="3050" height="1550" loading="lazy" alt="כרטיס לקוח עם המסמכים הפיננסיים וסך הכל, מסומנים בעיגול אדום" /></figure>
@@ -296,7 +296,7 @@
     <section class="sec bg-light">
       <div class="wrap-wide feat">
         <div>
-          <h3 class="feat-title"><span class="feat-emoji" aria-hidden="true">✍️</span><span>חוזה שנחתם בטלפון</span></h3>
+          <h3 id="contracts" class="feat-title"><span class="feat-emoji" aria-hidden="true">✍️</span><span>חוזה שנחתם בטלפון</span></h3>
           <p><b>בשדרוג:</b> <b>שולחים חוזה בוואטסאפ, הלקוח חותם באצבע, והחוזה החתום חוזר לבד לכרטיס שלו.</b></p>
         </div>
         <figure class="shot"><img src="/assets/img/crm/contract-card.webp?v=hd1" width="3050" height="1550" loading="lazy" alt="כרטיס לקוח עם אזור החוזים פתוח וחוזה חתום, מסומן בעיגול אדום" /></figure>
@@ -313,7 +313,7 @@
     <section class="sec sec-band">
       <div class="wrap-wide feat">
         <div>
-          <h3 class="feat-title"><span class="feat-emoji" aria-hidden="true">🎯</span><span>פילוח לידים וכרטיסים חכם</span></h3>
+          <h3 id="leads" class="feat-title"><span class="feat-emoji" aria-hidden="true">🎯</span><span>פילוח לידים וכרטיסים חכם</span></h3>
           <h4 class="feat-sub"><span aria-hidden="true">🎨</span> רואים בהצצה איפה תקוע הכסף</h4>
           <p>כל ליד מקבל סטטוס בצבע, וכל התצוגות נשמרות.</p>
           <p>ככה רואים בשנייה מי חדש, מי באמצע, ומי צריך פולואפ היום.</p>
@@ -329,7 +329,7 @@
       <div class="wrap-wide feat">
         <div>
           <span class="svc-ico" aria-hidden="true">🎯</span>
-          <h3>פילוח חכם של לידים ולקוחות</h3>
+          <h3 id="segments">פילוח חכם של לידים ולקוחות</h3>
           <p>לחיצה אחת, ורואים איפה כל הלידים עומדים ומאיפה הם הגיעו - לפי סטטוס ולפי מקור, לכל טווח תאריכים.</p>
           <p>ככה יודעים בדיוק איזה ערוץ מביא לידים, ואיפה הם נתקעים בדרך.</p>
         </div>
@@ -339,7 +339,7 @@
     <section class="sec sec-band">
       <div class="wrap-wide feat">
         <div>
-          <h3 class="feat-title"><span class="feat-emoji" aria-hidden="true">⏰</span><span>פולואפים שלא נשכחים</span></h3>
+          <h3 id="followups" class="feat-title"><span class="feat-emoji" aria-hidden="true">⏰</span><span>פולואפים שלא נשכחים</span></h3>
           <p>ליד לא ענה? נשלחה הצעת מחיר? יצא חוזה? <b>המערכת פותחת לבד משימה לחזור אליו ביום העסקים הבא.</b></p>
           <p><b>ככה אף ליד לא נשאר באוויר, ואף אחד לא צריך לזכור לחזור אליו.</b></p>
         </div>
@@ -350,7 +350,7 @@
       <div class="wrap-wide feat feat-rev">
         <div>
           <span class="svc-ico" aria-hidden="true">📊</span>
-          <h3>הכסף מול העיניים</h3>
+          <h3 id="money">הכסף מול העיניים</h3>
           <p>דשבורד עם פילוח שמראה <b>כמה כל נציג מכר ומתי ומה.</b></p>
           <p>והוא מראה במבט אחד כמה מכרתם היום, מתחילת החודש, בחודש שעבר ומתחילת השנה.<br>ואפשר לראות גם פירוט לפי חודשים, עם אפשרויות פילוח מתקדמות.</p>
         </div>
@@ -364,7 +364,7 @@
     <section class="sec sec-band">
       <div class="wrap-wide feat">
         <div>
-          <h3 class="feat-title"><span class="feat-emoji" aria-hidden="true">👥</span><span>תצוגת צוות - מה נופל בין הכיסאות</span></h3>
+          <h3 id="team" class="feat-title"><span class="feat-emoji" aria-hidden="true">👥</span><span>תצוגת צוות - מה נופל בין הכיסאות</span></h3>
           <p><b>ובתצוגת הצוות רואים מיד מה נופל בין הכיסאות:</b> לידים שממתינים לטיפול כי אין להם צעד הבא,<br>לידים שלא עונים ומתי ניסו להשיג אותם בפעם האחרונה,<br>וכמה לידים, משימות שעומדות בזמן, ומשימות באיחור יש לכל נציג.</p>
         </div>
         <figure class="shot"><img src="/assets/img/crm/leads-waiting.webp?v=hd1" width="3120" height="1577" loading="lazy" alt="לידים שממתינים לטיפול ולידים שלא עונים" /></figure>
@@ -378,7 +378,7 @@
       <div class="wrap-wide feat">
         <div>
           <span class="svc-ico" aria-hidden="true">🎙️</span>
-          <h3>שיחה שהופכת לסיכום ולמשימות</h3>
+          <h3 id="summary">שיחה שהופכת לסיכום ולמשימות</h3>
           <p><span class="strong">בשדרוג:</span> הקלטה של שיחת טלפון או של פגישה נכנסת לבד לכרטיס של הלקוח, מתומללת ומסוכמת אוטומטית.</p>
           <p>ובלחיצה על "לפרק למשימות", המערכת קוראת את הסיכום ואת התמלול, ופותחת את כל המשימות שיצאו מהשיחה, ממש בצד של אותו עמוד.</p>
           <p><b>וגם ללא שדרוג</b> - מה שאתה או הנציגים שלך סיכמו, המערכת מפרקת לבד למשימות - בצד ימין של המסך של הפגישה.</p>
@@ -392,7 +392,7 @@
     <section class="sec sec-dark">
       <div class="wrap team-free" style="text-align:center">
         <span class="svc-ico" aria-hidden="true">🤝</span>
-        <h2>כל הצוות בפנים בלי תשלום נוסף על כל עובד!</h2>
+        <h2 id="all-team">כל הצוות בפנים בלי תשלום נוסף על כל עובד!</h2>
         <p>יש לך 5 או 20 עובדים? זה לא משנה. תשלם כאילו שאין לך צוות בכלל.<br><span class="strong">מחיר אחד ללא דמי מנוי, חד פעמי וה-CRM שלך - לכל החיים!</span></p>
         <p class="team-note">כל עובד מקבל כניסה משלו והרשאות לפי התפקיד שלו.</p>
       </div>
@@ -401,7 +401,7 @@
     <!-- ===== 5 · בעלות ולא מנוי ===== -->
     <section class="sec sec-band">
       <div class="wrap">
-        <h2>למה ה-CRM נשאר שלך לתמיד ולא במנוי חודשי?</h2>
+        <h2 id="ownership">למה ה-CRM נשאר שלך לתמיד ולא במנוי חודשי?</h2>
         <p>ברוב המערכות משלמים כל חודש, לנצח, ועוד תוספת על כל משתמש. ככה שככל שהעסק גדל, גם החשבון גדל - על אותה מערכת בדיוק.</p>
         <p><span class="strong">אצלי זה עובד אחרת:</span> משלמים פעם אחת על הבנייה וההטמעה, והמערכת שלכם. היא יושבת על חשבון שפתוח על שמכם, ככה שהמידע של הלקוחות שלכם נשאר אצלכם, ואתם משלמים רק את עלות התשתית, ישירות לספק - <span class="strong">ולא אלפי שקלים בחודש, אלא כעשרות דולרים בודדים!</span></p>
       </div>
@@ -410,7 +410,7 @@
     <!-- ===== ועוד המון ===== -->
     <section class="sec bg-light">
       <div class="wrap-wide">
-        <h2 style="text-align:center;margin-bottom:clamp(22px,3vw,34px)">ועוד המון דברים שיש בפנים</h2>
+        <h2 id="more" style="text-align:center;margin-bottom:clamp(22px,3vw,34px)">ועוד המון דברים שיש בפנים</h2>
         <div class="grid grid-3 more-feats">
           <div class="card">
             <span class="svc-ico" aria-hidden="true">📥</span>
@@ -456,7 +456,7 @@
     <!-- ===== 6 · איך זה עובד ===== -->
     <section class="sec sec-band">
       <div class="wrap-wide">
-        <h2 style="text-align:center;margin-bottom:clamp(22px,3vw,34px)">איך זה עובד</h2>
+        <h2 id="how" style="text-align:center;margin-bottom:clamp(22px,3vw,34px)">איך זה עובד</h2>
         <div class="grid grid-3">
           <div class="card">
             <span class="step-num">1</span>
@@ -489,6 +489,27 @@
     </section>
 
   </main>
+  <nav class="crm-toc" aria-label="מה יש בעמוד">
+    <a href="#card">כרטיס לקוח</a>
+    <a href="#pages">סוגי עמודים</a>
+    <a href="#whatsapp">וואטסאפ</a>
+    <a href="#email">מייל</a>
+    <a href="#inbox">הודעות נכנסות</a>
+    <a href="#tasks">משימות</a>
+    <a href="#calendar">יומן ופגישות</a>
+    <a href="#finance">גבייה</a>
+    <a href="#contracts">חוזים</a>
+    <a href="#leads">פילוח לידים</a>
+    <a href="#segments">פילוח חכם</a>
+    <a href="#followups">פולואפים</a>
+    <a href="#money">הכסף מול העיניים</a>
+    <a href="#team">תצוגת צוות</a>
+    <a href="#summary">סיכום שיחה</a>
+    <a href="#all-team">כל הצוות בפנים</a>
+    <a href="#ownership">שלך לתמיד</a>
+    <a href="#more">ועוד המון</a>
+    <a href="#how">איך זה עובד</a>
+  </nav>
 
 
   <!-- ===== פוטר ===== -->
@@ -518,6 +539,6 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.21-8.24 8.21z"/></svg>
   </a>
 
-  <script src="/assets/site.js" defer></script>
+  <script src="/assets/site.js?v=toc1" defer></script>
 </body>
 </html>

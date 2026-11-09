@@ -84,3 +84,31 @@
     btn.textContent = open ? 'סגרו הכל' : 'פתחו הכל';
   });
 })();
+
+/* תפריט הצד בעמוד ה-CRM: מדגיש את הסקשן הנוכחי, ומסתתר מחוץ לחלק של היכולות */
+(function () {
+  var toc = document.querySelector('.crm-toc');
+  if (!toc) return;
+  var links = Array.prototype.slice.call(toc.querySelectorAll('a'));
+  var secs = links.map(function (a) {
+    var h = document.getElementById(a.getAttribute('href').slice(1));
+    return h ? (h.closest('section') || h) : null;
+  });
+  function spy() {
+    var vh = window.innerHeight, cur = -1;
+    secs.forEach(function (s, i) { if (s && s.getBoundingClientRect().top < vh * 0.4) cur = i; });
+    var first = secs[0].getBoundingClientRect().top, last = secs[secs.length - 1].getBoundingClientRect().bottom;
+    toc.classList.toggle('off', first > vh * 0.6 || last < vh * 0.3);
+    links.forEach(function (a, i) { a.classList.toggle('on', i === cur); });
+  }
+  links.forEach(function (a, i) {
+    a.addEventListener('click', function (e) {
+      if (!secs[i]) return;
+      e.preventDefault();
+      window.scrollTo({ top: secs[i].getBoundingClientRect().top + window.pageYOffset - 64, behavior: 'smooth' });
+    });
+  });
+  window.addEventListener('scroll', spy, { passive: true });
+  window.addEventListener('resize', spy);
+  spy();
+})();

@@ -1445,3 +1445,16 @@ main:has(.crm-hero) .about p:not(.about-hello) { font-size: 17px; }
 .shot-confirm { max-width: 470px; }
 .team-free p.team-note { font-size: clamp(14.5px, 1.4vw, 16px); opacity: .8; margin-top: 14px; }
 .feat > .shot-head + .shot { margin-top: clamp(-30px, -2.4vw, -14px); }
+/* תפריט צד בעמוד ה-CRM: כל כותרות הסקשנים, הסקשן הנוכחי מודגש בזהב. רק במסך רחב, שיש לו מקום בשוליים (אילנה, 9.11.2026) */
+.crm-toc { display: none; }
+@media (min-width: 1400px) {
+  .crm-toc { display: block; position: fixed; right: 10px; top: 50%; transform: translateY(-50%); z-index: 40; width: 128px; padding: 12px 0; background: rgba(255,255,255,.86); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border: 1px solid rgba(201,162,39,.35); border-radius: 16px; box-shadow: 0 10px 30px rgba(10,31,77,.12); transition: opacity .3s; }
+  .crm-toc a { display: block; padding: 3px 12px 3px 8px; font-size: 12.5px; line-height: 1.35; color: #5b6378; text-decoration: none; border-right: 3px solid transparent; }
+  .crm-toc a:hover { color: #0a1f4d; }
+  .crm-toc a.on { color: #0a1f4d; font-weight: 700; border-right-color: #c9a227; background: linear-gradient(270deg, rgba(201,162,39,.14), transparent); }
+  .crm-toc.off { opacity: 0; pointer-events: none; }
+}
+@media (min-width: 1500px) {
+  .crm-toc { right: 16px; width: 150px; }
+  .crm-toc a { font-size: 13px; padding: 4px 16px 4px 12px; }
+}
