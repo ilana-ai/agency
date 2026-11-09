@@ -1449,12 +1449,12 @@ main:has(.crm-hero) .about p:not(.about-hello) { font-size: 17px; }
 .crm-toc { display: none; }
 @media (min-width: 1440px) {
   .crm-toc { display: block; position: fixed; right: 6px; top: 50%; transform: translateY(-50%); z-index: 40; width: 152px; padding: 12px 0; background: rgba(255,255,255,.86); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border: 1px solid rgba(201,162,39,.35); border-radius: 16px; box-shadow: 0 10px 30px rgba(10,31,77,.12); transition: opacity .3s; }
-  .crm-toc a { display: block; padding: 4px 12px 4px 6px; font-size: 14.5px; line-height: 1.3; color: #5b6378; text-decoration: none; border-right: 3px solid transparent; }
+  .crm-toc a { display: block; padding: 6px 12px 6px 6px; font-size: 14.5px; line-height: 1.3; color: #5b6378; text-decoration: none; border-right: 3px solid transparent; }
   .crm-toc a:hover { color: #0a1f4d; }
   .crm-toc a.on { color: #0a1f4d; font-weight: 700; border-right-color: #c9a227; background: linear-gradient(270deg, rgba(201,162,39,.14), transparent); }
   .crm-toc.off { opacity: 0; pointer-events: none; }
 }
 @media (min-width: 1540px) {
   .crm-toc { right: 14px; width: 172px; }
-  .crm-toc a { font-size: 15.5px; padding: 4px 16px 4px 10px; }
+  .crm-toc a { font-size: 15.5px; padding: 6px 16px 6px 10px; }
 }
