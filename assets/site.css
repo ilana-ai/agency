@@ -1455,7 +1455,7 @@ main:has(.crm-hero) .about p:not(.about-hello) { font-size: 17px; }
   .crm-toc-tab { position: absolute; left: -24px; top: 40px; width: 24px; height: 70px; padding: 0; border: 0; border-radius: 12px 0 0 12px; cursor: pointer; font: inherit; font-size: 18px; font-weight: 800; color: #0a1f4d; background: linear-gradient(180deg, #f3dc8a, #c9a227); box-shadow: -3px 4px 12px rgba(10,31,77,.3); transition: all .35s ease; }
   .crm-toc-tab .lbl { display: none; }
   /* כפתור זהב בתחתית התפריט: לשריון שיחה */
-  .crm-toc a.crm-toc-cta { display: block; margin: 10px 10px 4px; padding: 10px 8px; border: 0; border-radius: 999px; text-align: center; font-size: 14px; font-weight: 800; line-height: 1.25; color: #0a1f4d; background: linear-gradient(135deg, #f3dc8a, #c9a227); box-shadow: 0 6px 16px rgba(201,162,39,.35); }
+  .crm-toc a.crm-toc-cta { display: flex; align-items: center; justify-content: center; gap: 6px; white-space: nowrap; height: 42px; margin: 8px 0 0; padding: 0 6px; border: 0; border-radius: 0 0 15px 15px; font-size: 13.5px; font-weight: 800; line-height: 1; color: #0a1f4d; background: linear-gradient(135deg, #f3dc8a, #c9a227); }
   .crm-toc a.crm-toc-cta:hover { color: #0a1f4d; filter: brightness(1.05); }
   .crm-toc.closed, html:not(.toc-open) .crm-toc { transform: translate(calc(100% + var(--r)), -50%); }
   .crm-toc.closed .crm-toc-tab, html:not(.toc-open) .crm-toc-tab { width: 32px; height: 120px; left: -32px; writing-mode: vertical-rl; font-size: 14px; }
@@ -1485,4 +1485,8 @@ main:has(.crm-hero) .about p:not(.about-hello) { font-size: 17px; }
 }
 @media (min-width: 1540px) and (max-width: 1720px) {
   html.toc-open main > section.sec-dark ~ section { padding-right: calc(var(--pad) + 224px); }
+}
+/* פס הזהב של השריון יושב צמוד לתחתית הכרטיס, בכל גובה מסך */
+@media (min-width: 1200px) {
+  .crm-toc { padding-bottom: 0; }
 }
