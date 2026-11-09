@@ -131,3 +131,37 @@
   window.addEventListener('resize', spy);
   spy();
 })();
+
+/* תפריט ה-CRM בנייד: לשונית בצד ימין שפותחת פאנל עם כל הסקשנים. נבנה מהקישורים של תפריט הצד של המחשב, כדי שתהיה רשימה אחת לתחזק */
+(function () {
+  var toc = document.querySelector('.crm-toc');
+  if (!toc) return;
+  var root = document.createElement('div'); root.className = 'crm-mtoc';
+  var dim = document.createElement('div'); dim.className = 'crm-mtoc-dim';
+  var panel = document.createElement('nav'); panel.className = 'crm-mtoc-panel'; panel.id = 'crm-mtoc-panel'; panel.setAttribute('aria-label', 'תפריט ה-CRM');
+  var ttl = document.createElement('p'); ttl.className = 'ttl'; ttl.textContent = 'מה יש בעמוד'; panel.appendChild(ttl);
+  Array.prototype.forEach.call(toc.querySelectorAll('a'), function (a) {
+    var c = a.cloneNode(true);
+    if (c.classList.contains('crm-toc-cta')) { c.className = 'cta'; }
+    else { c.removeAttribute('class'); }
+    panel.appendChild(c);
+  });
+  var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'crm-mtoc-btn';
+  btn.textContent = 'תפריט ה-CRM'; btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-controls', 'crm-mtoc-panel');
+  root.appendChild(dim); root.appendChild(panel); root.appendChild(btn);
+  document.body.appendChild(root);
+  function setOpen(o) { root.classList.toggle('open', o); btn.setAttribute('aria-expanded', o ? 'true' : 'false'); }
+  btn.addEventListener('click', function () { setOpen(!root.classList.contains('open')); });
+  dim.addEventListener('click', function () { setOpen(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+  Array.prototype.forEach.call(panel.querySelectorAll('a:not(.cta)'), function (a) {
+    a.addEventListener('click', function (e) {
+      var h = document.getElementById(a.getAttribute('href').slice(1));
+      setOpen(false);
+      if (!h) return;
+      e.preventDefault();
+      var sec = h.closest('section') || h;
+      window.scrollTo({ top: sec.getBoundingClientRect().top + window.pageYOffset - 64, behavior: 'smooth' });
+    });
+  });
+})();
