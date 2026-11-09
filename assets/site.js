@@ -176,10 +176,13 @@
     });
   });
   var hero = document.querySelector('.crm-hero');
+  var secs = document.querySelectorAll('main > section'), last = secs[secs.length - 1];
   function tint() {
     var bar = document.querySelector('.site-head').getBoundingClientRect().bottom;
     var past = !hero || hero.getBoundingClientRect().bottom <= bar + 1;
-    btn.classList.toggle('gold', past);
+    // גם בסקשן האחרון (ההזמנה לשיחה, עם כפתור השריון הזהוב) הכפתור חוזר להיות שקוף, ברגע שהסקשן נכנס למסך (אילנה, 9.11.2026)
+    var atEnd = last && last !== hero && last.getBoundingClientRect().top < window.innerHeight;
+    btn.classList.toggle('gold', past && !atEnd);
     document.documentElement.classList.toggle('crm-in-hero', !past);  // בנייד: עיגול הוואטסאפ מופיע רק אחרי הפתיחה
   }
   window.addEventListener('scroll', tint, { passive: true });
