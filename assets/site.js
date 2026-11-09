@@ -85,7 +85,7 @@
   });
 })();
 
-/* תפריט הצד בעמוד ה-CRM: מדגיש את הסקשן הנוכחי, ומסתתר מחוץ לחלק של היכולות */
+/* תפריט הצד בעמוד ה-CRM: גלוי תמיד, ומדגיש את הסקשן הנוכחי */
 (function () {
   var toc = document.querySelector('.crm-toc');
   if (!toc) return;
@@ -97,8 +97,6 @@
   function spy() {
     var vh = window.innerHeight, cur = -1;
     secs.forEach(function (s, i) { if (s && s.getBoundingClientRect().top < vh * 0.4) cur = i; });
-    var first = secs[0].getBoundingClientRect().top, last = secs[secs.length - 1].getBoundingClientRect().bottom;
-    toc.classList.toggle('off', first > vh * 0.6 || last < vh * 0.3);
     links.forEach(function (a, i) { a.classList.toggle('on', i === cur); });
   }
   links.forEach(function (a, i) {
