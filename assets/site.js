@@ -110,6 +110,7 @@
   if (tab) {
     var setClosed = function (c) {
       toc.classList.toggle('closed', c);
+      document.documentElement.classList.toggle('toc-open', !c);
       tab.setAttribute('aria-expanded', c ? 'false' : 'true');
       tab.setAttribute('aria-label', c ? 'פתיחת התפריט' : 'קיפול התפריט');
       tab.querySelector('.arr').textContent = c ? '›' : '‹';

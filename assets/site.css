@@ -1462,3 +1462,11 @@ main:has(.crm-hero) .about p:not(.about-hello) { font-size: 17px; }
   .crm-toc { --r: 14px; width: 172px; }
   .crm-toc a { font-size: 15.5px; padding: 6px 16px 6px 10px; }
 }
+/* כשהתפריט פתוח, התוכן זז שמאלה כדי שהתפריט והלשונית לא יעלו על הטקסט (מסך 14 אינץ' של אילנה). במסך רחב מאוד יש מספיק שוליים ולא צריך */
+@media (min-width: 1440px) and (max-width: 1720px) {
+  html.toc-open main { padding-right: 196px; transition: padding .35s ease; }
+  html main { transition: padding .35s ease; }
+}
+@media (min-width: 1540px) and (max-width: 1720px) {
+  html.toc-open main { padding-right: 224px; }
+}
