@@ -132,26 +132,25 @@
   spy();
 })();
 
-/* תפריט ה-CRM בנייד: לשונית בצד ימין שפותחת פאנל עם כל הסקשנים. נבנה מהקישורים של תפריט הצד של המחשב, כדי שתהיה רשימה אחת לתחזק */
+/* תפריט ה-CRM בנייד: כפתור בצד ימין של הפס העליון שפותח כרטיס עם כל הסקשנים. נבנה מהקישורים של תפריט הצד של המחשב, כדי שתהיה רשימה אחת לתחזק.
+   בסקשן הפתיחה הכפתור שקוף, ומהרגע שהפתיחה נגללת מתחת לפס העליון הוא נהיה זהב */
 (function () {
   var toc = document.querySelector('.crm-toc');
-  if (!toc) return;
-  var root = document.createElement('div'); root.className = 'crm-mtoc';
-  var dim = document.createElement('div'); dim.className = 'crm-mtoc-dim';
+  var head = document.querySelector('.site-head .head-in');
+  if (!toc || !head) return;
   var panel = document.createElement('nav'); panel.className = 'crm-mtoc-panel'; panel.id = 'crm-mtoc-panel'; panel.setAttribute('aria-label', 'תפריט ה-CRM');
   var ttl = document.createElement('p'); ttl.className = 'ttl'; ttl.textContent = 'מה יש בעמוד'; panel.appendChild(ttl);
   Array.prototype.forEach.call(toc.querySelectorAll('a'), function (a) {
     var c = a.cloneNode(true);
-    if (c.classList.contains('crm-toc-cta')) { c.className = 'cta'; }
-    else { c.removeAttribute('class'); }
+    if (c.classList.contains('crm-toc-cta')) { c.className = 'cta'; } else { c.removeAttribute('class'); }
     panel.appendChild(c);
   });
   var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'crm-mtoc-btn';
   btn.textContent = 'תפריט ה-CRM'; btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-controls', 'crm-mtoc-panel');
-  root.appendChild(dim); root.appendChild(panel); root.appendChild(btn);
-  document.body.appendChild(root);
-  function setOpen(o) { root.classList.toggle('open', o); btn.setAttribute('aria-expanded', o ? 'true' : 'false'); }
-  btn.addEventListener('click', function () { setOpen(!root.classList.contains('open')); });
+  var dim = document.createElement('div'); dim.className = 'crm-mtoc-dim';
+  head.appendChild(btn); head.appendChild(panel); document.body.appendChild(dim);
+  function setOpen(o) { panel.classList.toggle('open', o); dim.classList.toggle('open', o); btn.setAttribute('aria-expanded', o ? 'true' : 'false'); }
+  btn.addEventListener('click', function () { setOpen(!panel.classList.contains('open')); });
   dim.addEventListener('click', function () { setOpen(false); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
   Array.prototype.forEach.call(panel.querySelectorAll('a:not(.cta)'), function (a) {
@@ -164,4 +163,12 @@
       window.scrollTo({ top: sec.getBoundingClientRect().top + window.pageYOffset - 64, behavior: 'smooth' });
     });
   });
+  var hero = document.querySelector('.crm-hero');
+  function tint() {
+    var bar = document.querySelector('.site-head').getBoundingClientRect().bottom;
+    btn.classList.toggle('gold', !hero || hero.getBoundingClientRect().bottom <= bar + 1);
+  }
+  window.addEventListener('scroll', tint, { passive: true });
+  window.addEventListener('resize', tint);
+  tint();
 })();
