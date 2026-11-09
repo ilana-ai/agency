@@ -116,9 +116,15 @@
       tab.querySelector('.arr').textContent = c ? '›' : '‹';
       try { localStorage.setItem('crmTocClosed', c ? '1' : '0'); } catch (e) {}
     };
-    var saved = false;
-    try { saved = localStorage.getItem('crmTocClosed') === '1'; } catch (e) {}
-    setClosed(saved);
+    // בלפטופ צר (מתחת ל-1440) התפריט נפתח סגור, אלא אם הגולש כבר פתח אותו בעבר
+    var saved = null;
+    try { saved = localStorage.getItem('crmTocClosed'); } catch (e) {}
+    var startClosed = saved === null ? window.innerWidth < 1440 : saved === '1';
+    toc.classList.toggle('closed', startClosed);
+    document.documentElement.classList.toggle('toc-open', !startClosed);
+    tab.setAttribute('aria-expanded', startClosed ? 'false' : 'true');
+    tab.setAttribute('aria-label', startClosed ? 'פתיחת התפריט' : 'קיפול התפריט');
+    tab.querySelector('.arr').textContent = startClosed ? '›' : '‹';
     tab.addEventListener('click', function () { setClosed(!toc.classList.contains('closed')); });
   }
   window.addEventListener('scroll', spy, { passive: true });
