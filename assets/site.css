@@ -1445,16 +1445,20 @@ main:has(.crm-hero) .about p:not(.about-hello) { font-size: 17px; }
 .shot-confirm { max-width: 470px; }
 .team-free p.team-note { font-size: clamp(14.5px, 1.4vw, 16px); opacity: .8; margin-top: 14px; }
 .feat > .shot-head + .shot { margin-top: clamp(-30px, -2.4vw, -14px); }
-/* תפריט צד בעמוד ה-CRM: כל כותרות הסקשנים, הסקשן הנוכחי מודגש בזהב. רק במסך רחב, שיש לו מקום בשוליים (אילנה, 9.11.2026) */
+/* תפריט צד בעמוד ה-CRM: כרטיס כהה עם כל כותרות הסקשנים, הסקשן הנוכחי בזהב, ולשונית זהב שמקפלת ופותחת אותו. רק במסך רחב, שיש לו מקום בשוליים (אילנה, 9.11.2026) */
 .crm-toc { display: none; }
 @media (min-width: 1440px) {
-  .crm-toc { display: block; position: fixed; right: 6px; top: 50%; transform: translateY(-50%); z-index: 40; width: 152px; padding: 12px 0; background: rgba(255,255,255,.86); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border: 1px solid rgba(201,162,39,.35); border-radius: 16px; box-shadow: 0 10px 30px rgba(10,31,77,.12); transition: opacity .3s; }
-  .crm-toc a { display: block; padding: 6px 12px 6px 6px; font-size: 14.5px; line-height: 1.3; color: #5b6378; text-decoration: none; border-right: 3px solid transparent; }
-  .crm-toc a:hover { color: #0a1f4d; }
-  .crm-toc a.on { color: #0a1f4d; font-weight: 700; border-right-color: #c9a227; background: linear-gradient(270deg, rgba(201,162,39,.14), transparent); }
-  .crm-toc.off { opacity: 0; pointer-events: none; }
+  .crm-toc { --r: 6px; display: block; position: fixed; right: var(--r); top: 50%; transform: translateY(-50%); z-index: 40; width: 152px; padding: 12px 0; background: rgba(10,31,77,.95); border: 1px solid rgba(201,162,39,.55); border-radius: 16px; box-shadow: 0 10px 30px rgba(10,31,77,.25); transition: transform .35s ease; }
+  .crm-toc a { display: block; padding: 6px 12px 6px 6px; font-size: 14.5px; line-height: 1.3; color: #e8ecf6; font-weight: 600; text-decoration: none; border-right: 3px solid transparent; }
+  .crm-toc a:hover { color: #fff; }
+  .crm-toc a.on { color: #f3dc8a; font-weight: 800; border-right-color: #c9a227; background: linear-gradient(270deg, rgba(201,162,39,.25), transparent); }
+  .crm-toc-tab { position: absolute; left: -24px; top: 40px; width: 24px; height: 70px; padding: 0; border: 0; border-radius: 12px 0 0 12px; cursor: pointer; font: inherit; font-size: 18px; font-weight: 800; color: #0a1f4d; background: linear-gradient(180deg, #f3dc8a, #c9a227); box-shadow: -3px 4px 12px rgba(10,31,77,.3); transition: all .35s ease; }
+  .crm-toc-tab .lbl { display: none; }
+  .crm-toc.closed { transform: translate(calc(100% + var(--r)), -50%); }
+  .crm-toc.closed .crm-toc-tab { width: 32px; height: 120px; left: -32px; writing-mode: vertical-rl; font-size: 14px; }
+  .crm-toc.closed .crm-toc-tab .lbl { display: inline; }
 }
 @media (min-width: 1540px) {
-  .crm-toc { right: 14px; width: 172px; }
+  .crm-toc { --r: 14px; width: 172px; }
   .crm-toc a { font-size: 15.5px; padding: 6px 16px 6px 10px; }
 }

@@ -106,6 +106,20 @@
       window.scrollTo({ top: secs[i].getBoundingClientRect().top + window.pageYOffset - 64, behavior: 'smooth' });
     });
   });
+  var tab = toc.querySelector('.crm-toc-tab');
+  if (tab) {
+    var setClosed = function (c) {
+      toc.classList.toggle('closed', c);
+      tab.setAttribute('aria-expanded', c ? 'false' : 'true');
+      tab.setAttribute('aria-label', c ? 'פתיחת התפריט' : 'קיפול התפריט');
+      tab.querySelector('.arr').textContent = c ? '›' : '‹';
+      try { localStorage.setItem('crmTocClosed', c ? '1' : '0'); } catch (e) {}
+    };
+    var saved = false;
+    try { saved = localStorage.getItem('crmTocClosed') === '1'; } catch (e) {}
+    setClosed(saved);
+    tab.addEventListener('click', function () { setClosed(!toc.classList.contains('closed')); });
+  }
   window.addEventListener('scroll', spy, { passive: true });
   window.addEventListener('resize', spy);
   spy();
