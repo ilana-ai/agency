@@ -1492,3 +1492,9 @@ main:has(.crm-hero) .about p:not(.about-hello) { font-size: 17px; }
 @media (min-width: 1200px) {
   .crm-toc { padding-bottom: 0; }
 }
+/* איך זה עובד בסוף עמוד ה-CRM: טקסט גדול יותר בנייד בלבד (אילנה, 9.11.2026) */
+@media (max-width: 720px) {
+  #how { font-size: 26px; }
+  .how-steps .card h3 { font-size: 20px; }
+  .how-steps .card p { font-size: 17.5px; line-height: 1.5; }
+}
