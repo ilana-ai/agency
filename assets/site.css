@@ -1449,7 +1449,7 @@ main:has(.crm-hero) .about p:not(.about-hello) { font-size: 17px; }
 .crm-toc { display: none; }
 @media (min-width: 1200px) {
   .crm-toc { --r: 6px; display: block; position: fixed; right: var(--r); top: 50%; transform: translateY(-50%); z-index: 40; width: 152px; padding: 12px 0; background: rgba(255,255,255,.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(201,162,39,.45); border-radius: 16px; box-shadow: 0 10px 30px rgba(10,31,77,.14); transition: transform .35s ease; }
-  .crm-toc a { display: block; padding: 6px 12px 6px 6px; font-size: 14.5px; line-height: 1.3; color: #3a4560; font-weight: 600; text-decoration: none; border-right: 3px solid transparent; }
+  .crm-toc a { display: block; padding: 6px 12px 6px 6px; font-size: 14.5px; line-height: 1.3; color: #1b3a75; font-weight: 600; text-decoration: none; border-right: 3px solid transparent; }
   .crm-toc a:hover { color: #0a1f4d; }
   .crm-toc a.on { color: #0a1f4d; font-weight: 800; border-right-color: #c9a227; background: linear-gradient(270deg, rgba(201,162,39,.2), transparent); }
   .crm-toc-tab { position: absolute; left: -24px; top: 40px; width: 24px; height: 70px; padding: 0; border: 0; border-radius: 12px 0 0 12px; cursor: pointer; font: inherit; font-size: 18px; font-weight: 800; color: #0a1f4d; background: linear-gradient(180deg, #f3dc8a, #c9a227); box-shadow: -3px 4px 12px rgba(10,31,77,.3); transition: all .35s ease; }
