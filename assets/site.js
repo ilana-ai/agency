@@ -158,7 +158,7 @@
   list.addEventListener('scroll', moveThumb, { passive: true });
   window.addEventListener('resize', moveThumb);
   var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'crm-mtoc-btn';
-  btn.textContent = 'תפריט ה-CRM'; btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-controls', 'crm-mtoc-panel');
+  btn.textContent = toc.getAttribute('data-mlabel') || 'תפריט ה-CRM'; btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-controls', 'crm-mtoc-panel');
   var dim = document.createElement('div'); dim.className = 'crm-mtoc-dim';
   head.appendChild(btn); head.appendChild(panel); document.body.appendChild(dim);
   function setOpen(o) { panel.classList.toggle('open', o); dim.classList.toggle('open', o); btn.setAttribute('aria-expanded', o ? 'true' : 'false'); if (o) moveThumb(); }
