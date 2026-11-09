@@ -1513,3 +1513,8 @@ main:has(.crm-hero) .about p:not(.about-hello) { font-size: 17px; }
   .crm-mtoc-dim { display: block; position: fixed; inset: 0; z-index: 59; background: rgba(10,31,77,.35); opacity: 0; pointer-events: none; transition: opacity .25s; }
   .crm-mtoc-dim.open { opacity: 1; pointer-events: auto; }
 }
+/* עמוד ה-CRM בנייד: בסקשן הפתיחה כבר יש כפתור וואטסאפ וכפתור זהב, אז עיגול הוואטסאפ הצף מופיע רק אחרי שגוללים מתחת לפתיחה (אילנה, 9.11.2026) */
+@media (max-width: 768px) {
+  .wa-float { transition: transform .16s ease, opacity .3s ease, visibility .3s; }
+  html.crm-in-hero .wa-float { opacity: 0; visibility: hidden; transform: scale(.7); }
+}

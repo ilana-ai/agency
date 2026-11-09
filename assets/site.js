@@ -166,7 +166,9 @@
   var hero = document.querySelector('.crm-hero');
   function tint() {
     var bar = document.querySelector('.site-head').getBoundingClientRect().bottom;
-    btn.classList.toggle('gold', !hero || hero.getBoundingClientRect().bottom <= bar + 1);
+    var past = !hero || hero.getBoundingClientRect().bottom <= bar + 1;
+    btn.classList.toggle('gold', past);
+    document.documentElement.classList.toggle('crm-in-hero', !past);  // בנייד: עיגול הוואטסאפ מופיע רק אחרי הפתיחה
   }
   window.addEventListener('scroll', tint, { passive: true });
   window.addEventListener('resize', tint);
