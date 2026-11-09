@@ -89,7 +89,7 @@
 (function () {
   var toc = document.querySelector('.crm-toc');
   if (!toc) return;
-  var links = Array.prototype.slice.call(toc.querySelectorAll('a'));
+  var links = Array.prototype.slice.call(toc.querySelectorAll('a:not(.crm-toc-cta)'));
   var secs = links.map(function (a) {
     var h = document.getElementById(a.getAttribute('href').slice(1));
     return h ? (h.closest('section') || h) : null;
