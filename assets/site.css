@@ -1526,3 +1526,8 @@ main:has(.crm-hero) .about p:not(.about-hello) { font-size: 17px; }
 .yoman-hero + .sec { padding-top: calc(min(600px, 92vw) * 0.33); }
 /* עמוד היומן, "מה היומן חוסך לכם": כותרות הכרטיסים טיפה גדולות יותר ובנייבי (אילנה, 10.11.2026) */
 .benefit-cards .card h3 { font-size: 1.25em; color: var(--navy); }
+/* עמוד היומן, "למי היומן הכי מתאים?": ריבועים קטנים עם אייקון ושם (אילנה, 10.11.2026) */
+.who-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(10px, 1.4vw, 16px); max-width: 1000px; margin-inline: auto; }
+.who-card { display: flex; align-items: center; gap: 10px; padding: 14px 16px; background: #fff; border: 1px solid rgba(200,154,60,.35); border-radius: 14px; box-shadow: 0 6px 18px rgba(10,31,77,.07); font-weight: 700; color: var(--navy); font-size: clamp(15px, 1.4vw, 16.5px); line-height: 1.3; }
+.who-card span { font-size: 1.45em; flex-shrink: 0; }
+@media (max-width: 900px) { .who-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
