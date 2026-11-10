@@ -1521,3 +1521,6 @@ main:has(.crm-hero) .about p:not(.about-hello) { font-size: 17px; }
   .wa-float { transition: transform .16s ease, opacity .3s ease, visibility .3s; }
   html.crm-in-hero .wa-float { opacity: 0; visibility: hidden; transform: scale(.7); }
 }
+/* עמוד היומן: משפט הפתיחה רחב יותר, כדי ש"מהוואטסאפ!" לא יישאר לבד בשורה, ופחות רווח בין המוקאפ ל"מכירים את זה?" (אילנה, 10.11.2026) */
+.yoman-hero .lead { max-width: 690px; text-wrap: balance; }
+.yoman-hero + .sec { padding-top: calc(min(600px, 92vw) * 0.33); }
