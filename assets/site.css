@@ -1524,3 +1524,5 @@ main:has(.crm-hero) .about p:not(.about-hello) { font-size: 17px; }
 /* עמוד היומן: משפט הפתיחה רחב יותר, כדי ש"מהוואטסאפ!" לא יישאר לבד בשורה, ופחות רווח בין המוקאפ ל"מכירים את זה?" (אילנה, 10.11.2026) */
 .yoman-hero .lead { max-width: 690px; text-wrap: balance; }
 .yoman-hero + .sec { padding-top: calc(min(600px, 92vw) * 0.33); }
+/* עמוד היומן, "מה היומן חוסך לכם": כותרות הכרטיסים טיפה גדולות יותר ובנייבי (אילנה, 10.11.2026) */
+.benefit-cards .card h3 { font-size: 1.25em; color: var(--navy); }
