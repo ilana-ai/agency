@@ -1564,3 +1564,9 @@ h2.h2-gold-line { padding-bottom: 16px; background: linear-gradient(90deg, #E2BE
 .inside-kicker { display: block; color: #fff; font-size: clamp(19px, 2.3vw, 24px); font-weight: 700; margin-bottom: 4px; }
 .shot-head-sm .feat-sub { font-size: clamp(16px, 1.7vw, 18px); margin: 0; }
 .feat > .shot-head-sm + .shot { margin-top: calc(-1 * clamp(14px, 2vw, 26px)); }
+
+/* 🦶 הפוטר (12.11.2026): בשורה הראשונה הרשתות והקישורים הראשיים, ובשנייה הקישורים המשפטיים והזכויות */
+.foot-top { justify-content: space-between; gap: 14px 24px; }
+.foot-links { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
+.foot-bottom { justify-content: flex-start; gap: 4px 10px; font-size: 13px; }
+@media (max-width: 768px) { .foot-top { justify-content: flex-start; } }
