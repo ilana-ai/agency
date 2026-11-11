@@ -1553,4 +1553,4 @@ main:has(.crm-hero) .about p:not(.about-hello) { font-size: 17px; }
 .inside-divider { border-top: 1px solid rgba(201,162,39,.35); }
 @media (max-width: 520px) { .inside-split { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .inside-cube, .inside-cube .ic { transition: none; } .inside-cube:hover, .inside-cube:hover .ic { transform: none; } }
-.bg-light p.who-lead, .sec-band p.who-lead, p.who-lead { text-align: center; font-size: clamp(19px, 2.2vw, 23px); font-weight: 800; color: #1b3a75; max-width: 820px; margin: 0 auto clamp(20px, 2.8vw, 30px); line-height: 1.4; }
+.bg-light p.who-lead, .sec-band p.who-lead, p.who-lead { text-align: center; font-size: clamp(17px, 1.9vw, 20px); font-weight: 800; color: #1b3a75; max-width: 820px; margin: 0 auto clamp(20px, 2.8vw, 30px); line-height: 1.4; }
