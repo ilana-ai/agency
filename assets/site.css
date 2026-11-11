@@ -1558,3 +1558,9 @@ main:has(.crm-hero) .about p:not(.about-hello) { font-size: 17px; }
 .inside-divider { padding-block: clamp(20px, 2.6vw, 30px); }
 .inside-divider h2 { margin-bottom: 0; }
 .inside-divider + .sec { padding-top: clamp(22px, 3vw, 34px); }
+
+/* 📅 עמוד היומן (11.11.2026): קו זהב קצר באמצע מתחת לכותרת, "מבחוץ" בלבן מעל הכותרת הזהובה, וכותרת קטנה וקרובה לתמונה */
+h2.h2-gold-line { padding-bottom: 16px; background: linear-gradient(90deg, #E2BE5E, #C89A3C) no-repeat center bottom / 74px 3px; }
+.inside-kicker { display: block; color: #fff; font-size: clamp(16px, 1.8vw, 19px); font-weight: 700; margin-bottom: 4px; }
+.shot-head-sm .feat-sub { font-size: clamp(16px, 1.7vw, 18px); margin: 0; }
+.feat > .shot-head-sm + .shot { margin-top: calc(-1 * clamp(14px, 2vw, 26px)); }
