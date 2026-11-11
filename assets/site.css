@@ -1540,7 +1540,7 @@ main:has(.crm-hero) .about p:not(.about-hello) { font-size: 17px; }
 /* למי זה מתאים: האייקון מסתובב ומתנפח בריחוף, והשורות מתחת בגודל של "מכירים את זה?" (אילנה, 11.11.2026) */
 .who-card span { display: inline-block; transition: transform .6s cubic-bezier(.34,1.56,.64,1); }
 .who-card:hover span { transform: rotate(360deg) scale(1.25); }
-.who-notes p { font-size: 19px; }
+.who-notes p { font-size: 18px; }
 @media (prefers-reduced-motion: reduce) { .who-card span { transition: none; } .who-card:hover span { transform: none; } }
 /* עמוד היומן, "מה יש בפנים?": שתי קוביות - מבחוץ ומבפנים (אילנה, 11.11.2026) */
 .inside-split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(12px, 1.6vw, 18px); max-width: 600px; margin: clamp(18px, 2.6vw, 28px) auto 0; }
