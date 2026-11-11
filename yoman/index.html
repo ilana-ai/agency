@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/site.css?v=20261111a" />
+  <link rel="stylesheet" href="/assets/site.css?v=20261111b" />
   <script>try{var c=localStorage.getItem('crmTocClosed');if(c==='1'||(c===null&&innerWidth<1440))document.documentElement.classList.remove('toc-open')}catch(e){}</script>
 </head>
 <body>
@@ -150,7 +150,16 @@
     <section class="sec sec-dark">
       <div class="wrap inside-intro" style="text-align:center">
         <h2>מה יש בפנים?</h2>
-        <p>קודם, מה הלקוחות שלכם רואים</p>
+        <div class="inside-split">
+          <a class="inside-cube" href="#outside"><span class="ic" aria-hidden="true">👀</span><span class="k">מבחוץ</span><span class="t">מה הלקוחות שלכם רואים</span></a>
+          <a class="inside-cube" href="#inside"><span class="ic" aria-hidden="true">⚙️</span><span class="k">מבפנים</span><span class="t">מה אתם מגדירים ורואים</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec sec-dark inside-divider">
+      <div class="wrap inside-intro" style="text-align:center">
+        <h2 id="outside" class="gold-text">מה הלקוחות שלכם רואים:</h2>
       </div>
     </section>
 
@@ -225,7 +234,7 @@
 
     <section class="sec sec-dark">
       <div class="wrap inside-intro" style="text-align:center">
-        <h2>ומה אתם רואים, מאחורי הקלעים</h2>
+        <h2 id="inside" class="gold-text">מה אתם מגדירים ורואים:</h2>
         <p>המסכים שבהם אתם מנהלים את היומן החכם</p>
       </div>
     </section>

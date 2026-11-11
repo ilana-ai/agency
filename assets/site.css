@@ -1542,3 +1542,14 @@ main:has(.crm-hero) .about p:not(.about-hello) { font-size: 17px; }
 .who-card:hover span { transform: rotate(360deg) scale(1.25); }
 .who-notes p { font-size: 17px; }
 @media (prefers-reduced-motion: reduce) { .who-card span { transition: none; } .who-card:hover span { transform: none; } }
+/* עמוד היומן, "מה יש בפנים?": שתי קוביות - מבחוץ ומבפנים (אילנה, 11.11.2026) */
+.inside-split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(14px, 2vw, 24px); max-width: 760px; margin: clamp(18px, 2.6vw, 28px) auto 0; }
+.inside-cube { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: clamp(18px, 2.4vw, 26px) 16px; border: 1px solid rgba(201,162,39,.6); border-radius: 18px; background: rgba(255,255,255,.06); color: #fff; text-decoration: none; transition: transform .3s ease, background .3s ease, box-shadow .3s ease; }
+.inside-cube:hover { transform: translateY(-5px); background: rgba(255,255,255,.12); box-shadow: 0 16px 34px rgba(0,0,0,.28); }
+.inside-cube .ic { font-size: 34px; line-height: 1; display: inline-block; transition: transform .6s cubic-bezier(.34,1.56,.64,1); }
+.inside-cube:hover .ic { transform: rotate(360deg) scale(1.2); }
+.inside-cube .k { font-size: clamp(22px, 2.6vw, 28px); font-weight: 800; color: #f3dc8a; }
+.inside-cube .t { font-size: clamp(16px, 1.8vw, 19px); font-weight: 600; color: #fff; }
+.inside-divider { border-top: 1px solid rgba(201,162,39,.35); }
+@media (max-width: 520px) { .inside-split { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .inside-cube, .inside-cube .ic { transition: none; } .inside-cube:hover, .inside-cube:hover .ic { transform: none; } }
