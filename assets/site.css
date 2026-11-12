@@ -1583,3 +1583,4 @@ a.up-more:hover { text-decoration: underline; }
 .up-cards .card { text-align: center; }
 .up-cards .card .svc-ico { display: inline-block; }
 .up-cards .card h3 { font-size: clamp(21px, 2.3vw, 25px); }
+.up-cards .card .svc-ico svg { width: 26px !important; height: 26px !important; display: block; }
