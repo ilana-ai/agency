@@ -1585,3 +1585,27 @@ a.up-more:hover { text-decoration: underline; }
 .up-cards .card h3 { font-size: clamp(21px, 2.3vw, 25px); }
 .up-cards .card .svc-ico svg { width: 26px !important; height: 26px !important; display: block; }
 .up-cards .card .svc-ico { display: flex; justify-content: center; align-items: center; height: 34px; margin-inline: auto; }
+
+
+/* ===== תת-תפריט של היומן בפס העליון (אילנה, 12.11.2026) =====
+   מחשב: ריחוף על "מערכת יומן" פותח רשימה, וריחוף על "שדרוגים ליומן החכם" פותח עוד שתיים בצד.
+   מובייל: הכל פתוח ומוזח פנימה, בלי ריחוף. */
+.nav-dd { position: relative; display: flex; align-items: center; }
+.nav-dd-top::after { content: " ▾"; font-size: .8em; }
+.nav-dd-menu { display: none; position: absolute; top: 100%; left: 0; z-index: 70; min-width: 270px; padding: 8px 0; margin-top: 2px; background: var(--navy); border: 1px solid rgba(200,154,60,.35); border-radius: 12px; box-shadow: 0 18px 40px rgba(0,0,0,.34); }
+.nav-dd::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 8px; }
+.nav-dd:hover .nav-dd-menu, .nav-dd:focus-within .nav-dd-menu { display: block; }
+.site-nav .nav-dd-menu a, .nav-dd-label { display: block; padding: 10px 18px; border-bottom: 0; white-space: nowrap; font-size: 14.5px; color: var(--cream); text-decoration: none; }
+.site-nav .nav-dd-menu a:hover, .nav-dd-label:hover { color: var(--gold-lift); background: rgba(244,239,226,.06); }
+.nav-dd-sub { position: relative; }
+.nav-dd-label { cursor: default; font-weight: 500; }
+.nav-dd-label::after { content: " ›"; color: var(--gold-lift); }
+.nav-dd-sub-menu { display: none; position: absolute; top: -8px; left: 100%; min-width: 320px; padding: 8px 0; background: var(--navy); border: 1px solid rgba(200,154,60,.35); border-radius: 12px; box-shadow: 0 18px 40px rgba(0,0,0,.34); }
+.nav-dd-sub:hover .nav-dd-sub-menu, .nav-dd-sub:focus-within .nav-dd-sub-menu { display: block; }
+@media (max-width: 768px) {
+  .nav-dd { flex-direction: column; align-items: stretch; }
+  .nav-dd-top::after, .nav-dd::after, .nav-dd-label::after { content: none; }
+  .nav-dd-menu, .nav-dd-sub-menu { display: block; position: static; min-width: 0; margin: 0; padding: 0 16px 0 0; background: none; border: 0; border-radius: 0; box-shadow: none; }
+  .site-nav .nav-dd-menu a, .nav-dd-label { padding: 11px 0; font-size: 15px; white-space: normal; border-bottom: 1px solid rgba(244,239,226,.09); }
+  .nav-dd-label { color: var(--gold-lift); }
+}
