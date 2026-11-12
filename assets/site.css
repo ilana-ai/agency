@@ -1570,3 +1570,12 @@ h2.h2-gold-line { padding-bottom: 16px; background: linear-gradient(90deg, #E2BE
 .foot-top .social { order: 2; }   /* הקישורים מימין, והרשתות אחריהם באותה שורה */
 .foot-links { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
 .foot-bottom { justify-content: flex-start; gap: 4px 10px; font-size: 13px; }
+
+/* ⬆️ עמודי השדרוגים של היומן (12.11.2026): קישור חזרה בראש ה-hero, וקישור "לפרטים" בקוביות השדרוג */
+.up-back { margin: 0 0 10px; font-size: 15px; }
+.up-back a { color: rgba(244,239,226,.8); text-decoration: none; }
+.up-back a:hover { color: var(--gold-lift); text-decoration: underline; }
+a.up-more { color: #8a6414; font-weight: 800; text-decoration: none; }
+a.up-more:hover { text-decoration: underline; }
+.crm-hero.up-hero { padding-bottom: clamp(34px, 5vw, 58px); }
+.up-hero + .sec { padding-top: clamp(32px, 5vw, 58px); }
