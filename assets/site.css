@@ -1579,3 +1579,7 @@ a.up-more { color: #8a6414; font-weight: 800; text-decoration: none; }
 a.up-more:hover { text-decoration: underline; }
 .crm-hero.up-hero { padding-bottom: clamp(34px, 5vw, 58px); }
 .up-hero + .sec { padding-top: clamp(32px, 5vw, 58px); }
+/* קוביות השדרוגים בעמוד היומן (12.11.2026): ממורכזות, כותרת גדולה יותר */
+.up-cards .card { text-align: center; }
+.up-cards .card .svc-ico { display: inline-block; }
+.up-cards .card h3 { font-size: clamp(21px, 2.3vw, 25px); }
